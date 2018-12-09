@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <title>几道小山的git 学习笔记</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 id="top"><em>"HTML"</em> 学习笔记</h1>
+        <p>备注：这不是教学文档，只是一份个人学习笔记，有些地方的内容会比较零散（本网页是静态网页）</p>
+        <div class="go-top"><a href="#top">
+            <span>回到</span><span>顶部</span>
+        </a></div>
+    </header>
+    <nav class="page-nav">
+        <ul>
+            <li><a href="#model-001">一、学习目标</a></li>
+            <li><a href="#model-002">二、开发工具</a></li>
+            <li><a href="#model-003">三、浏览器内核</a></li>
+            <li><a href="#model-004">四、Web标准</a></li>
+            <li><a href="#model-005">五、HTML初识</a></li>
+            <li><a href="#model-006">六、文档类型</a></li>
+            <li><a href="#model-007">七、字符集</a></li>
+            <li><a href="#model-008">八、HTML标签的语义化</a></li>
+            <li><a href="#model-009">九、HTML常用标签</a></li>
+            <li><a href="#model-010">十、查文档</a></li>
+        </ul>
+    </nav>
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="html.html" class="now">HTML</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="jsbase.html">JavaScript基础</a></li>
+            <li><a href="dom.html">DOM操作</a></li>
+            <li><a href="bom.html">BOM操作</a></li>
+            <li><a href="jquery.html">jQuery</a></li>
+            <li><a href="h5.html">HTML5</a></li>
+            <li><a href="c3.html">CSS3</a></li>
+            <li><a href="ajax.html">ajax</a></li>
+            <li><a href="mysql.html">MySQL</a></li>
+            <li><a href="mongodb.html">MongoDB</a></li>
+            <li><a href="stream.html">流式布局</a></li>
+            <li><a href="bootstrap.html">响应式布局&Bootstrap</a></li>
+            <li><a href="less.html">rem布局&LESS</a></li>
+            <li><a href="nodejs.html">nodejs</a></li>
+            <li><a href="git.html">Git</a></li>
+            <li><a href="jsplugin.html">js插件</a></li>
+            <li><a href="weapp.html">微信小程序</a></li>
+            <li><a href="show.html">小案例展示</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <ul>
+            <li class="model" id="model-001">
+                <h2 class="first">一、学习目标</h2>
+                <ul>
+                    <li>了解常用浏览器</li>
+                    <li>掌握WEB标准</li>
+                    <li>理解标签语义化</li>
+                    <li>掌握常用的排版标签</li>
+                    <li>掌握常用的文本格式化图像链接等标签</li>
+                    <li>掌握三种列表标签</li>
+                    <li>掌握表格标签</li>
+                    <li>掌握表单标签</li>
+                </ul>
+            </li>
+            <li class="model" id="model-002">
+                <h2 class="first">二、开发工具</h2>
+                <p>我们主要用的 开发工具有 浏览器（chrome） 、 编辑器（sublime/webStorm） 、 图形编辑（photoshop/fireworks） </p>
+                <ul>
+                    <li>
+                        <dl>
+                            <dt class="second">1.浏览器（显示）</dt>
+                            <dd>
+                                <p>1.1 浏览器是网页显示、运行的平台，常用的浏览器有IE、火狐（Firefox）、谷歌（Chrome）、Safari和Opera等。我们平时称为五大浏览器。</p>
+                                <p>1.2 查看浏览器占有的市场份额 : <a href="http://tongji.baidu.com/data/browser ">http://tongji.baidu.com/data/browser </a>
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.sublime（书写）</dt>
+                            <dd>
+                                <p>普通青年 Dreamweaver </p>
+                                <p>文艺青年 sublime/webStorm </p>
+                                <p>高手和傻子 用记事本 </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">3.Photoshop(协助)</dt>
+                            <dd>
+                                <p>PS 工具是我们使用频率比较高的软件之一， 我们学习PS目的不是为了设计海报做电商和UI的，而是要求： </p>
+                                <p>3.1 熟练的切图</p>
+                                <p>3.2 能和网站美工美眉有共同话题。。。。。</p>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-003">
+                <h2 class="first">三、浏览器内核</h2>
+                <p>浏览器内核又可以分成两部分：渲染引擎(layout engineer 或者 Rendering Engine)和 JS
+                    引擎。渲染引擎它负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS
+                    等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。JS 引擎 则是解析 Javascript 语言，执行
+                    javascript语言来实现网页的动态效果。</p>
+                <p>最开始渲染引擎和 JS 引擎并没有区分的很明确，后来 JS 引擎越来越独立，内核就倾向于只指渲染引擎。有一个网页标准计划小组制作了一个 ACID
+                    来测试引擎的兼容性和性能。内核的种类很多，如加上没什么人使用的非商业的免费内核，可能会有10多种，但是常见的浏览器内核可以分这四种：Trident、Gecko、Blink、Webkit。
+                </p>
+                <ul>
+                    <li>
+                        <dl>
+                            <dt class="second">1.Trident(IE内核)</dt>
+                            <dd>
+                                <p>1.1 国内很多的双核浏览器的其中一核便是 Trident，美其名曰 "兼容模式" </p>
+                                <p>1.2 代表： IE、傲游、世界之窗浏览器、Avant、腾讯TT、猎豹安全浏览器、360极速浏览器、百度浏览器等</p>
+                                <p>1.3 Window10 发布后，IE 将其内置浏览器命名为 Edge，Edge 最显著的特点就是新内核 EdgeHTML</p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.Gecko(firefox)</dt>
+                            <dd>
+                                <p>Gecko(Firefox 内核)： Mozilla FireFox(火狐浏览器) 采用该内核，Gecko
+                                    的特点是代码完全公开，因此，其可开发程度很高，全世界的程序员都可以为其编写代码，增加功能。 可惜这几年已经没落了， 比如
+                                    打开速度慢、升级频繁、猪一样的队友flash、神一样的对手chrome。</p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">3. webkit(Safari)</dt>
+                            <dd>
+                                <p>3.1 Safari 是苹果公司开发的浏览器，所用浏览器内核的名称是大名鼎鼎的 WebKit。 </p>
+                                <p>3.2 现在很多人错误地把 webkit 叫做 chrome内核（即使 chrome内核已经是 blink 了），苹果感觉像被别人抢了媳妇，都哭晕再厕所里面了。</p>
+                                <p>3.3 代表浏览器：傲游浏览器3、 Apple Safari (Win/Mac/iPhone/iPad)、Symbian手机浏览器、Android 默认浏览器，</p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">4. Chromium/Blink(chrome)</dt>
+                            <dd>
+                                <p>4.1 在 Chromium 项目中研发 Blink 渲染引擎（即浏览器核心），内置于 Chrome 浏览器之中。Blink 其实是 WebKit 的分支。 </p>
+                                <p>4.2 大部分国产浏览器最新版都采用Blink内核。二次开发</p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">5. Presto(Opera)</dt>
+                            <dd>
+                                <p>Presto（已经废弃） 是挪威产浏览器 opera 的 "前任" 内核，为何说是 "前任"，因为最新的 opera 浏览器早已将之抛弃从而投入到了谷歌怀抱了。</p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">6. 相关了解</dt>
+                            <dd>
+                                <p>6.1 移动端的浏览器内核主要说的是系统内置浏览器的内核。</p>
+                                <p>6.2 Android手机而言，使用率最高的就是Webkit内核，大部分国产浏览器宣称的自己的内核，基本上也是属于webkit二次开发。</p>
+                                <p>6.3 iOS以及WP7平台上，由于系统原因，系统大部分自带浏览器内核，一般是Safari或者IE内核Trident的</p>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-004">
+                <h2 class="first">四、Web标准（重点）</h2>
+                <p>通过以上浏览器的内核不同，我们知道他们工作原理、解析肯定不同，显示就会有差别。</p>
+                <ul>
+                    <li>
+                        <dl>
+                            <dt class="second">Web 标准的好处</dt>
+                            <dd>
+                                <p> Web标准不是某一个标准，而是由W3C和其他标准化组织制定的一系列标准的集合。</p>
+                                <div>
+                                    <p>主要包括结构（Structure）、表现（Presentation）和行为（Behavior）三个方面。</p>
+                                    <dl>
+                                        <dt class="third">1.1 结构标准</dt>
+                                        <dd>结构用于对网页元素进行整理和分类，咱们主要学的是HTML。 最重要 <em>(决定你是否有个好天然身体)</em></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt class="third">1.2 表现标准</dt>
+                                        <dd>表现用于设置网页元素的版式、颜色、大小等外观样式，主要指的是CSS。 <em>(决定你是否打扮的美丽外观)</em></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt class="third">1.3 行为标准</dt>
+                                        <dd>行为是指网页模型的定义及交互的编写，咱们主要学的是 Javascript <em>(决定你是否有吸引人的行为)</em></dd>
+                                    </dl>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-005">
+                <h2 class="first">五、HTML 初识</h2>
+                <p>一般先学习HTML+CSS， 这里我们先定一个小目标，先学HTML,后学习CSS。</p>
+                <p>HTML（英文Hyper Text Markup Language的缩写）中文译为“超文本标签语言”。是用来描述网页的一种语言。</p>
+                <p>所谓超文本，因为它可以加入图片、声音、动画、多媒体等内容，不仅如此，它还可以从一个文件跳转到另一个文件，与世界各地主机的文件连接</p>
+                <ul>
+                    <li>* HTML 指的是超文本标记语言 (Hyper Text Markup Language)</li>
+                    <li>* HTML 不是一种编程语言，而是一种标记语言 (markup language)</li>
+                    <li>* 标记语言是一套标记标签 (markup tag)</li>
+                    <li>* 总结： HTML 作用就是用标记标签来描述网页，把网页内容在浏览器中展示出来。用文字来描述网页标签</li>
+                </ul>
+                <ul>
+                    <li>
+                        <dl>
+                            <dt class="second">1.HTML骨架格式</dt>
+                            <dd>
+                                <p> 日常生活的书信，我们要遵循共同的约定。同理：HTML 有自己的语言语法骨架格式</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <HTML>
+                                        <head>
+                                            <title></title>
+                                        </head>
+                                        <body>
+                                        </body>
+                                        </HTML>
+                                    </xmp>
+                                </div>
+                                <dl>
+                                    <dt class="third">1.1 HTML标签：</dt>
+                                    <dd>作用所有HTML中标签的一个根节点。 最大的标签 根标签</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="third">1.2 head标签： 文档的头部</dt>
+                                    <dd>文档的头部描述了文档的各种属性和信息，包括文档的标题、在 Web
+                                        中的位置以及和其他文档的关系等。绝大多数文档头部包含的数据都不会真正作为内容显示给读者。注意在head标签中我们必须要设置的标签是title
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="third">1.3 title标签： 文档的标题</dt>
+                                    <dd>作用：让页面拥有一个属于自己的标题。</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="third">1.4 body标签：文档的主体 以后我们的页面内容 基本都是放到body里面的</dt>
+                                    <dd>body 元素包含文档的所有内容（比如文本、超链接、图像、表格和列表等等。）</dd>
+                                </dl>
+                            </dd>
+                            <dt class="second">2.HTML标签分类</dt>
+                            <dd>
+                                <p>在HTML页面中，带有“< >”符号的元素被称为HTML标签，如上面提到的 <em>HTML</em>、<em>head</em>、<em>body</em>
+                                    都是HTML骨架结构标签。所谓标签就是放在“< >” 标签符中表示某个功能的编码命令，也称为HTML标签或 HTML元素</p>
+                                <dl>
+                                    <dt class="third">2.1.双标签</dt>
+                                    <dd>
+                                        <p>该语法中“
+                                            <标签名>”表示该标签的作用开始，一般称为“开始标签（start tag）”，“</标签名>
+                                            ” 表示该标签的作用结束，一般称为“结束标签（end tag）”。和开始标签相比，结束标签只是在前面加了一个关闭符“/”。
+                                        </p>
+                                        <div class="daiMa">
+                                            <xmp>
+                                                <标签名> 内容</标签名>
+                                                比如
+                                                <body>我是文字</body>
+                                            </xmp>
+                                        </div>
+                                    </dd>
+                                    <dt class="third">2.2.单标签</dt>
+                                    <dd>单标签也称空标签，是指用一个标签符号即可完整地描述某个功能的标签。
+                                        <div class="daiMa">
+                                            <xmp>
+                                                <标签名/>
+                                                比如 <br/>
+                                            </xmp>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </dd>
+                            <dt class="second">3.HTML标签关系</dt>
+                            <dd>
+                                <p>标签的相互关系就分为两种：</p>
+                                <dl>
+                                    <dt class="third">3.1.嵌套关系</dt>
+                                    <dd>
+                                        <div class="daiMa">
+                                            <xmp>
+                                                <head><title></title></head>
+                                            </xmp>
+                                        </div>
+                                    </dd>
+                                    <dt class="third">3.2.并列关系</dt>
+                                    <dd>
+                                        <div class="daiMa">
+                                            <xmp>
+                                                <head></head>
+                                                <body></body>
+                                            </xmp>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <p>倡议： 如果两个标签之间的关系是嵌套关系，子元素最好缩进一个tab键的身位。如果是并列关系，最好上下对齐。</p>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-006">
+                <h2 class="first">六、文档类型</h2>
+                <div class="daiMa">
+                    <xmp>
+                        <!DOCTYPE html>
+                    </xmp>
+                </div>
+                <p>同学你用啥手机？你咋回答？ </p>
+                <p>标签位于文档的最前面，用于向浏览器说明当前文档使用哪种 HTML 或 XHTML
+                    标准规范，必需在开头处使用标签为所有的XHTML文档指定XHTML版本和类型，只有这样浏览器才能按指定的文档类型进行解析。 </p>
+                <p>注意： 一些老网站可能用的还是老版本的文档类型比如
+                    XHTML之类的，但是我们学的是HTML5,而且HTML5的文档类型兼容很好(向下兼容的原则)，所以大家放心的使用HTML5的文档类型就好了。 </p>
+            </li>
+            <li class="model" id="model-007">
+                <h2 class="first">七、字符集</h2>
+                <p>* utf-8是目前最常用的字符集编码方式，常用的字符集编码方式还有gbk和gb2312。 </p>
+                <p>* gb2312 简单中文 包括6763个汉字 </p>
+                <p>* BIG5 繁体中文 港澳台等用 </p>
+                <p>* GBK包含全部中文字符 是GB2312的扩展，加入对繁体字的支持，兼容GB2312 </p>
+                <p>* UTF-8则包含全世界所有国家需要用到的字符 </p>
+                <p>* 记住一点，以后我们统统使用UTF-8 字符集, 这样就避免出现字符集不统一而引起乱码的情况了。</p>
+            </li>
+            <li class="model" id="model-008">
+                <h2 class="first">八、HTML标签的语义化</h2>
+                <p>* 所谓标签语义化，就是指标签的含义。 </p>
+                <dl>
+                    <dt class="second">1.为什么要有语义化标签</dt>
+                    <dd><p>1.1.方便代码的阅读和维护</p>
+                        <p>1.2.同时让浏览器或是网络爬虫可以很好地解析，从而更好分析其中的内容</p>
+                        <p>1.3.使用语义化标签会具有更好地搜索引擎优化</p>
+                        核心：合适的地方给一个最为合理的标签。
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.语义是否良好： 当我们去掉CSS之后，网页结构依然组织有序，并且有良好的可读性。</dt>
+                    <dd>一眼看去，就知道那个是重点，结构是什么，知道每块的内容是干啥的。
+
+                        遵循的原则：先确定语义的HTML ，再选合适的CSS。
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-009">
+                <h2 class="first">九、HTML常用标签</h2>
+                <p>* 首先 HTML和CSS是两种完全不同的语言，我们学的是结构，就只写HTML标签，认识标签就可以了。 不会再给结构标签指定样式了。 </p>
+                <p>* HTML标签有很多，这里我们学习最为常用的，后面有些较少用的，我们可以查下手册就可以了。 </p>
+                <div class="daiMa">
+                    <xmp>
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset='utf-8'>
+                            <title>网页标题</title>
+                        </head>
+                        <body>
+                        <div class="box">
+                            <h1>一级标题</h1>
+                            <nav>导航
+                                <ul>
+                                    <li>无序列表 1</li>
+                                    <li>无序列表 2</li>
+                                    <li>无序列表 3</li>
+                                </ul>
+                                <ol>
+                                    <li>1. 有序列表</li>
+                                    <li>2. 有序列表</li>
+                                    <li>3. 有序列表</li>
+                                </ol>
+                            </nav>
+                            <p>内容</p><br>//换行
+                            //一个简单的示例
+                        </div>
+                        </body>
+                        </html>
+                    </xmp>
+                </div>
+                <dl>
+                    <dt class="second">1.排版标签</dt>
+                    <dd><p>排版标签主要和css搭配使用，显示网页结构的标签，是网页布局最常用的标签。</p></dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.标题标签 (熟记)</dt>
+                    <dd>
+                        <p>2.1 单词缩写： head 头部. 标题 title 文档标题</p>
+                        <p>2.2 为了使网页更具有语义化，我们经常会在页面中用到标题标签，HTML提供了6个等级的标题，即</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <h1>一级标题</h1>
+                                <h2>二级标题</h2>
+                                <h3>三级标题</h3>
+                                <h4>四级标题</h4>
+                                <h5>五级标题</h5>
+                                <h6>六级标题</h6>
+                                //标题标签语义： 作为标题使用，并且依据重要性递减
+                            </xmp>
+                        </div>
+                        <p>2.3 h1 标签因为重要，尽量少用，不要动不动就向你扔了一个h1。 一般h1 都是给logo使用，或者页面中最重要标题信息。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.段落标签( 熟记)</dt>
+                    <dd>
+                        <p>3.1 单词缩写： paragraph 段落 [ˈpærəgræf] 无须记这个单词</p>
+                        <p>3.2 在网页中要把文字有条理地显示出来，离不开段落标签，就如同我们平常写文章一样，整个网页也可以分为若干个段落，而段落的标签就是</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <p>文本内容</p>
+                            </xmp>
+                        </div>
+                        <p>3.3 是HTML文档中最常见的标签，默认情况下，文本在一个段落中会根据浏览器窗口的大小自动换行。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.水平线标签(认识)</dt>
+                    <dd>
+                        <p>4.1 单词缩写： horizontal 横线 [ˌhɔrəˈzɑntl] 同上</p>
+                        <p>4.2 在网页中常常看到一些水平线将段落与段落之间隔开，使得文档结构清晰，层次分明。这些水平线可以通过插入图片实现，也可以简单地通过标签来完成，</p>
+                        <p>4.3 就是创建横跨网页水平线的标签。其基本语法格式如下：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <hr/>
+                                是单标签
+                            </xmp>
+                        </div>
+                        <p>4.4 在网页中显示默认样式的水平线。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">5. 换行标签(熟记)</dt>
+                    <dd>
+                        <p>5.1 单词缩写： break 打断 ,换行</p>
+                        <p>5.2 在HTML中，一个段落中的文字会从左到右依次排列，直到浏览器窗口的右端，然后自动换行。如果希望某段文本强制换行显示，就需要使用换行标签</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <br/>
+                            </xmp>
+                        </div>
+                        <p>5.3 这时如果还像在word中直接敲回车键换行就不起作用了。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">6.div span标签(重点)</dt>
+                    <dd>
+                        <p>6.1 div span 是没有语义的 是我们网页布局主要的2个盒子 css+div</p>
+                        <p>6.2 div 就是 division 的缩写 分割， 分区的意思 其实有很多div 来组合网页。</p>
+                        <p>6.3 span, 跨度，跨距；范围</p>
+                        <p>6.4 语法格式：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <div> 这是头部</div>
+                                <span>今日价格</span>
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">7.文本格式化标签(熟记)</dt>
+                    <dd>
+                        <p>7.1 在网页中，有时需要为文字设置粗体、斜体或下划线效果，这时就需要用到HTML中的文本格式化标签，使文字以特殊的方式显示。</p>
+                        <p>7.2 b i s u 只有使用 没有 强调的意思 strong em del ins 语义更强烈</p>
+                        <div class="daiMa">
+                            <xmp>
+                                //没有 强调的意思,不推荐使用（效果自行测试）
+                                <i></i>
+                                <b></b>
+                                <s></s>
+                                <u></u>
+                                //语义更强烈（效果自行测试）
+                                <strong></strong>
+                                <em></em>
+                                <del></del>
+                                <ins></ins>
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">8.标签属性</dt>
+                    <dd>
+                        <p>8.1 属性就是特性 比如 手机的颜色 手机的尺寸 ，总结就是手机的。。手机的颜色是黑色 手机的尺寸是 8寸,水平线的长度是 200</p>
+                        <p>8.2 使用HTML制作网页时，如果想让HTML标签提供更多的信息，可以使用HTML标签的属性加以设置。其基本语法格式如下：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <标签名 属性1="属性值1" 属性2="属性值2" …> 内容</标签名>
+                            </xmp>
+                        </div>
+                        <dl>
+                            <dt class="third">8.3 在上面的语法中</dt>
+                            <dd>
+                                <p>8.3.1 标签可以拥有多个属性，必须写在开始标签中，位于标签名后面。</p>
+                                <p>8.3.2 属性之间不分先后顺序，标签名与属性、属性与属性之间均以空格分开。</p>
+                                <p>8.3.3 任何标签的属性都有默认值，省略该属性则取默认值。</p>
+                            </dd>
+                            <div class="daiMa">
+                                <xmp>
+                                    采取 键值对 的格式 key="value" 的格式
+                                    比如:
+                                    <hr width="400"/>
+                                    属性 是 宽度
+                                    值 是 400
+                                    提倡： 尽量不使用 样式属性。
+                                </xmp>
+                            </div>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">9.图像标签img (重点)</dt>
+                    <dd>
+                        <p>9.1 单词缩写： image 图像</p>
+                        <p>9.2 HTML网页中任何元素的实现都要依靠HTML标签，要想在网页中显示图像就需要使用图像标签，接下来将详细介绍图像标签以及和他相关的属性。其基本语法格式如下：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                该语法中src属性用于指定图像文件的路径和文件名，他是img标签的必需属性。
+                                <img src="图像URL"/>
+                            </xmp>
+                        </div>
+                        <img src="img/img.png" alt="">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">10.链接标签(重点)</dt>
+                    <dd>
+                        <p>10.1 单词缩写： anchor 的缩写 [ˈæŋkə(r)] 。基本解释 锚, 铁锚 的</p>
+                        <p>10.2 在HTML中创建超链接非常简单，只需用标签环绕需要被链接的对象即可，其基本语法格式如下：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <a href="跳转目标" target="目标窗口的弹出方式">文本或图像</a>
+                            </xmp>
+                        </div>
+                        <p>10.3 href：用于指定链接目标的url地址，当为标签应用href属性时，它就具有了超链接的功能。 Hypertext Reference的缩写。意思是超文本引用</p>
+                        <p>10.4 target：用于指定链接页面的打开方式，其取值有_self和_blank两种，其中_self为默认值，_blank为在新窗口中打开方式。</p>
+                        <dl>
+                            <dt class="forth">注意:</dt>
+                            <dd>
+                                <p>1.外部链接 需要添加 http:// www.baidu.com </p>
+                                <p>2. 内部链接 直接链接内部页面名称即可 比如 < a href="index.html"> 首页</p>
+                                <p>3. 如果当时没有确定链接目标时，通常将链接标签的href属性值定义为“#”(即href="#")，表示该链接暂时为一个空链接。</p>
+                                <p>4.不仅可以创建文本超链接，在网页中各种网页元素，如图像、表格、音频、视频等都可以添加超链接。 </p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">11.锚点定位 （难点）</dt>
+                    <dd>
+                        <p>通过创建锚点链接，用户能够快速定位到目标内容。 创建锚点链接分为两步：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                1.使用“a href=”#id名>“链接文本" 创建链接文本（被点击的）
+                                <a href="#two">跳到第2集</a>
+                                2.使用相应的id名标注跳转目标的位置。
+                                <h3 id="two">第2集</h3>
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">12.特殊字符标签 （理解）</dt>
+                    <dd>
+                        <p>12.1 在HTML中还有一种特殊的标签——注释标签。如果需要在HTML文档中添加一些便于阅读和理解但又不需要显示在页面中的注释文字，就需要使用注释标签。其基本语法格式如下： ​</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <!-- 注释语句 -->   ctrl + / 或者 ctrl +shift + /
+                            </xmp>
+                        </div>
+                        <p>12.2 注释内容不会显示在浏览器窗口中，但是作为HTML文档内容的一部分，也会被下载到用户的计算机上，查看源代码时就可以看到。</p>
+                        <p>12.3 注释非常重要，合理注释可以方便代码的阅读和维护</p>
+                        <img src="img/zifu.png" alt="特殊字符" title="特殊字符">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">13.路径(重点、难点)</dt>
+                    <dd>
+                        <p>13.1 实际工作中，通常新建一个文件夹专门用于存放图像文件，这时再插入图像，就需要采用“路径”的方式来指定图像文件的位置。</p>
+                        <dl>
+                            <dt class="third">13.2 路径可以分为： 相对路径和绝对路径</dt>
+                            <dd>
+                                <dl>
+                                    <dt class="forth">13.2.1 相对路径</dt>
+                                    <dd>
+                                        <p>以引用文件之网页所在位置为参考基础，而建立出的目录路径。因此，当保存于不同目录的网页引用同一个文件时，所使用的路径将不相同，故称之为相对路径。</p>
+                                        <div class="daiMa">
+                                            <xmp>
+                                                1.图像文件和HTML文件位于同一文件夹：只需输入图像文件的名称即可，
+                                                如<img src="logo.gif"/>。
+                                                2.图像文件位于HTML文件的下一级文件夹：输入文件夹名和文件名，之间用“/”隔开，
+                                                如<img src="img/img01/logo.gif"/>。
+                                                3.图像文件位于HTML文件的上一级文件夹：在文件名之前加入“../” ，
+                                                如果是上两级，则需要使用 “../ ../”，以此类推，
+                                                如<img src="../logo.gif"/>。
+                                            </xmp>
+                                        </div>
+                                    </dd>
+                                    <dt class="forth">13.2.2 绝对路径</dt>
+                                    <dd>
+                                        <p>绝对路径以Web站点根目录为参考基础的目录路径。之所以称为绝对，意指当所有网页引用同一个文件时，所使用的路径都是一样的</p>
+                                        <p>“D:\web\img\logo.gif”，或完整的网络地址，例如“http://www.itcast.cn/images/logo.gif”。</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">14.列表标签</dt>
+                    <dd>
+                        什么是列表？ 把…制成表,以表显示容器里面装载着文字或图表的一种形式，叫列表。列表最大的特点就是 整齐 、整洁、 有序
+                    </dd>
+                    <dl>
+                        <dt class="third">14.1 无序列表 ul （重点）</dt>
+                        <dd>
+                            <p>无序列表的各个列表项之间没有顺序级别之分，是并列的。其基本语法格式如下：</p>
+                            <div class="daiMa">
+                                <xmp>
+                                    <ul>
+                                        <li>列表项1</li>
+                                        <li>列表项2</li>
+                                        <li>列表项3</li>
+                                        ......
+                                    </ul>
+                                    1. ul中只能嵌套li，直接在ul标签中输入其他标签或者文字的做法是不被允许的。
+                                    2. li与li之间相当于一个容器，可以容纳所有元素。
+                                    3. 无序列表会带有自己样式属性，放下那个样式，一会让CSS来！
+                                </xmp>
+                            </div>
+                        </dd>
+                        <dt class="third">14.2 有序列表 ol</dt>
+                        <dd>
+                            <p>有序列表即为有排列顺序的列表，其各个列表项按照一定的顺序排列定义，有序列表的基本语法格式如下：</p>
+                            <div class="daiMa">
+                                <xmp>
+                                    <ol>
+                                        <li>列表项1</li>
+                                        <li>列表项2</li>
+                                        <li>列表项3</li>
+                                        ......
+                                    </ol>
+                                    所有特性基本与ul 一致。
+                                    但是实际工作中， 较少用 ol
+                                </xmp>
+                            </div>
+                        </dd>
+                    </dl>
+                </dl>
+                <dl>
+                    <dt class="second">15.自定义列表（理解）</dt>
+                    <dd>
+                        <p>定义列表常用于对术语或名词进行解释和描述，定义列表的列表项前没有任何项目符号。其基本语法如下：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <dl>
+                                    <dt>名词1</dt>
+                                    <dd>名词1解释1</dd>
+                                    <dd>名词1解释2</dd>
+                                    ...
+                                    <dt>名词2</dt>
+                                    <dd>名词2解释1</dd>
+                                    <dd>名词2解释2</dd>
+                                    ...
+                                </dl>
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">16.表格 table</dt>
+                    <dd>
+                        <p>存在即是合理的。 表格的现在还是较为常用的一种标签，但不是用来布局，常见处理、显示表格式数据。</p>
+                        <dl>
+                            <dt class="third">16.1 创建表格</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <table>
+                                            <tr>
+                                                <td>单元格内的文字</td>
+                                                ...
+                                            </tr>
+                                            ...
+                                        </table>
+                                    </xmp>
+                                </div>
+                                <p class="forth">* 在上面的语法中包含三对HTML标签，分别为 table、tr、td，他们是创建表格的基本标签，缺一不可，下面对他们进行具体地解释</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        1.table用于定义一个表格。
+
+                                        2.tr 用于定义表格中的一行，必须嵌套在 table标签中，在 table中包含几对 tr，就有几行表格。
+
+                                        3.td /td：用于定义表格中的单元格，必须嵌套在
+                                        <tr></tr>
+                                        标签中，
+                                        一对
+                                        <tr></tr>
+                                        中包含几对
+                                        <td></td>
+                                        ，就表示该行中有多少列（或多少个单元格）。
+                                    </xmp>
+                                </div>
+                                <p class="forth">注意：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        1.
+                                        <tr></tr>
+                                        中只能嵌套
+                                        <td></td>
+                                        2.
+                                        <td></td>
+                                        标签，他就像一个容器，可以容纳所有的元素
+                                    </xmp>
+                                </div>
+                            </dd>
+                            <dt class="third">16.2 表头标签</dt>
+                            <dd>
+                                <p>表头一般位于表格的第一行或第一列，其文本加粗居中，如下图所示，即为设置了表头的表格。设置表头非常简单，只需用表头标签th替代相应的单元格标签td即可。</p>
+                            </dd>
+                            <dt class="third">16.3 表格结构（了解）</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        在使用表格进行布局时，可以将表格划分为头部、主体和页脚（页脚因为有兼容性问题，我们不在赘述），
+                                        具体 如下所示：
+
+                                        <thead></thead>
+                                        ：用于定义表格的头部。
+
+                                        必须位于
+                                        <table></table>
+                                        标签中，一般包含网页的logo和导航等头部信息。
+
+
+                                        <tbody></tbody>
+                                        ：用于定义表格的主体。
+
+                                        位于
+                                        <table></table>
+                                        标签中，一般包含网页中除头部和底部之外的其他内容。
+                                    </xmp>
+                                </div>
+                            </dd>
+                            <dt class="third">16.4 表格标题</dt>
+                            <dd>
+                                <p>表格的标题： caption , caption 元素定义表格标题。</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <table>
+                                            <caption>我是表格标题</caption>
+                                        </table>
+                                    </xmp>
+                                </div>
+                                <p>* caption 标签必须紧随 table 标签之后。您只能对每个表格定义一个标题。通常这个标题会被居中于表格之上。</p>
+                            </dd>
+                            <dt class="third">16.5 合并单元格(难点)</dt>
+                            <dd>
+                                <p>16.5.1 跨行合并：rowspan 跨列合并：colspan</p>
+                                <p>16.5.2 合并单元格的思想：将多个内容合并的时候，就会有多余的东西，把它删除。 例如 把 3个 td 合并成一个， 那就多余了2个，需要删除。 </p>
+                                <p>16.5.3 ​ 公式： 删除的个数 = 合并的个数 - 1</p>
+                                <p>16.5.4 合并的顺序 先上 先左</p>
+                            </dd>
+                            <dt class="third">16.6 总结表格</dt>
+                            <dd>
+                                <p>16.6.1 表格提供了HTML 中定义表格式数据的方法。</p>
+                                <p>16.6.2 表格中由行中的单元格组成。</p>
+                                <p>16.6.3 表格中没有列元素，列的个数取决于行的单元格个数。</p>
+                                <p>16.6.4 表格不要纠结于外观，那是CSS 的作用。</p>
+                                <p>16.6.5 表格的学习要求： 能手写表格结构，并且能合并单元格。</p>
+                            </dd>
+                        </dl>
+                        <img src="img/tt.png" alt="">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">17.表单标签(掌握)</dt>
+                    <dd>
+                        <p>现实中的表单，类似我们去银行办理信用卡填写的单子。目的是为了收集用户信息。</p>
+                        <p>在我们网页中， 我们也需要跟用户进行交互，收集用户资料，此时也需要表单。</p>
+                        <h4 class="third">17.1 在HTML中，一个完整的表单通常由表单控件（也称为表单元素）、提示信息和表单域3个部分构成。</h4>
+                        <dl>
+                            <dt class="forth">17.1.1.表单控件：</dt>
+                            <dd>
+                                <p> 包含了具体的表单功能项，如单行文本输入框、密码输入框、复选框、提交按钮、重置按钮等。</p>
+                            </dd>
+                            <dt class="forth">17.1.2.提示信息：</dt>
+                            <dd>
+                                <p>一个表单中通常还需要包含一些说明性的文字，提示用户进行填写和操作。</p>
+                            </dd>
+                            <dt class="forth">17.1.3.表单域：</dt>
+                            <dd>
+                                <p>​ 他相当于一个容器，用来容纳所有的表单控件和提示信息，可以通过他定义处理表单数据所用程序的url地址，以及数据提交到服务器的方法。如果不定义表单域，表单中的数据就无法传送到后台服务器。</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">17.2 input 控件(重点)</dt>
+                            <dd>
+                                <p>在上面的语法中，input标签为单标签，type属性为其最基本的属性，其取值有多种，用于指定不同的控件类型。除了type属性之外，input 标签还可以定义很多其他的属性，其常用属性如下表所示。</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">17.3 label标签(理解)</dt>
+                            <dd>
+                                <p>17.3.1 label 标签为 input 元素定义标注（标签）。</p>
+                                <p>17.3.2 作用： 用于绑定一个表单元素, 当点击label标签的时候, 被绑定的表单元素就会获得输入焦点</p>
+                                <p>17.3.3 for 属性规定 label 与哪个表单元素绑定。 </p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <label for="male">Male</label>
+                                        <input type="radio" name="sex" id="male" value="male">
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">17.4 textarea控件(文本域)</dt>
+                            <dd>
+                                <p>如果需要输入大量的信息，就需要用到textarea标签。通过textarea控件可以轻松地创建多行文本输入框，其基本语法格式如下：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <textarea cols="每行中的字符数" rows="显示的行数">文本内容</textarea>
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">17.5 下拉菜单</dt>
+                            <dd>
+                                <p>使用select控件定义下拉菜单的基本语法格式如下</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <select>
+                                            <option>选项1</option>
+                                            <option>选项2</option>
+                                            <option>选项3</option>
+                                            ...
+                                        </select>
+                                    </xmp>
+                                </div>
+                                <dl>
+                                    <dt class="forth">注意：</dt>
+                                    <dd>
+                                        <p>* select中至少应包含一对option </p>
+                                        <p>* 在option 中定义selected =" selected "时，当前项即为默认选中项。</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">17.6 表单域</dt>
+                            <dd>
+                                <p>在HTML中，form标签被用于定义表单域，即创建一个表单，以实现用户信息的收集和传递，form中的所有内容都会被提交给服务器。创建表单的基本语法格式如下：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <form action="url地址" method="提交方式" name="表单名称">
+                                            各种表单控件
+                                        </form>
+                                    </xmp>
+                                </div>
+                                <dl>
+                                    <dt class="forth">常用属性：</dt>
+                                    <dd>
+                                        <p>* Action 在表单收集到信息后，需要将信息传递给服务器进行处理，action属性用于指定接收并处理表单数据的服务器程序的url地址。</p>
+                                        <p>* method 用于设置表单数据的提交方式，其取值为get或post。</p>
+                                        <p>* name 用于指定表单的名称，以区分同一个页面中的多个表单。</p>
+                                        <p>* 注意： 每个表单都应该有自己表单域。</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <img src="img/input.png" alt="">
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-010">
+                <h2 class="first">十、查文档</h2>
+                <ul>
+                    <li>经常查阅文档是一个非常好的学习习惯。</li>
+                    <li>W3C: <a href="http://www.w3school.com.cn/">http://www.w3school.com.cn/</a> </li>
+                    <li>MDN: <a href="https://developer.mozilla.org/zh-CN/">https://developer.mozilla.org/zh-CN/</a></li>
+                </ul>
+            </li>
+            <li class="model" id="model-100">
+                <h2 class="first">END、完结撒花</h2>
+                <ul class="f_l">
+                    <li class="second animateM">完结撒花</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <p>作者：几道小山©</p>
+        <p>邮箱：874972633@qq.com</p>
+        <p>GitHub：<a href="https://github.com/jidaoxiaoshan" target="_blank">https://github.com/jidaoxiaoshan</a></p>
+    </footer>
+</div>
+</body>
+</html>

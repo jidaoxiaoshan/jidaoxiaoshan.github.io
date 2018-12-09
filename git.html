@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <title>几道小山的git 学习笔记</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 id="top"> <em>"Git"</em> 学习笔记</h1>
+        <p>备注：这不是教学文档，只是一份个人学习笔记，有些地方的内容会比较零散（本网页是静态网页）</p>
+        <div class="go-top"><a href="#top">
+            <span>回到</span><span>顶部</span>
+        </a></div>
+    </header>
+    <nav class="page-nav">
+        <ul>
+            <li><a href="#model-001">一、常见版本控制器</a></li>
+            <li><a href="#model-002">二、git的优势</a></li>
+            <li><a href="#model-003">三、版本控制工具应该具备的功能</a></li>
+            <li><a href="#model-004">四、版本控制简介</a></li>
+            <li><a href="#model-005">五、git简史</a></li>
+            <li><a href="#model-006">六、git的下载和安装</a></li>
+            <li><a href="#model-007">七、git的结构</a></li>
+            <li><a href="#model-008">八、git和代码托管中心</a></li>
+            <li><a href="#model-009">九、本地库和远程库</a></li>
+            <li><a href="#model-010">十、git的命令行操作</a></li>
+            <li><a href="#model-011">十一、git保存版本的机制</a></li>
+            <li><a href="#model-012">十二、GitHub</a></li>
+            <li><a href="#model-013">十三、SSH免密登录</a></li>
+            <li><a href="#model-014">十四、补充</a></li>
+        </ul>
+    </nav>
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="jsbase.html">JavaScript基础</a></li>
+            <li><a href="dom.html">DOM操作</a></li>
+            <li><a href="bom.html">BOM操作</a></li>
+            <li><a href="jquery.html">jQuery</a></li>
+            <li><a href="h5.html">HTML5</a></li>
+            <li><a href="c3.html">CSS3</a></li>
+            <li><a href="ajax.html">ajax</a></li>
+            <li><a href="mysql.html">MySQL</a></li>
+            <li><a href="mongodb.html">MongoDB</a></li>
+            <li><a href="stream.html">流式布局</a></li>
+            <li><a href="bootstrap.html">响应式布局&Bootstrap</a></li>
+            <li><a href="less.html">rem布局&LESS</a></li>
+            <li><a href="nodejs.html">nodejs</a></li>
+            <li><a href="git.html" class="now">Git</a></li>
+            <li><a href="jsplugin.html">js插件</a></li>
+            <li><a href="weapp.html">微信小程序</a></li>
+            <li><a href="show.html">小案例展示</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <ul>
+            <li class="model" id="model-001">
+                <h2 class="first">一、常见版本控制器</h2>
+                <ul>
+                    <li>
+                        <dl class="second">1.CVS</dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.SVN</dt>
+                            <dd>
+                                <p>
+                                    SVN是Subversion的简称，是一个开放源代码的版本控制系统，相较于RCS、CVS，它采用了分支管理系统，它的设计目标就是取代CVS。互联网上很多版本控制服务已从CVS迁移到Subversion。说得简单一点SVN就是用于多个人共同开发同一个项目，共用资源的目的。</p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="second">3.ClearCase</dl>
+                    </li>
+                    <li>
+                        <dl class="second">4.VSS : (以上都是集中式版本控制系统)</dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">5.GIT : (分布式版本控制系统)</dt>
+                            <dd>
+                                <p>Git(读音为/gɪt/。)是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理
+                                    Linux
+                                    内核开发而开发的一个开放源码的版本控制软件。
+                                    Torvalds 开始着手开发 Git 是为了作为一种过渡方案来替代 BitKe</p>
+                                <p>分布式相比于集中式的最大区别在于开发者可以提交到本地，每个开发者通过克隆（git clone），在本地机器上拷贝一个完整的Git仓库。</p>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-002">
+                <h2 class="first">二、git的优势</h2>
+                <ul>
+                    <li>1.分布式，强调个体</li>
+                    <li>2.公共服务器压力和数据量都不会太大</li>
+                    <li>3.速度快，灵活，分支操作非常快捷流畅</li>
+                    <li>4.任意两个开发者之间可以很容易的解决冲突</li>
+                    <li>5.离线工作,大部分操作在本地完成，不需要联网</li>
+                    <li>6.与Linux命令全面兼容</li>
+                    <li>7.完整性保证</li>
+                </ul>
+            </li>
+            <li class="model" id="model-003">
+                <h2 class="first">三、版本控制工具应该具备的功能</h2>
+                <ul>
+                    <li>
+                        <dl>
+                            <dt class="second">1.协调修改</dt>
+                            <dd>多人并行不悖的修改服务器端的同一个文件</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.数据备份</dt>
+                            <dd>不仅保存目录和文件的当前状态，还能够保存每一个提交过的历史状态</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">3.版本管理</dt>
+                            <dd>在保存每一个版本的文件信息的时候要做到不保存重复数据，以节约存储空间，提高运行效率。这方面SVN采用的是增量式管理的方式，而git采取了文件系统快照的方式</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">4.权限控制</dt>
+                            <dd>对团队中参与开发的人员进行权限控制</dd>
+                            <dd>对团队外开发者贡献的代码进行审核--Git独有</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">5.历史记录</dt>
+                            <dd>查看修改人，修改时间，修改内容，日志信息</dd>
+                            <dd>将本地文件恢复到某一个历史状态</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">6.分支管理</dt>
+                            <dd>允许开发团队在工作过程中多条生产线同时推进任务，进一步提高效率</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-004">
+                <h2 class="first">四、版本控制简介</h2>
+                <ul>
+                    <li>
+                        <dl>
+                            <dt class="second">1.版本控制</dt>
+                            <dd>工程设计领域中使用版本控制管理工程蓝图的设计过程，在IT开发过程中也可以使用版本控制思想管理代码的版本迭代。</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.版本控制工具</dt>
+                            <dd>思想：版本控制</dd>
+                            <dd>实现：版本控制工具</dd>
+                            <dd>集中式版本控制工具： CVS , SVN , VSS...</dd>
+                            <dd>分布式版本控制工具： git</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-005">
+                <h2 class="first">五、git简史</h2>
+                <img src="img/Git-GitHub-history001.png" alt="git简史">
+            </li>
+            <li class="model" id="model-006">
+                <h2 class="first">六、git的下载和安装</h2>
+                <ul>
+                    <li>
+                        <dl>
+                            <dt class="second">1.下载地址</dt>
+                            <dd><a href="https://git-scm.com/">https://git-scm.com/</a></dd>
+                            <dd>根据自己的电脑系统下载对应的版本</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.安装</dt>
+                            <dd>安装在任意全英文目录下
+                                <img src="img/git-anzhuang001.png" alt="">
+                            </dd>
+                            <dd>无脑一直点 <em>next</em> ， 最后 <em>install</em> 安装</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-007">
+                <h2 class="first">七、git的结构</h2>
+                <ul class="f_l">
+                    <li>
+                        <dl>
+                            <dt class="second">1.工作区</dt>
+                            <dd>写代码</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.暂存区</dt>
+                            <dd>临时存储</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">3.本地库</dt>
+                            <dd>历史版本</dd>
+                        </dl>
+                    </li>
+                </ul>
+                <img class="litter-img f_r" src="img/three-tree.png" alt="git的结构" width="488" height="573">
+            </li>
+            <li class="model" id="model-008">
+                <h2 class="first">八、git和代码托管中心</h2>
+                <ul class="f_l">
+                    <li>
+                        <dl>
+                            <dt class="second">1.局域网环境下</dt>
+                            <dd>GitLab 服务器</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.外网环境下</dt>
+                            <dd>GitHub</dd>
+                            <dd>码云</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">3.代码托管中心的任务：</dt>
+                            <dd>维护远程库</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-009">
+                <h2 class="first">九、本地库和远程库</h2>
+                <ul class="f_l">
+                    <li>
+                        <dl>
+                            <dt class="second">1.团队内部协作</dt>
+                            <dd>项目经理创建远程库，<em>push</em> 代码到远程库，其他程序员可以加入到团队 <em>clone</em> 远程库的代码，修改后 <em>push</em>
+                                到远程库,由项目经理 <em>pull</em> 程序员修改的代码， 审核 <em>push</em>,最终决定是否 <em>merge</em></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.跨团队协作</dt>
+                            <dd>项目经理创建远程库，<em>push</em> 代码到远程库，（非项目团队的程序员无权 <em>clone</em> 代码）其他团队的程序员可以 <em>fork</em>
+                                代码到自己的远程库，修改后 <em>pull request</em> 给原来的远程库，项目经理审核，最终决定是否 <em>merge</em></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-010">
+                <h2 class="first">十、git的命令行操作</h2>
+                <ul class="f_l">
+                    <li>
+                        <h3 class="second">1.本地操作</h3>
+                        <ul>
+                            <li>
+                                <h4 class="third"> 1.1 本地库初始化操作</h4>
+                                <ul>
+                                    <li><p>1.1.1 在任意目录下右键打开 <em>git bash here</em> 可以打开git的控制台，所有操作都可以在控制台中完成
+                                        ，git与linux完全兼容，如果会Linux，使用git将如鱼得水。
+                                    </p></li>
+                                    <li><p>1.1.2 打开控制台之后可以通多 <em>cd</em> 跳转到你要工作的文件夹， 此处不做累述（如果不会使用，请在要工作的目录下运行git控制台）
+                                    </p></li>
+                                    <li><p>1.1.3创建目录： <em>mkdir 目录名称</em>， 例如： <em>mkdir project</em>
+                                        可以在运行目录下创建一个名为project的目录
+                                    </p></li>
+                                    <li><p>1.1.4 在控制台输入<em>ll</em> 可以查看当前目录下所有文件（不包括隐藏文件）</p></li>
+                                    <li><p>1.1.5 输入 <em>git init</em> 初始化本地库，此时在当前文件夹下会有一个隐藏的文件夹 <em>.git</em>,请不要随便修改这个文件夹
+                                    </p></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="third"> 1.2 设置签名</h4>
+                                <ul>
+                                    <li>
+                                        <dl>
+                                            <dt class="forth">1.2.1 形式</dt>
+                                            <dd>
+                                                <p>用户名：tom</p>
+                                                <p>email地址：abc@github.com</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt class="forth">1.2.2 作用：</dt>
+                                            <dd>
+                                                <p>区分不同的开发人员</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt class="forth">1.2.3 命令：</dt>
+                                            <dd>
+                                                <p class="forth">1.2.3.1 项目级别/仓库级别：仅在当前本地库范围内生效 </p>
+                                                <p>设置名称：<em>git config user.name tom_pro</em><br></p>
+                                                <p>设置邮箱：<em>git config user.email abc_pro@github.com</em></p>
+                                                <p>信息存储在当前文件夹的 <em>.git/config</em>里面，通过 <em>cat .git/config</em>可以查看配置文件
+                                                </p>
+                                                <p class="forth">1.2.3.2 系统用户级别：登录当前操作系统的用户范围 </p>
+                                                <p>设置名称：<em>git config -global user.name tom_glo</em></p>
+                                                <p>设置邮箱：<em>git config -global user.email abc_pro@github.com</em></p>
+                                                <p>配置好 <em>cd ~</em>，通过 <em>cat .gitconfig</em> 查看</p>
+                                                <p class="forth">1.2.3.3 级别优先级 </p>
+                                                <p>就近原则：项目级别优先于系统用户级别，二者都有时采用项目级别的签名</p>
+                                                <p>如果只有系统用户级别签名，就以系统用户级别签名为准</p>
+                                                <p>二者必须有一个，不允许一个也没有</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="third"> 1.3 基本操作</h4>
+                                <p>1.3.1 显示当前状态： <em>git status</em> ， 红色文件为还没有提交到暂存库的文件，绿色文件表示已经提交到暂存库了，可以
+                                    <em>commit</em> 到远程库</p>
+                                <p>1.3.2 新建一个文件： <em>vim 文件名.后缀</em></p>
+                                <p>1.3.3 将指定文件提交到暂存库： <em>git add 文件名.后缀</em></p>
+                                <p>1.3.4 将提交到暂存库的指定文件恢复到工作区： <em>git rm --cached 文件名.后缀</em> ，恢复后 查看状态时，移除的文件会变红</p>
+                                <p>1.3.5 将暂存库的指定文件提交到本地库：<em>git commit 文件名.后缀</em>，提交后会要求提交 <em>message</em>
+                                    提交信息（git自动调用了vim编辑器，输入<em>：set nu</em>可以显示行号，按 <em>i</em>键 可以进入编辑模式 按 <em>Esc</em>键
+                                    退出编辑模式，输入 <em>:wq</em> 退出vim编辑器），一般记录一下本次提交的基本信息（备注的意思），方便以后需要的时候回调</p>
+                                <p>1.3.6 修改文件后查看当前文件状态会显示：<em>modified : 文件名.后缀</em> , 此时使用 <em>git add 文件名.后缀</em>
+                                    可以更新当前文件到缓存库 ， 使用 <em>git checkout -- 文件名.后缀</em>
+                                    可以取消工作区指定文件的修改，将工作区的指定文件恢复到缓存库的指定文件</p>
+                                <p>1.3.7 提交文件到工作区的同时，提交备注信息：<em>git commit -m "备注信息" 文件名.后缀</em> ，
+                                    这是一种简写的方式，可以不经过vim编辑器就实现备注</p>
+                                <p>1.3.8 查看版本的历史记录： <em>git log</em> ， 当显示的数据很多无法一页显示的时候 按 <em>space</em>键 可以翻页查看</p>
+                                <p>1.3.9 查看版本的历史记录，每一条记录只显示一行： <em>git log --pretty=oneline</em> , 此时只显示 hash值和备注信息
+                                    ，第一行显示 HEAD 的指针当前指向的 <em>branch</em> , 默认指向 <em>master</em> 主分支</p>
+                                <p>1.3.10 查看版本的历史记录，每一条记录只显示一行（简写，只有之前的版本，回调之后不显示新版本）： <em>git log --oneline</em> ,
+                                    此时只显示 hash值的前面“七位数”和备注信息 ，第一行显示 HEAD 的指针当前指向的 <em>branch</em> , 默认指向 <em>master</em>
+                                    主分支</p>
+                                <p>1.3.11 查看版本的历史记录，每一条记录只显示一行（简写，并可以显示回调到之前的版本需要几次，新旧都有）： <em>git reflog</em> ,
+                                    HEAD@{1} 表示当前版本的前一个版本，HEAD@{3} 表示当前版本的前三个版本，以此类推 </p>
+                                <p>1.3.12 版本的前进和后退操作：本质就是修改 HEAD 的指针</p>
+                                <p>1.3.13 版本的前进和后退操作，基于索引值的操作【推荐使用的方式】：<em>git reset --hard 对应版本的索引值（hash值的前面“七位数”）</em>
+                                </p>
+                                <p>1.3.14 版本的前进和后退操作，使用^符号(不建议使用)：只能后退，不能前进 <em>git reset --hard HEAD^</em> 返回到以上一个版本
+                                    ，<em> ^ </em> 的个数表示 回退到之前第几个版本 , <em>git reset --hard HEAD^^^</em></p>
+                                <p>1.3.15 版本的前进和后退操作，使用~符号(不建议使用)：只能后退，不能前进 <em>git reset --hard HEAD~3</em> 返回到之前三个版本 ，<em>
+                                    ~n </em> 的n表示 回退到之前n个版本</p>
+                                <dl>
+                                    <dt class="forth">1.3.16 reset 命令的三个参数对比</dt>
+                                    <dd>
+                                        <p>1.3.16.1 --soft 参数： 仅仅在本地库移动HEAD指针</p>
+                                        <p>1.3.16.2 --mixed 参数： 在本地库移动HEAD指针，重置暂存库</p>
+                                        <p>1.3.16.3 --hard 参数： 在本地库移动HEAD指针，重置暂存库，重置工作区</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="forth">1.3.17 删除文件</dt>
+                                    <dd>
+                                        <p>1.3.17.1 删除本地库的指定文件：<em>rm 文件名.后缀</em> 然后 添加 <em>add</em> 到缓存库，再
+                                            <em>commit</em> 到工作区 ，新版本就不存在已经删除的文件</p>
+                                        <p>1.3.17.2
+                                            确切地讲，删除的文件只是当前版本的文件，由于git的特性，如果我们回调到之前的版本，原来要删除的文件依然存在，所以，我们并不能删除任何文件，除非破坏
+                                            <em>.git</em> 文件夹的内容，然而这样做事 <strong>非常危险</strong> 的！！！</p>
+                                        <p>1.3.17.3 如果已经执行了 <em>rm</em> 和 <em>add</em> 到缓存库，又不想删除这些文件的时候可以执行 <em>git
+                                            reset --hard HEAD</em> 直接回调到最新版本（因为没有 <em>commit</em>，所以最新版本就是没有删除文件的版本），或者直接回调到一个没有删除的版本
+                                            <em>git reset --hard HEAD 指定版本hash值</em></p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="forth">1.3.18 diff 命令对比文件的修改状态</dt>
+                                    <dd>
+                                        <p>1.3.18.1 对比某个文件的状态 ：<em>git diff 文件名.后缀</em> 新修改的工作区文件和缓存库对应的文件的比较 </p>
+                                        <p>1.3.18.2 对比某个文件的状态 ：<em>git diff HEAD 文件名.后缀</em> 新修改的工作区文件和HAED当前指针对应的文件的比较
+                                        </p>
+                                        <p>1.3.18.3 红色的表示被删除的内容 </p>
+                                        <p>1.3.18.4 绿色的表示新增的内容 </p>
+                                        <p>1.3.18.5 如果指定的版本里面没有对应的文件，所有内容都会显示为绿色 </p>
+                                        <p>1.3.18.6 如果不指定文件名：则比较所有的文件： <em>git diff</em></p>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h4 class="third"> 1.4 分支管理</h4>
+                                <dl>
+                                    <dt class="forth">1.4.1 什么是分支</dt>
+                                    <dd>
+                                        <p>在版本控制时，使用多条线同时推进多个任务</p>
+                                        <img src="img/fenzhi.png" alt="">
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="forth">1.4.2 分支的好处</dt>
+                                    <dd>
+                                        <p>1.4.2.1 同时并行推进多个功能的开发，提高开发效率</p>
+                                        <p>1.4.2.2 各个分支在开发过程中，如果某一个分支开发失败，不会影响其他任何分支，失败的分支删除重新开始即可</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="forth">1.4.3 分支操作</dt>
+                                    <dd>
+                                        <p>1.4.3.1 查看当前项目所有分支： <em>git branch -v</em></p>
+                                        <p>1.4.3.2 创建新的分支： <em>git branch 新的分支名</em></p>
+                                        <p>1.4.3.3 切换分支： <em>git checkout 指定的分支名</em></p>
+                                        <p>1.4.3.4 合并分支：合并的时候必须切换到要主分支（或者是要留下的对应的分支），然后执行 <em>git merge 要合并到主分支的分支名</em>
+                                        </p>
+                                        <p>1.4.3.5
+                                            解决合并分支时产生的冲突：比如在不同的两个分支上对同一个文件都进行了修改，然后要将这个两个分支合并，此时git不能确定到底应该保存哪一个分支的文件（冲突），git会直接抛出问题（两个分支的不同部分会分别显示出来，并标明归属哪一个分支），由用户决定保留哪一个文件到最终文件（一般这就需要程序员之间互相沟通，最终决定应该留下哪些代码），修改好代码之后，<em>git
+                                                add 文件名</em>到缓存库，然后 <em>git commit -m "日志信息"</em>到本地库，这是特殊情况，不需要指定文件名，
+                                            <strong>注意</strong> ：如果指定了文件名会报错！！！</p>
+                                    </dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 class="second">2.远程库操作</h3>
+                        <ul>
+                            <li class="third">2.1 <em>pull</em>，拉取</li>
+                            <li class="third">2.2 <em>push</em>，推送</li>
+                            <li class="third">2.3 <em>fetch</em>，抓取</li>
+                            <li class="third">2.4 <em>merge</em>，合并</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">3.代码托管中心的任务：</dt>
+                            <dd>维护远程库</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-011">
+                <h2 class="first">十一、git保存版本的机制</h2>
+                <ul class="f_l">
+                    <li>
+                        <dl>
+                            <dt class="second">1.集中式版本控制工具的文件管理机制</dt>
+                            <dd><p>以文件变更列表的方式存储信息。这类系统将它们保存的信息看做是一组基本文件和每个文件随时间逐步积累的差异。</p></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.git的文件管理机制</dt>
+                            <dd>
+                                git把数据看做是小型文件系统的一组快照，每次提交更新时git都会对当前的全部文件制作一个快照并保存这个快照的索引。为了高效，如果文件没有修改，git不再重新存储该文件，而是保留一个链接指向之前存储的文件，所以Git的工作方式可以称之为快照流。
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">3.git提交的数据对象</dt>
+                            <dd>每一次提交都会有一个hash值</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">4.分支管理的本质</dt>
+                            <dd>就是改变HEAD的指针，并没有动文件</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-012">
+                <h2 class="first">十二、GitHub</h2>
+                <ul class="f_l">
+                    <li>
+                        <dl>
+                            <dt class="second">1.注册账号</dt>
+                            <dd>
+                                <p>GitHub官方网站：<a href="https://github.com/">https://github.com/</a></p>
+                                <p>1.1 进入网站注册账号</p>
+                                <p>1.2 设置基本信息</p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.创建本地库（前面有）</dt>
+                            <dd></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">3.创建远程库</dt>
+                            <dd>
+                                <p>3.1 登录GitHub</p>
+                                <p>3.2 点击 <em>new repository</em> 新建一个库</p>
+                                <p>3.3 验证邮箱地址（第一次创建库操作一次，以后不需要）</p>
+                                <p>3.4 填写仓库的名称</p>
+                                <p>3.5 选择库是公开的还是私有的，私有的库是收费的</p>
+                                <p>3.6 点击创建</p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">4.本地库push到远程库</dt>
+                            <dd>
+                                <p>4.1 点击进入仓库</p>
+                                <p>4.2 复制https 的地址</p>
+                                <p>4.3 在本地库执行<em>git remote add origin 复制过来的远程库的地址</em></p>
+                                <p>4.4 <em>git remote -v</em> 查看origin ，此时会显示刚刚设置的远程库的地址</p>
+                                <p>4.5 执行 <em>git push origin master</em> 把本地库的文件推到远程库上面的主分支中</p>
+                                <p>4.6 输入GitHub的账号和密码，因为是远程的，所以到等一下</p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">5.本地库clone远程库的代码到本地</dt>
+                            <dd>
+                                <p>5.1 点击进入仓库</p>
+                                <p>5.2 复制 <em>clone download</em> 的地址</p>
+                                <p>5.3 在本地库执行<em>git clone 复制过来的地址</em></p>
+                                <p>5.4 此时在本地库就有一份远程库复制过来的代码，而且配置也和远程库的一样，但是，如果是一个没有加入团队的人修改的代码，此时无法提交文件到远程库</p>
+                                <p>5.5 加入团队：在远程库的 <em>settings</em> 里面的 <em>collaborators</em> 可以添加新成员，复制邀请的地址（点 <em>copy
+                                    invite link</em>）发送给要添加的成员</p>
+                                <p>5.6 要加入的成员点击链接，接收邀请，就正是加入团队，被添加的新成员才有权限提交 <em> push</em> 新代码到远程库</p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">6.pull 代码到本地库</dt>
+                            <dd>
+                                <p>6.1 抓取远程库 <em>git fetch origin master</em></p>
+                                <p>6.2 合并远程库的文件到本地库 <em>git merge origin/master</em></p>
+                                <p>6.3 拉取：<em>pull</em> 等于 <em>fetch</em> + <em>merge</em>，一般会分开操作（保险起见），而不直接使用
+                                    <em>pull</em></p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">7. 跨团队合作开发</dt>
+                            <dd>
+                                <p>6.1 团队外的成员进入目标库，点击 <em> fork </em>,可以复制一份远程库的内容到自己的远程库</p>
+                                <p>6.2 团队外的成员就可以 <em>clone</em> 代码到本地库</p>
+                                <p>6.3 修改代码，推送到远程库</p>
+                                <p>6.4 在库界面点击 <em>pull request</em>按钮，然后点击 <em>new pull request</em> ，然后点击 <em>create
+                                    pull request</em> ，输入一些相关信息，再次点击 <em>create pull request</em>，创建好请求，等待源远程库的项目人审核</p>
+                                <p>6.5 源远程库的项目人到源库点击 <em>pull request</em>按钮，在新界面可以看到其他团队发过来的请求，打开请求点击 <em>commits</em>
+                                    查看提交，点击 <em>files changed</em> 查看修改的内容</p>
+                                <p>6.6 在会话当中可以互相交流，点击 <em>continuous</em> 按钮进入会话，在会话底部有一个 <em>merge pull request</em>
+                                    按钮，点击就会合并两个库的代码（必须审核清楚，这是一个 <strong>危险</strong> 的工作）,点击后可以写一些“日志信息”，方便回调，最后点击 <em>confirm
+                                        merge</em>完成合并。</p>
+                                <p>6.7 把远程库的文件拉取到本地，就是最新的合并后的文件</p>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-013">
+                <h2 class="first">十三、SSH免密登录</h2>
+                <ul class="f_l">
+                    <li>
+                        <dl>
+                            <dt class="second">1.配置</dt>
+                            <dd>
+                                <p>1.1 打开git控制台，跳转到根目录 <em>cd ~</em></p>
+                                <p>1.2 输入： <em>ssh-keygen -t rsa -C 需要连接的github邮箱地址</em> ，后面的按默认配置，不需要修改，一直回车</p>
+                                <p>1.3 打开 <em>id_rsa</em> 文件夹 ，复制里面的秘钥（该文件在 <em>系统磁盘:\Users\Administrator\.ssh</em>
+                                    里面，在当前控制面板输入<em>cat id_rsa.pub</em> 也可以打开）</p>
+                                <p>1.4 登录GitHub，在用户的 <em>settings</em> 界面点击 <em>SSH and GPG keys</em>，然后点击 <em>new SSH
+                                    key</em> ,把秘钥复制粘贴到 <em>key</em> 对话框内，并命名一个 <em>title</em>，然后 点击 <em>add SSH key</em>
+                                    提交</p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.测试</dt>
+                            <dd>
+                                <p>1.1 在GitHub的库界面点击 <em>clone or download</em> 复制 <em>SSH</em> 的库地址</p>
+                                <p>1.2 在控制台输入 <em>git remote add origin_ssh 复制过来的ssh库地址</em></p>
+                                <p>1.3 输入：<em>git remote -v</em> 查看一下是否添加成功</p>
+                                <p>1.4 随便修改一个文件，提交到本地库</p>
+                                <p>1.5 推送到远程库 <em>git push origin_ssh master</em>，注意：要推送给SSH，然后点击yes，以后就不需要填写用户名和密码了（只能绑定一个账号）
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="model" id="model-014">
+                <h2 class="first">END、补充</h2>
+                <ul class="f_l">
+                    <li class="second">1.有很多可视化工具，根据实际需求学习，此处不做累述</li>
+                    <li>
+                        <dl>
+                            <dt class="second">2.git 出现 SSL certificate problem: unable to get local issuer certificate 错误</dt>
+                            <dd>
+                                <p>在Windows下的git窗口里使用命令直接去掉ssl的验证：</p>
+                                <p><em>git config --global http.sslVerify false </em></p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="second animateM">2.完结撒花</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <p>作者：几道小山</p>
+        <p>邮箱：874972633@qq.com</p>
+        <p>GitHub：<a href="https://github.com/jidaoxiaoshan" target="_blank">https://github.com/jidaoxiaoshan</a></p>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <title>几道小山的git 学习笔记</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 id="top"><em>"HTML5"</em> 学习笔记</h1>
+        <p>备注：这不是教学文档，只是一份个人学习笔记，有些地方的内容会比较零散（本网页是静态网页）</p>
+        <div class="go-top"><a href="#top">
+            <span>回到</span><span>顶部</span>
+        </a></div>
+    </header>
+    <nav class="page-nav">
+        <ul>
+            <li><a href="#model-001">一、HTML5常用新标签</a></li>
+            <li><a href="#model-002">二、新增的input type属性值</a></li>
+            <li><a href="#model-003">三、HTML5常用新属性</a></li>
+            <li><a href="#model-004">四、多媒体标签</a></li>
+            <!--<li><a href="#model-005">五、git简史</a></li>-->
+            <!--<li><a href="#model-006">六、git的下载和安装</a></li>-->
+            <!--<li><a href="#model-007">七、git的结构</a></li>-->
+            <!--<li><a href="#model-008">八、git和代码托管中心</a></li>-->
+            <!--<li><a href="#model-009">九、本地库和远程库</a></li>-->
+            <!--<li><a href="#model-010">十、git的命令行操作</a></li>-->
+            <!--<li><a href="#model-011">十一、git保存版本的机制</a></li>-->
+            <!--<li><a href="#model-012">十二、GitHub</a></li>-->
+            <!--<li><a href="#model-013">十三、SSH免密登录</a></li>-->
+            <li><a href="#model-100">补充</a></li>
+        </ul>
+    </nav>
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="jsbase.html">JavaScript基础</a></li>
+            <li><a href="dom.html">DOM操作</a></li>
+            <li><a href="bom.html">BOM操作</a></li>
+            <li><a href="jquery.html">jQuery</a></li>
+            <li><a href="h5.html" class="now">HTML5</a></li>
+            <li><a href="c3.html">CSS3</a></li>
+            <li><a href="ajax.html">ajax</a></li>
+            <li><a href="mysql.html">MySQL</a></li>
+            <li><a href="mongodb.html">MongoDB</a></li>
+            <li><a href="stream.html">流式布局</a></li>
+            <li><a href="bootstrap.html">响应式布局&Bootstrap</a></li>
+            <li><a href="less.html">rem布局&LESS</a></li>
+            <li><a href="nodejs.html">nodejs</a></li>
+            <li><a href="git.html">Git</a></li>
+            <li><a href="jsplugin.html">js插件</a></li>
+            <li><a href="weapp.html">微信小程序</a></li>
+            <li><a href="show.html">小案例展示</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <ul>
+            <li class="model" id="model-001">
+                <dl>
+                    <dt><h2 class="first">一、HTML5常用新标签</h2></dt>
+                    <dd>
+                        <p><em>header</em> : 定义文档的页眉 头部</p>
+                        <p><em>nav</em> : 定义导航链接的部分</p>
+                        <p><em>footer</em> : 定义文档或节的页脚 底部</p>
+                        <p><em>article</em> : 定义文章</p>
+                        <p><em>section</em> : 定义文档中的节（section、区段）</p>
+                        <p><em>aside</em> : 定义其所处内容之外的内容 侧边</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <header> 语义 :定义页面的头部 页眉</header>
+                                <nav> 语义 :定义导航栏</nav>
+                                <footer> 语义: 定义 页面底部 页脚</footer>
+                                <article> 语义: 定义文章</article>
+                                <section> 语义： 定义区域</section>
+                                <aside> 语义： 定义其所处内容之外的内容 侧边</aside>
+                            </xmp>
+                        </div>
+                        <p>=================================</p>
+                        <p><em>datalist </em> : 标签定义选项列表。请与 <em>input</em> 元素配合使用该元素 </p>
+                        <div class="daiMa">
+                            <xmp>
+                                <input type="text" value="输入明星" list="star"/> <!--  input里面用 list -->
+                                <datalist id="star">   <!-- datalist 里面用 id  来实现和 input 链接 -->
+                                    <option>刘德华</option>
+                                    <option>刘若英</option>
+                                    <option>刘晓庆</option>
+                                    <option>郭富城</option>
+                                    <option>张学友</option>
+                                    <option>郭郭</option>
+                                </datalist>
+                            </xmp>
+                        </div>
+                        <p>=================================</p>
+                        <p><em>fieldset </em> : 元素可将表单内的相关元素分组，打包 <em>legend </em> 搭配使用 </p>
+                        <div class="daiMa">
+                            <xmp>
+                                <fieldset>
+                                    <legend>用户登录</legend>
+                                    标题
+                                    用户名: <input type="text"><br/><br/>
+                                    密　码: <input type="password">
+                                </fieldset>
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-002">
+                <dl>
+                    <dt>
+                        <h2 class="first">二、HTML5新增的input type属性值：</h2>
+                    </dt>
+                    <dd>
+                        <table>
+                            <tr>
+                                <th>类型</th>
+                                <th>含义</th>
+                            </tr>
+                            <tr>
+                                <td>email</td>
+                                <td>输入邮箱格式</td>
+                            </tr>
+                            <tr>
+                                <td>tel</td>
+                                <td>输入手机号码格式</td>
+                            </tr>
+                            <tr>
+                                <td>url</td>
+                                <td>输入url格式</td>
+                            </tr>
+                            <tr>
+                                <td>number</td>
+                                <td>输入数字格式</td>
+                            </tr>
+                            <tr>
+                                <td>search</td>
+                                <td>搜索框（体现语义化）</td>
+                            </tr>
+                            <tr>
+                                <td>range</td>
+                                <td>自由拖动滑块</td>
+                            </tr>
+                            <tr>
+                                <td>time</td>
+                                <td>小时分钟</td>
+                            </tr>
+                            <tr>
+                                <td>date</td>
+                                <td>年月日</td>
+                            </tr>
+                            <tr>
+                                <td>datetime</td>
+                                <td>时间</td>
+                            </tr>
+                            <tr>
+                                <td>month</td>
+                                <td>月年</td>
+                            </tr>
+                            <tr>
+                                <td>week</td>
+                                <td>星期 年</td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-003">
+                <dl>
+                    <dt>
+                        <h2 class="first">三、HTML5常用新属性</h2>
+                    </dt>
+                    <dd>
+                        <table>
+                            <tr>
+                                <th>属性</th>
+                                <th>含义</th>
+                            </tr>
+                            <tr>
+                                <td>placeholder</td>
+                                <td>占位符 当用户输入的时候 里面的文字消失 删除所有文字，自动返回</td>
+                            </tr>
+                            <tr>
+                                <td>autofocus</td>
+                                <td>规定当页面加载时 input 元素应该自动获得焦点</td>
+                            </tr>
+                            <tr>
+                                <td>multiple</td>
+                                <td>多文件上传</td>
+                            </tr>
+                            <tr>
+                                <td>autocomplete</td>
+                                <td>规定表单是否应该启用自动完成功能 有2个值，一个是on 一个是off on 代表记录已经输入的值 1.autocomplete 首先需要提交按钮
+                                    2.这个表单您必须给他名字
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>required</td>
+                                <td>必填项 内容不能为空</td>
+                            </tr>
+                            <tr>
+                                <td>accesskey</td>
+                                <td>规定激活（使元素获得焦点）元素的快捷键 采用 alt + s的形式</td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-004">
+                <dl>
+                    <dt>
+                        <h2 class="first">四、多媒体标签</h2>
+                    </dt>
+                    <dd>
+                        <p><em>embed</em> : 标签定义嵌入的内容</p>
+                        <p><em>audio</em> : 播放音频</p>
+                        <p><em>video</em> : 播放视频</p>
+                        <dl>
+                            <dt><h3 class="second">1.多媒体 embed（会使用）</h3></dt>
+                            <dd>
+                                <p><em>embed</em> 可以用来插入各种多媒体，格式可以是 Midi、Wav、AIFF、AU、MP3等等。<em>url</em> 为音频或视频文件及其路径，可以是相对路径或绝对路径。</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <embed
+                                                src="http://player.youku.com/player.php/sid/XMTI4MzM2MDIwOA==/v.swf"
+                                                allowFullScreen="true"
+                                                quality="high" width="480" height="400" align="middle"
+                                                allowScriptAccess="always"
+                                                type="application/x-shockwave-flash">
+
+                                        </embed>
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 class="third">2.多媒体 audio</h3></dt>
+                            <dd>
+                                <p>HTML5通过标签来解决音频播放的问题。</p>
+                                <p>使用相当简单:</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <audio src="音频地址"></audio>
+                                    </xmp>
+                                </div>
+                                <p>并且可以通过附加属性可以更友好控制音频的播放</p>
+                                <p><em>autoplay</em> : 自动播放</p>
+                                <p><em>controls</em> : 是否显不默认播放控件</p>
+                                <p><em>loop</em> : 循环播放 如果这个属性不写 默认播放一次 <em>loop</em> 或者 <em>loop = “loop”</em> 表示无限循环</p>
+                                <p>由于版权等原因，不同的浏览器可支持播放的格式是不一样的</p>
+                                <table>
+                                    <tr>
+                                        <th></th>
+                                        <th>IE 9</th>
+                                        <th>Firefox 3.5</th>
+                                        <th>Opera 10.5</th>
+                                        <th>Chrome 3.0</th>
+                                        <th>Safari 3.0</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Ogg Voribis</td>
+                                        <td></td>
+                                        <td>√</td>
+                                        <td>√</td>
+                                        <td>√</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>MP3</td>
+                                        <td>√</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>√</td>
+                                        <td>√</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wav</td>
+                                        <td></td>
+                                        <td>√</td>
+                                        <td>√</td>
+                                        <td></td>
+                                        <td>√</td>
+                                    </tr>
+                                </table>
+                                <p>多浏览器支持的方案</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        //标签允许您规定可替换的视频/音频文件供浏览器根据它对媒体类型或者编解码器的支持进行选择
+                                        <audio controls>
+                                            <source src="路径mp3">
+                                            <source src="路径.wav">
+                                            <source src="路径ogg">
+                                            您的浏览器不支持HTML音频播放功能
+                                        </audio>
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 class="third">3.多媒体 video</h3></dt>
+                            <dd>
+                                <p>HTML5通过标签来解决音频播放的问题。</p>
+                                <p>同音频播放一样，使用也相当简单</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <video src="视频地址" controls></video>
+                                    </xmp>
+                                </div>
+                                <p>同样，通过附加属性可以更友好的控制视频的播放</p>
+                                <p><em>autoplay</em> :  自动播放</p>
+                                <p><em>controls</em> : 是否显示默认播放控件</p>
+                                <p><em>loop</em> : 循环播放</p>
+                                <p><em>width</em> : 设置播放窗口宽度</p>
+                                <p><em>height</em> : 设置播放窗口的高度</p>
+                                <p>由于版权等原因，不同的浏览器可支持播放的格式是不一样的</p>
+                                <table>
+                                    <tr>
+                                        <th>格式</th>
+                                        <th>IE</th>
+                                        <th>Firefox</th>
+                                        <th>Opera</th>
+                                        <th>Chrome</th>
+                                        <th>Safari</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Ogg</td>
+                                        <td>No</td>
+                                        <td>3.5+</td>
+                                        <td>10.5+</td>
+                                        <td>5.0+</td>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MPEG 4</td>
+                                        <td>9.0+</td>
+                                        <td>No</td>
+                                        <td>No</td>
+                                        <td>5.0+</td>
+                                        <td>3.0+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WebM</td>
+                                        <td>No</td>
+                                        <td>4.0+</td>
+                                        <td>10.6+</td>
+                                        <td>6.0+</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                                <p>多浏览器支持的方案：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <video  controls>
+                                            <source src="路径.ogg">
+                                            <source src="路径.mp4">
+                                            您的浏览器不支持HTML视频播放功能
+                                        </video>
+                                    </xmp>
+                                </div>
+
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-005">
+                <dl>
+                    <dt>
+                        <h2 class="first">五、HTML5待更新</h2>
+                    </dt>
+                    <dd>
+                        <table>
+                            <tr>
+                                <th>属性</th>
+                                <th>含义</th>
+                            </tr>
+                            <tr>
+                                <td>placeholder</td>
+                                <td>占位符 当用户输入的时候 里面的文字消失 删除所有文字，自动返回</td>
+                            </tr>
+                            <tr>
+                                <td>autofocus</td>
+                                <td>规定当页面加载时 input 元素应该自动获得焦点</td>
+                            </tr>
+                            <tr>
+                                <td>multiple</td>
+                                <td>多文件上传</td>
+                            </tr>
+                            <tr>
+                                <td>autocomplete</td>
+                                <td>规定表单是否应该启用自动完成功能 有2个值，一个是on 一个是off on 代表记录已经输入的值 1.autocomplete 首先需要提交按钮
+                                    2.这个表单您必须给他名字
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>required</td>
+                                <td>必填项 内容不能为空</td>
+                            </tr>
+                            <tr>
+                                <td>accesskey</td>
+                                <td>规定激活（使元素获得焦点）元素的快捷键 采用 alt + s的形式</td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-100">
+                <h2 class="first">END、完结撒花</h2>
+                <ul class="f_l">
+                    <li class="second animateM">完结撒花</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <p>作者：几道小山</p>
+        <p>邮箱：874972633@qq.com</p>
+        <p>GitHub：<a href="https://github.com/jidaoxiaoshan" target="_blank">https://github.com/jidaoxiaoshan</a></p>
+    </footer>
+</div>
+</body>
+</html>

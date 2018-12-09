@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <title>几道小山的git 学习笔记</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 id="top"><em>"CSS"</em> 学习笔记</h1>
+        <p>备注：这不是教学文档，只是一份个人学习笔记，有些地方的内容会比较零散（本网页是静态网页）</p>
+        <div class="go-top"><a href="#top">
+            <span>回到</span><span>顶部</span>
+        </a></div>
+    </header>
+    <nav class="page-nav">
+        <ul>
+            <li><a href="#model-001">1.课程目标</a></li>
+            <li><a href="#model-002">2.CSS的发展历程</a></li>
+            <li><a href="#model-003">3.CSS 网页的美容师</a></li>
+            <li><a href="#model-004">4.CSS初识</a></li>
+            <li><a href="#model-005">5.引入CSS样式表</a></li>
+            <li><a href="#model-006">6.CSS样式规则</a></li>
+            <li><a href="#model-007">7.选择器</a></li>
+            <li><a href="#model-008">8.CSS字体样式属性</a></li>
+            <li><a href="#model-009">9.CSS外观属性</a></li>
+            <li><a href="#model-010">10.CSS复合选择器</a></li>
+            <li><a href="#model-011">11.CSS注释</a></li>
+            <li><a href="#model-012">12.标签显示模式（display）</a></li>
+            <li><a href="#model-013">13.CSS书写规范</a></li>
+            <li><a href="#model-014">14.CSS 三大特性</a></li>
+            <li><a href="#model-015">15.CSS 背景(background)</a></li>
+            <li><a href="#model-016">16.盒子模型</a></li>
+            <li><a href="#model-017">17.浮动(float)</a></li>
+            <li><a href="#model-018">18.版心和布局流程</a></li>
+            <li><a href="#model-019">19.定位(position)</a></li>
+            <li><a href="#model-020">20.CSS高级技巧</a></li>
+            <li><a href="#model-021">21.CSS精灵技术</a></li>
+            <li><a href="#model-022">22.滑动门</a></li>
+            <li><a href="#model-023">23.字体图标</a></li>
+            <li><a href="#model-024">24.网站优化</a></li>
+            <li><a href="#model-025">25.小心得</a></li>
+        </ul>
+    </nav>
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="css.html" class="now">CSS</a></li>
+            <li><a href="jsbase.html">JavaScript基础</a></li>
+            <li><a href="dom.html">DOM操作</a></li>
+            <li><a href="bom.html">BOM操作</a></li>
+            <li><a href="jquery.html">jQuery</a></li>
+            <li><a href="h5.html">HTML5</a></li>
+            <li><a href="c3.html">CSS3</a></li>
+            <li><a href="ajax.html">ajax</a></li>
+            <li><a href="mysql.html">MySQL</a></li>
+            <li><a href="mongodb.html">MongoDB</a></li>
+            <li><a href="stream.html">流式布局</a></li>
+            <li><a href="bootstrap.html">响应式布局&Bootstrap</a></li>
+            <li><a href="less.html">rem布局&LESS</a></li>
+            <li><a href="nodejs.html">nodejs</a></li>
+            <li><a href="git.html">Git</a></li>
+            <li><a href="jsplugin.html">js插件</a></li>
+            <li><a href="weapp.html">微信小程序</a></li>
+            <li><a href="show.html">小案例展示</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <ul>
+            <li class="model" id="model-001">
+                <h2 class="first">一、课程目标</h2>
+                <ul>
+                    <li>1.学会使用CSS选择器</li>
+                    <li>2.熟记CSS样式和外观属性</li>
+                    <li>3.熟练掌握CSS各种选择器</li>
+                    <li>4.熟练掌握CSS各种选择器</li>
+                    <li>5.熟练掌握CSS三种显示模式</li>
+                    <li>6.熟练掌握CSS背景属性</li>
+                    <li>7.熟练掌握CSS三大特性</li>
+                    <li>8.熟练掌握CSS盒子模型</li>
+                    <li>9.熟练掌握CSS浮动</li>
+                    <li>10.熟练掌握CSS定位</li>
+                    <li>11.熟练掌握CSS高级技巧强化CSS</li>
+                </ul>
+            </li>
+            <li class="model" id="model-002">
+                <h2 class="first">二、CSS的发展历程</h2>
+                <p>从HTML被发明开始，样式就以各种形式存在。不同的浏览器结合它们各自的样式语言为用户提供页面效果的控制。最初的HTML只包含很少的显示属性。
+                    随着HTML的成长，为了满足页面设计者的要求，HTML添加了很多显示功能。但是随着这些功能的增加，HTML变的越来越杂乱，而且HTML页面也越来越臃肿。于是CSS便诞生了。</p>
+            </li>
+            <li class="model" id="model-003">
+                <h2 class="first">三、CSS 网页的美容师</h2>
+                <p>CSS的出现，拯救了混乱的HTML，当让更加拯救了我们web开发者。 让我们的网页更加丰富多彩。</p>
+                <p>CSS的最大贡献就是： 让 HTML 从样式中解脱苦海， 实现了 HTML 专注去做 结构呈现。 而样式交给 CSS 后，你完全可以放心的早点洗洗睡了！而且。。。。。 CSS
+                    做的很出色，如果JavaScript是网页的魔法师，那么CSS它是我们网页的美容师</p>
+            </li>
+            <li class="model" id="model-004">
+                <h2 class="first">四、CSS初识</h2>
+                <p>CSS(Cascading Style Sheets) 美化样式</p>
+                <p>CSS通常称为CSS样式表或层叠样式表（级联样式表），主要用于设置HTML页面中的文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局等外观显示样式。</p>
+                <p>CSS以HTML为基础，提供了丰富的功能，如字体、颜色、背景的控制及整体排版等，而且还可以针对不同的浏览器设置不同的样式。</p>
+            </li>
+            <li class="model" id="model-005">
+                <h2 class="first">五、引入CSS样式表</h2>
+                <p>CSS可以写到那个位置？ 是不是一定写到html文件里面呢？</p>
+                <dl>
+                    <dt class="second">1.内部样式表</dt>
+                    <dd>
+                        <p>内嵌式是将CSS代码集中写在HTML文档的head头部标签中，并且用style标签定义，其基本语法格式如下：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <head>
+                                    <style type="text/CSS">
+                                        选择器 {
+                                            属性1: 属性值1;
+                                            属性2: 属性值2;
+                                            属性3: 属性值3;
+                                        }
+                                    </style>
+                                </head>
+                            </xmp>
+                        </div>
+                        <p>语法中，style标签一般位于head标签中title标签之后，也可以把他放在HTML文档的任何地方。</p>
+                        <p>type="text/CSS" 在html5中可以省略， 写上也比较符合规范， 所以这个地方可以写也可以省略。</p>
+                    </dd>
+                    <dt class="second">2.行内式（内联样式）</dt>
+                    <dd>
+                        <p>内联样式，又有人称行内样式、行间样式、内嵌样式。是通过标签的style属性来设置元素的样式，其基本语法格式如下：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <标签名 style="属性1:属性值1; 属性2:属性值2; 属性3:属性值3;"> 内容</标签名>
+                            </xmp>
+                        </div>
+                        <p>
+                            语法中style是标签的属性，实际上任何HTML标签都拥有style属性，用来设置行内式。其中属性和值的书写规范与CSS样式规则相同，行内式只对其所在的标签及嵌套在其中的子标签起作用。</p>
+                    </dd>
+                    <dt class="second">3.外部样式表（外链式）</dt>
+                    <dd>
+                        <p>链入式是将所有的样式放在一个或多个以.CSS为扩展名的外部样式表文件中，通过link标签将外部样式表文件链接到HTML文档中，其基本语法格式如下：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <head>
+                                    <link href="CSS文件的路径" rel="stylesheet"/>
+                                </head>
+                            </xmp>
+                        </div>
+                        <p>注意： link 是个单标签哦!!!</p>
+                        <p>该语法中，link标签需要放在head头部标签中，并且必须指定link标签的三个属性，具体如下：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                href：定义所链接外部样式表文件的URL，可以是相对路径，也可以是绝对路径。
+                                type：定义所链接文档的类型，在这里需要指定为“text/CSS”，表示链接的外部文件为CSS样式表。
+                                rel：定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”，表示被链接的文档是一个样式表文件。
+                            </xmp>
+                        </div>
+                    </dd>
+                    <dt class="second">4.三种样式表总结（位置）</dt>
+                    <dd>
+                        <table>
+                            <tr>
+                                <th>样式表</th>
+                                <th>优点</th>
+                                <th>缺点</th>
+                                <th>使用情况</th>
+                                <th>控制范围</th>
+                            </tr>
+                            <tr>
+                                <th>行内样式表</th>
+                                <td>书写方便，权重高</td>
+                                <td>没有实现样式和结构相分离</td>
+                                <td>较少</td>
+                                <td>控制一个标签（少）</td>
+                            </tr>
+                            <tr>
+                                <th>内部样式表</th>
+                                <td>部分结构和样式相分离</td>
+                                <td>没有彻底分离</td>
+                                <td>较多</td>
+                                <td>控制一个页面（中）</td>
+                            </tr>
+                            <tr>
+                                <th>外部样式表</th>
+                                <td>完全实现结构和样式相分离</td>
+                                <td>需要引入</td>
+                                <td>最多，强烈推荐</td>
+                                <td>控制整个站点（多）</td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-006">
+                <h2 class="first">六、CSS样式规则</h2>
+                <p>使用HTML时，需要遵从一定的规范。CSS亦如此，要想熟练地使用CSS对网页进行修饰，首先需要了解CSS样式规则，具体格式如下：</p>
+                <div class="daiMa">
+                    <xmp>
+                        在上面的样式规则中:
+
+                        1.选择器用于指定CSS样式作用的HTML对象，花括号内是对该对象设置的具体样式。
+                        2.属性和属性值以“键值对”的形式出现。
+                        3.属性是对指定的对象设置的样式属性，例如字体大小、文本颜色等。
+                        4.属性和属性值之间用英文“:”连接。
+                        5.多个“键值对”之间用英文“;”进行区分。
+                        可以用段落 和 表格的对齐的演示。
+                    </xmp>
+                </div>
+            </li>
+            <li class="model" id="model-007">
+                <h2 class="first">七、选择器（重点）</h2>
+                <p>要想将CSS样式应用于特定的HTML元素，首先需要找到该目标元素。在CSS中，执行这一任务的样式规则部分被称为选择器（选择符）。</p>
+                <dl>
+                    <dt class="second">CSS基础选择器</dt>
+                    <dd>
+                        <dl>
+                            <dt class="third">1.1 类选择器</dt>
+                            <dd>
+                                <p>类选择器使用“.”（英文点号）进行标识，后面紧跟类名，其基本语法格式如下：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        .类名{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }
+                                        标签调用的时候用 class=“类名” 即可。
+                                    </xmp>
+                                </div>
+                                <p>类选择器最大的优势是可以为元素对象定义单独或相同的样式。 可以选择一个或者多个标签</p>
+                                <p>小技巧：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        1.长名称或词组可以使用中横线来为选择器命名。
+                                        2.不建议使用“_”下划线来命名CSS选择器。
+                                        3.不要纯数字、中文等命名， 尽量使用英文字母来表示。
+                                    </xmp>
+                                </div>
+                                <p>​ 输入的时候少按一个shift键; 　浏览器兼容问题 (比如使用_tips的选择器命名，在IE6是无效的)
+                                    　能良好区分JavaScript变量命名(JS变量命名是用“_”)</p>
+                                <p>命名是我们通俗约定的，但是没有规定必须用这些常用的命名。</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <head>
+                                            <meta charset="utf-8">
+                                            <style>
+                                                span {
+                                                    font-size: 100px;
+                                                }
+
+                                                .blue {
+                                                    color: blue;
+                                                }
+
+                                                .red {
+                                                    color: red;
+                                                }
+
+                                                .orange {
+                                                    color: orange;
+                                                }
+
+                                                .green {
+                                                    color: green;
+                                                }
+                                            </style>
+                                        </head>
+                                        <body>
+                                        <span class="blue">G</span>
+                                        <span class="red">o</span>
+                                        <span class="orange">o</span>
+                                        <span class="blue">g</span>
+                                        <span class="green">l</span>
+                                        <span class="red">e</span>
+                                        </body>
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">1.2 标签选择器（元素选择器）</dt>
+                            <dd>
+                                <p>标签选择器是指用HTML标签名称作为选择器，按标签名称分类，为页面中某一类标签指定统一的CSS样式。其基本语法格式如下：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        标签名{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; } 或者
+                                        元素名{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }
+                                    </xmp>
+                                </div>
+                                <p>标签选择器最大的优点是能快速为页面中同类型的标签统一样式，同时这也是他的缺点，不能设计差异化样式。</p>
+                                <p>标签选择器 可以把某一类标签全部选择出来 div span</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">1.3 多类名选择器</dt>
+                            <dd>
+                                <p>我们可以给标签指定多个类名，从而达到更多的选择目的。</p>
+                                <p>注意：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        1. 样式显示效果跟HTML元素中的类名先后顺序没有关系,受CSS样式书写的上下顺序有关。
+                                        2. 各个类名中间用空格隔开。
+                                    </xmp>
+                                </div>
+                                <p>多类名选择器在后期布局比较复杂的情况下，还是较多使用的。</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <div class="pink fontWeight font20">亚瑟</div>
+                                        <div class="font20">刘备</div>
+                                        <div class="font14 pink">安其拉</div>
+                                        <div class="font14">貂蝉</div>
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">1.4 id选择器</dt>
+                            <dd>
+                                <p>id选择器使用“#”进行标识，后面紧跟id名，其基本语法格式如下：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        #id名{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }
+                                    </xmp>
+                                </div>
+                                <p>该语法中，id名即为HTML元素的id属性值，大多数HTML元素都可以定义id属性，元素的id值是唯一的，只能对应于文档中某一个具体的元素。</p>
+                                <p>用法基本和类选择器相同。</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">1.5 id选择器和类选择器区别</dt>
+                            <dd>
+                                <p>W3C标准规定，在同一个页面内，不允许有相同名字的id对象出现，但是允许相同名字的class。</p>
+                                <p>类选择器（class） 好比人的名字， 是可以多次重复使用的</p>
+                                <p>id选择器 好比人的身份证号码， 全中国是唯一的， 不得重复。 只能使用一次。</p>
+                                <p>id选择器和类选择器最大的不同在于 使用次数上。</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">1.6 通配符选择器</dt>
+                            <dd>
+                                <p>通配符选择器用“*”号表示，他是所有选择器中作用范围最广的，能匹配页面中所有的元素。其基本语法格式如下：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        * { 属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }
+                                    </xmp>
+                                </div>
+                                <p>例如下面的代码，使用通配符选择器定义CSS样式，清除所有HTML标记的默认边距。</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        * {
+                                        margin: 0; /* 定义外边距*/
+                                        padding: 0; /* 定义内边距*/
+                                        }
+                                    </xmp>
+                                </div>
+                                <p>*注意：这个通配符选择器，就像我们的电影明星中的梦中情人， 想想它就好了，但是它不会和你过日子。</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-008">
+                <h2 class="first">八、CSS字体样式属性</h2>
+                <dl>
+                    <dt class="second">1.font-size:字号大小</dt>
+                    <dd>
+                        <p>font-size属性用于设置字号，该属性的值可以使用相对长度单位，也可以使用绝对长度单位。其中，相对长度单位比较常用，推荐使用像素单位px，绝对长度单位使用较少。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.font-family:字体</dt>
+                    <dd>
+                        <p>font-family属性用于设置字体。网页中常用的字体有宋体、微软雅黑、黑体等，例如将网页中所有段落文本的字体设置为微软雅黑，可以使用如下CSS样式代码：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                p{ font-family:"微软雅黑";}
+                            </xmp>
+                        </div>
+                        <p>可以同时指定多个字体，中间以逗号隔开，表示如果浏览器不支持第一个字体，则会尝试下一个，直到找到合适的字体。</p>
+                        <div class="daiMa">
+                            <xmp>
+                                常用技巧：
+                                1. 现在网页中普遍使用14px+。
+                                2. 尽量使用偶数的数字字号。ie6等老式浏览器支持奇数会有bug。
+                                3. 各种字体之间必须使用英文状态下的逗号隔开。
+                                4. 中文字体需要加英文状态下的引号，英文字体一般不需要加引号。当需要设置英文字体时，英文字体名必须位于中文字体名之前。
+                                5. 如果字体名中包含空格、#、$等符号，则该字体必须加英文状态下的单引号或双引号，例如font-family: "Times New Roman";。
+                                6. 尽量使用系统默认字体，保证在任何用户的浏览器中都能正确显示。
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.CSS Unicode字体</dt>
+                    <dd>
+                        <p>在 CSS 中设置字体名称，直接写中文是可以的。但是在文件编码（GB2312、UTF-8 等）不匹配时会产生乱码的错误。xp 系统不支持 类似微软雅黑的中文。</p>
+                        <p>方案一： 你可以使用英文来替代。 比如 font-family:"Microsoft Yahei"。</p>
+                        <p>方案二： 在 CSS 直接使用 Unicode 编码来写字体名称可以避免这些错误。使用 Unicode 写中文字体名称，浏览器是可以正确的解析的。 font-family:
+                            "\5FAE\8F6F\96C5\9ED1"，表示设置字体为“微软雅黑”。</p>
+                        <p>可以通过escape() 来测试属于什么字体。</p>
+                        <table>
+                            <tr>
+                                <th>字体名称</th>
+                                <th>英文名称</th>
+                                <th>Unicode 编码</th>
+                            </tr>
+                            <tr>
+                                <td>宋体</td>
+                                <td>SimSun</td>
+                                <td>\5B8B\4F53</td>
+                            </tr>
+                            <tr>
+                                <td>新宋体</td>
+                                <td>NSimSun</td>
+                                <td>\65B0\5B8B\4F53</td>
+                            </tr>
+                            <tr>
+                                <td>黑体</td>
+                                <td>SimHei</td>
+                                <td>\9ED1\4F53</td>
+                            </tr>
+                            <tr>
+                                <td>微软雅黑</td>
+                                <td>Microsoft YaHei</td>
+                                <td>\5FAE\8F6F\96C5\9ED1</td>
+                            </tr>
+                            <tr>
+                                <td>楷体_GB2312</td>
+                                <td>KaiTi_GB2312</td>
+                                <td>\6977\4F53_GB2312</td>
+                            </tr>
+                            <tr>
+                                <td>隶书</td>
+                                <td>LiSu</td>
+                                <td>\96B6\4E66</td>
+                            </tr>
+                            <tr>
+                                <td>幼园</td>
+                                <td>YouYuan</td>
+                                <td>\5E7C\5706</td>
+                            </tr>
+                            <tr>
+                                <td>华文细黑</td>
+                                <td>STXihei</td>
+                                <td>\534E\6587\7EC6\9ED1</td>
+                            </tr>
+                            <tr>
+                                <td>细明体</td>
+                                <td>MingLiU</td>
+                                <td>\7EC6\660E\4F53</td>
+                            </tr>
+                            <tr>
+                                <td>新细明体</td>
+                                <td>PMingLiU</td>
+                                <td>\65B0\7EC6\660E\4F53</td>
+                            </tr>
+                        </table>
+                        <p>*为了照顾不同电脑的字体安装问题，我们尽量只使用宋体和微软雅黑中文字体</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.font-weight:字体粗细</dt>
+                    <dd>
+                        <p>字体加粗除了用 b 和 strong 标签之外，可以使用CSS 来实现，但是CSS 是没有语义的。</p>
+                        <div class="daiMa">
+                            <xmp>
+                                font-weight属性用于定义字体的粗细，其可用属性值：normal、bold、bolder、lighter、100~900（100的整数倍）。
+                                小技巧：
+                                数字 400 等价于 normal，而 700 等价于 bold。 但是我们更喜欢用数字来表示。
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">5.font-style:字体风格</dt>
+                    <dd>
+                        <p>字体倾斜除了用 i 和 em 标签之外，可以使用CSS 来实现，但是CSS 是没有语义的。</p>
+                        <p>font-style属性用于定义字体风格，如设置斜体、倾斜或正常字体，其可用属性值如下：</p>
+                        <p>normal：默认值，浏览器会显示标准的字体样式。</p>
+                        <p>italic：浏览器会显示斜体的字体样式。</p>
+                        <p>oblique：浏览器会显示倾斜的字体样式。</p>
+                        <p>*平时我们很少给文字加斜体，反而喜欢给斜体标签（em，i）改为普通模式。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">6.font:综合设置字体样式 (重点)</dt>
+                    <dd>
+                        <p>font属性用于对字体样式进行综合设置，其基本语法格式如下：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                选择器{font: font-style font-weight font-size/line-height font-family;}
+                                使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，各个属性以空格隔开。
+                                注意：其中不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用。
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-009">
+                <h2 class="first">九、CSS外观属性</h2>
+                <dl>
+                    <dt class="second">1.color:文本颜色</dt>
+                    <dd>
+                        <p>color属性用于定义文本的颜色，其取值方式有如下3种：</p>
+                        <p>1.1 预定义的颜色值，如red，green，blue等。</p>
+                        <p>1.2 十六进制，如#FF0000，#FF6600，#29D794等。实际工作中，十六进制是最常用的定义颜色的方式。</p>
+                        <p>1.3 RGB代码，如红色可以表示为rgb(255,0,0)或rgb(100%,0%,0%)。</p>
+                        <p>*需要注意的是，如果使用RGB代码的百分比颜色值，取值为0时也不能省略百分号，必须写为0%。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.line-height:行间距</dt>
+                    <dd>
+                        <p>
+                            ine-height属性用于设置行间距，就是行与行之间的距离，即字符的垂直间距，一般称为行高。line-height常用的属性值单位有三种，分别为像素px，相对值em和百分比%，实际工作中使用最多的是像素px</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.text-align:水平对齐方式</dt>
+                    <dd>
+                        <p>text-align属性用于设置文本内容的水平对齐，相当于html中的align对齐属性。其可用属性值如下：</p>
+                        <p>left：左对齐（默认值）</p>
+                        <p>right：右对齐</p>
+                        <p>center：居中对齐</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.text-indent:首行缩进</dt>
+                    <dd>
+                        <p>text-indent属性用于设置首行文本的缩进，其属性值可为不同单位的数值、em字符宽度的倍数、或相对于浏览器窗口宽度的百分比%，允许使用负值, 建议使用em作为设置单位。</p>
+                        <p>1em 就是一个字的宽度 如果是汉字的段落， 1em 就是一个汉字的宽度</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">5.text-decoration 文本的装饰</dt>
+                    <dd>
+                        <p>text-decoration 通常我们用于给链接修改装饰效果</p>
+                        <table>
+                            <tr>
+                                <th>值</th>
+                                <th>描述</th>
+                            </tr>
+                            <tr>
+                                <td>none</td>
+                                <td>默认。定义标准的文本。</td>
+                            </tr>
+                            <tr>
+                                <td>underline</td>
+                                <td>定义文本下的一条线。下划线 也是我们链接自带的</td>
+                            </tr>
+                            <tr>
+                                <td>overline</td>
+                                <td>定义文本上的一条线。</td>
+                            </tr>
+                            <tr>
+                                <td>line-through</td>
+                                <td>定义穿过文本下的一条线。</td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-010">
+                <h2 class="first">十、CSS复合选择器</h2>
+                <p>复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的,目的是为了可以选择更准确更精细的目标元素标签。</p>
+                <dl>
+                    <dt class="second">1.交集选择器</dt>
+                    <dd>
+                        <p>交集选择器由两个选择器构成，其中第一个为标签选择器，第二个为class选择器，两个选择器之间不能有空格，如h3.special。</p>
+                        <div class="daiMa">
+                            <xmp>
+                                比如： p.one 选择的是： 类名为 .one 的 段落标签。
+                            </xmp>
+                        </div>
+                        <p>*用的相对来说比较少，不太建议使用。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.并集选择器</dt>
+                    <dd>
+                        <p>
+                            并集选择器（CSS选择器分组）是各个选择器通过逗号连接而成的，任何形式的选择器（包括标签选择器、class类选择器id选择器等），都可以作为并集选择器的一部分。如果某些选择器定义的样式完全相同，或部分相同，就可以利用并集选择器为它们定义相同的CSS样式。</p>
+                        <div class="daiMa">
+                            <xmp>
+                                比如 .one, p , #test {color: #F00;} 表示 .one 和 p 和 #test 这三个选择器都会执行颜色为红色。
+                                通常用于集体声明。
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.后代选择器</dt>
+                    <dd>
+                        <p>后代选择器又称为包含选择器，用来选择元素或元素组的后代，其写法就是把外层标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套时，内层标签就成为外层标签的后代。</p>
+                        <p>子孙后代都可以这么选择。 或者说，它能选择任何包含在内 的标签。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.子元素选择器</dt>
+                    <dd>
+                        <p>子元素选择器只能选择作为某元素子元素的元素。其写法就是把父级标签写在前面，子级标签写在后面，中间跟一个 > 进行连接，注意，符号左右两侧各保留一个空格。</p>
+                        <div class="daiMa">
+                            <xmp>
+                                比如： .demo > h3 {color: red;} 说明 h3 一定是demo 亲儿子。 demo 元素包含着h3。
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">5.伪类选择器</dt>
+                    <dd>
+                        <p>伪类选择器用于向某些选择器添加特殊的效果。比如给链接添加特殊效果， 比如可以选择 第1个，第n个元素。</p>
+                        <div class="daiMa">
+                            <xmp>
+                                为了和我们刚才学的类选择器相区别， 类选择器是一个点 比如 .demo {} 而我们的伪类 用 2个点 就是 冒号 比如 :link{}
+                            </xmp>
+                        </div>
+                        <dl>
+                            <dt class="third">链接伪类选择器</dt>
+                            <dd>
+                                <p>:link /* 未访问的链接 */</p>
+                                <p>:visited /* 已访问的链接 */</p>
+                                <p>:hover /* 鼠标移动到链接上 */</p>
+                                <p>:active /* 选定的链接 *</p>
+                            </dd>
+                        </dl>
+                        <p>*注意写的时候，他们的顺序尽量不要颠倒 按照 lvha 的顺序。 love hate 爱上了讨厌 记忆法 或者 lv 包包 非常 hao</p>
+                        <div class="daiMa">
+                            <xmp>
+                                a { /* a是标签选择器 所有的链接 */
+                                font-weight: 700;
+                                font-size: 16px;
+                                color: gray;
+                                }
+                                a:hover { /* :hover 是链接伪类选择器 鼠标经过 */
+                                color: red; /* 鼠标经过的时候，由原来的 灰色 变成了红色 */
+                                }
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-011">
+                <h2 class="first">十一、CSS注释</h2>
+                <div class="daiMa">
+                    <xmp>
+                        CSS规则是使用 /* 需要注释的内容 */ 进行注释的，即在需要注释的内容前使用 “/*” 标记开始注释，在内容的结尾使用 “*/”结束。
+                        例如：
+                        p {
+                        font-size: 14px; /* 所有的字体是14像素大小*/
+                        }
+                    </xmp>
+                </div>
+            </li>
+            <li class="model" id="model-012">
+                <h2 class="first">十二、标签显示模式（display）</h2>
+                <p>HTML标签一般分为块标签和行内标签两种类型，它们也称块元素和行内元素。</p>
+                <dl>
+                    <dt class="second">1.块级元素(block-level)</dt>
+                    <dd>
+                        <p>每个块元素通常都会独自占据一整行或多整行，可以对其设置宽度、高度、对齐等属性，常用于网页布局和网页结构的搭建。</p>
+                        <div class="daiMa">
+                            <xmp>
+                                常见的块元素有h1~h6、p、div、ul、ol、li等，其中div标签是最典型的块元素。
+                            </xmp>
+                        </div>
+                        <dl>
+                            <dt class="third">块级元素的特点：</dt>
+                            <dd>
+                                <p>（1）总是从新行开始</p>
+                                <p>（2）高度，行高、外边距以及内边距都可以控制。</p>
+                                <p>（3）宽度默认是容器的100%</p>
+                                <p>（4）可以容纳内联元素和其他块元素。</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.行内元素(inline-level)</dt>
+                    <dd>
+                        <p>行内元素（内联元素）不占有独立的区域，仅仅靠自身的字体大小和图像尺寸来支撑结构，一般不可以设置宽度、高度、对齐等属性，常用于控制页面中文本的样式。</p>
+                        <p>常见的行内元素有a、strong、b、em、i、del、s、ins、u、span等，其中span标签最典型的行内元素。</p>
+                        <dl>
+                            <dt class="forth">行内元素的特点：</dt>
+                            <dd>
+                                <p>（1）和相邻行内元素在一行上。</p>
+                                <p>（2）高、宽无效，但水平方向的padding和margin可以设置，垂直方向的无效。</p>
+                                <p>（3）默认宽度就是它本身内容的宽度。</p>
+                                <p>（4）行内元素只能容纳文本或则其他行内元素。（a特殊）</p>
+                            </dd>
+                            <dt class="forth"> 注意：</dt>
+                            <dd>
+                                <p>1.只有 文字才 能组成段落 因此 p
+                                    里面不能放块级元素，同理还有这些标签h1,h2,h3,h4,h5,h6,dt，他们都是文字类块级标签，里面不能放其他块级元素。</p>
+                                <p>2.链接里面不能再放链接。</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.块级元素和行内元素区别</dt>
+                    <div class="daiMa">
+                        <xmp>
+                            块级元素的特点：
+                            （1）总是从新行开始
+                            （2）高度，行高、外边距以及内边距都可以控制。
+                            （3）宽度默认是容器的100%
+                            （4）可以容纳内联元素和其他块元素。
+                        </xmp>
+                    </div>
+                    <dd><p></p></dd>
+                    <div class="daiMa">
+                        <xmp>
+                            行内元素的特点：
+                            （1）和相邻行内元素在一行上。
+                            （2）高、宽无效，但水平方向的padding和margin可以设置，垂直方向的无效。
+                            （3）默认宽度就是它本身内容的宽度。
+                            （4）行内元素只能容纳文本或则其他行内元素。
+                        </xmp>
+                    </div>
+                </dl>
+                <dl>
+                    <dt class="second">4.行内块元素（inline-block）</dt>
+                    <div class="daiMa">
+                        <xmp>
+                            在行内元素中有几个特殊的标签——img 、input 、td，可以对它们设置宽高和对齐属性，有些资料可能会称它们为行内块元素。
+
+                            行内块元素的特点：
+                            （1）和相邻行内元素（行内块）在一行上,但是之间会有空白缝隙。
+                            （2）默认宽度就是它本身内容的宽度。
+                            （3）高度，行高、外边距以及内边距都可以控制。
+                        </xmp>
+                    </div>
+                </dl>
+                <dl>
+                    <dt class="second">5.标签显示模式转换 display</dt>
+                    <dd>
+                        <p>块转行内：display:inline;</p>
+                        <p>行内转块：display:block;</p>
+                        <p>块、行内元素转换为行内块： display: inline-block;</p>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-013">
+                <h2 class="first">十三、CSS书写规范</h2>
+                <p>开始就形成良好的书写规范，是你专业化的开始。</p>
+                <dl>
+                    <dt class="second">1.空格规范</dt>
+                    <dd>
+                        <p>【强制】 选择器 与 { 之间必须包含空格。</p>
+                        <p>示例： .selector { }</p>
+                        <p>【强制】 属性名 与之后的 : 之间不允许包含空格， : 与 属性值 之间必须包含空格。</p>
+                        <p>示例：font-size: 12px;</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.选择器规范</dt>
+                    <dd>
+                        <p>【强制】 当一个 rule 包含多个 selector 时，每个选择器声明必须独占一行。</p>
+                        <p>示例：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                /* good */
+                                .post,
+                                .page,
+                                .comment {
+                                line-height: 1.5;
+                                }
+
+
+                                /* bad */
+                                .post, .page, .comment {
+                                line-height: 1.5;
+                                }
+                            </xmp>
+                        </div>
+                        <p>【建议】 选择器的嵌套层级应不大于 3 级，位置靠后的限定条件应尽可能精确。</p>
+                        <p>示例：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                /* good */
+                                #username input {}
+                                .comment .avatar {}
+
+                                /* bad */
+                                .page .header .login #username input {}
+                                .comment div * {}
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.属性规范</dt>
+                    <dd>
+                        <p>【强制】 属性定义必须另起一行。</p>
+                        <p>示例：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                /* good */
+                                .selector {
+                                margin: 0;
+                                padding: 0;
+                                }
+
+                                /* bad */
+                                .selector { margin: 0; padding: 0; }
+                            </xmp>
+                        </div>
+                        <p>【强制】 属性定义后必须以分号结尾。</p>
+                        <p>示例：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                /* good */
+                                .selector {
+                                margin: 0;
+                                }
+
+                                /* bad */
+                                .selector {
+                                margin: 0
+                                }
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-014">
+                <h2 class="first">十四、CSS 三大特性</h2>
+                <p>层叠 继承 优先级 是我们学习CSS 必须掌握的三个特性。</p>
+                <dl>
+                    <dt class="second">1.CSS层叠性</dt>
+                    <dd>
+                        <p>所谓层叠性是指多种CSS样式的叠加。</p>
+                        <p>是浏览器处理冲突的一个能力,如果一个属性通过两个相同选择器设置到同一个元素上，那么这个时候一个属性就会将另一个属性层叠掉</p>
+                        <p>比如先给某个标签指定了内部文字颜色为红色，接着又指定了颜色为蓝色，此时出现一个标签指定了相同样式不同值的情况，这就是样式冲突。</p>
+                        <dl>
+                            <dt class="third">一般情况下，如果出现样式冲突，则会按照CSS书写的顺序，以最后的样式为准。</dt>
+                            <dd>
+                                <p>1.样式冲突，遵循的原则是就近原则。 那个样式离着结构近，就执行那个样式。</p>
+                                <p>2.样式不冲突，不会层叠</p>
+                            </dd>
+                        </dl>
+                        <p>CSS最后的执行口诀： 长江后浪推前浪，前浪死在沙滩上。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.CSS继承性</dt>
+                    <dd>
+                        <p>所谓继承性是指书写CSS样式表时，子标签会继承父标签的某些样式，如文本颜色和字号。想要设置一个可继承的属性，只需将它应用于父元素即可。</p>
+                        <p>CSS最后的执行口诀： 龙生龙，凤生凤，老鼠生的孩子会打洞。</p>
+                        <p class="forth">注意：</p>
+                        <p>恰当地使用继承可以简化代码，降低CSS样式的复杂性。子元素可以继承父元素的样式（text-，font-，line-这些元素开头的都可以继承，以及color属性）</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.CSS优先级</dt>
+                    <dd>
+                        <p>定义CSS样式时，经常出现两个或更多规则应用在同一元素上，这时就会出现优先级的问题。</p>
+                        <dl>
+                            <dt class="third">定义CSS样式时，经常出现两个或更多规则应用在同一元素上，这时就会出现优先级的问题。</dt>
+                            <dd>
+                                <p>1.继承样式的权重为0。即在嵌套结构中，不管父元素样式的权重多大，被子元素继承时，他的权重都为0，也就是说子元素定义的样式会覆盖继承来的样式。</p>
+                                <p>2.行内样式优先。应用style属性的元素，其行内样式的权重非常高，可以理解为远大于100。总之，他拥有比上面提高的选择器都大的优先级。</p>
+                                <p> 3.权重相同时，CSS遵循就近原则。也就是说靠近元素的样式具有最大的优先级，或者说排在最后的样式优先级最大。</p>
+                                <p> 4.CSS定义了一个!important命令，该命令被赋予最大的优先级。也就是说不管权重如何以及样式位置的远近，!important都具有最大优先级。</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.CSS特殊性（Specificity）</dt>
+                    <dd>
+                        <p>关于CSS权重，我们需要一套计算公式来去计算，这个就是 CSS Specificity，我们称为CSS 特性或称非凡性，它是一个衡量CSS值优先级的一个标准</p>
+                        <p>specificity用一个四位的数 字串(CSS2是三位)来表示，更像四个级别，值从左到右，左面的最大，一级大于一级，数位之间没有进制，级别之间不可超越</p>
+                        <table>
+                            <tr>
+                                <td>继承或者* 的贡献值</td>
+                                <td>0,0,0,0</td>
+                            </tr>
+                            <tr>
+                                <td>每个元素（标签）贡献值为</td>
+                                <td>0,0,0,1</td>
+                            </tr>
+                            <tr>
+                                <td>每个类，伪类贡献值为</td>
+                                <td>0,0,1,0</td>
+                            </tr>
+                            <tr>
+                                <td>每个ID贡献值为</td>
+                                <td>0,1,0,0</td>
+                            </tr>
+                            <tr>
+                                <td>每个行内样式贡献值</td>
+                                <td>1,0,0,0</td>
+                            </tr>
+                            <tr>
+                                <td>每个!important贡献值</td>
+                                <td>∞ 无穷大</td>
+                            </tr>
+                        </table>
+                        <p>权重是可以叠加的,比如的例子：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                div ul li -----> 0,0,0,3
+
+                                .nav ul li -----> 0,0,1,2
+
+                                a:hover -----> 0,0,1,1
+
+                                .nav a -----> 0,0,1,1
+
+                                #nav p -----> 0,1,0,1
+                            </xmp>
+                        </div>
+                        <dl>
+                            <dt class="forth"> 注意：</dt>
+                            <dd>
+                                <p>数位之间没有进制 比如说： 0,0,0,5 + 0,0,0,5 =0,0,0,10 而不是 0,0, 1, 0，
+                                    所以不会存在10个div能赶上一个类选择器的情况。</p>
+                                <p>继承的 权重是 0</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="forth">总结优先级：</dt>
+                            <dd>
+                                <p>1.使用了 !important声明的规则。</p>
+                                <p>2.内嵌在 HTML 元素的 style属性里面的声明。</p>
+                                <p>3.使用了 ID 选择器的规则。</p>
+                                <p>4.使用了类选择器、属性选择器、伪元素和伪类选择器的规则。</p>
+                                <p>5.使用了元素选择器的规则。</p>
+                                <p>6.只包含一个通用选择器的规则。</p>
+                                <p>7.同一类选择器则遵循就近原则。</p>
+                            </dd>
+                            <p>总结：权重是优先级的算法，层叠是优先级的表现</p>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-015">
+                <h2 class="first">十五、CSS 背景(background)</h2>
+                <p>CSS 可以添加背景颜色和背景图片，以及来进行图片设置。</p>
+                <table>
+                    <tr>
+                        <td>background-color</td>
+                        <td>背景颜色</td>
+                    </tr>
+                    <tr>
+                        <td>background-image</td>
+                        <td>背景图片地址</td>
+                    </tr>
+                    <tr>
+                        <td>background-repeat</td>
+                        <td>是否平铺</td>
+                    </tr>
+                    <tr>
+                        <td>background-position</td>
+                        <td>背景位置</td>
+                    </tr>
+                    <tr>
+                        <td>background-attachment</td>
+                        <td>背景固定还是滚动</td>
+                    </tr>
+                    <tr>
+                        <td>背景的合写（复合属性）</td>
+                        <td>background:背景颜色 背景图片地址 背景平铺 背景滚动 背景位置</td>
+                    </tr>
+                </table>
+                <dl>
+                    <dt class="third">1.背景图片(image)</dt>
+                    <dd>
+                        <p>语法：<em>background-image : none | url (url) </em></p>
+                        <p>参数：<em>none</em> : 　无背景图（默认的） <em>url</em> : 　使用绝对或相对地址指定背景图像</p>
+                        <p><em>background-image</em> 属性允许指定一个图片展示在背景中（只有CSS3才可以多背景）可以和 <em>background-color</em> 连用。
+                            如果图片不重复地话，图片覆盖不到地地方都会被背景色填充。 如果有背景图片平铺，则会覆盖背景颜色。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.背景平铺（repeat）</dt>
+                    <dd>
+                        <p>语法：<em>background-repeat : repeat | no-repeat | repeat-x | repeat-y </em></p>
+                        <p>参数：</p>
+                        <p><em>repeat</em> : 　背景图像在纵向和横向上平铺（默认的）</p>
+
+                        <p><em>no-repeat</em> : 　背景图像不平铺</p>
+                        <p><em>repeat-x</em> : 　背景图像在横向上平铺</p>
+                        <p><em>repeat-y</em> : 　背景图像在纵向平铺</p>
+                        <p>设置背景图片时，默认把图片在水平和垂直方向平铺以铺满整个元素。</p>
+                        <p><em>repeat-x</em> : 　背景图像在横向上平铺</p>
+                        <p><em>repeat-y</em> : 　背景图像在纵向平铺</p>
+                        <p>设置背景图片时，默认把图片在水平和垂直方向平铺以铺满整个元素。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.背景位置(position)</dt>
+                    <dd>
+                        <p>语法：</p>
+                        <p><em>background-position : length || length</em></p>
+                        <p><em>background-position : position || position </em></p>
+                        <p>参数：</p>
+                        <p><em>length</em> : 　百分数 | 由浮点数字和单位标识符组成的长度值。请参阅长度单位 <em>position : 　top | center | bottom |
+                            left | center | right</em></p>
+                        <p>说明：</p>
+                        <p>设置或检索对象的背景图像位置。必须先指定 <em>background-image</em> 属性。默认值为：(0% 0%)。
+                            如果只指定了一个值，该值将用于横坐标。纵坐标将默认为50%。第二个值将用于纵坐标。</p>
+                        <dl>
+                            <dt class="forth">注意：</dt>
+                            <dd>
+                                <p>1. <em>position</em> 后面是x坐标和y坐标。 可以使用方位名词或者 精确单位。</p>
+                                <p>2. 如果和精确单位和方位名字混合使用，则必须是x坐标在前，y坐标后面。比如 <em>background-position: 15px top;</em> 则 <em>15px</em>
+                                    一定是 x坐标 <em>top</em> 是 y坐标。</p>
+                                <p>实际工作用的最多的，就是背景图片居中对齐了。</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.背景附着</dt>
+                    <dd>
+                        <p>语法：</p>
+                        <p><em>background-attachment : scroll | fixed </em></p>
+                        <p>参数：</p>
+                        <p><em>scroll</em> : 　背景图像是随对象内容滚动 <em>fixed</em> : 　背景图像固定</p>
+                        <p>说明：</p>
+                        <p>设置或检索背景图像是随对象内容滚动还是固定的。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">5.背景简写</dt>
+                    <dd>
+                        <p><em>background</em> 属性的值的书写顺序官方并没有强制标准的。为了可读性，建议大家如下写：</p>
+                        <p><em>background</em> :背景颜色 背景图片地址 背景平铺 背景滚动 背景位置</p>
+                        <p><em>background: transparent url(image.jpg) repeat-y scroll 50% 0 ;</em></p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">6.背景透明(CSS3)</dt>
+                    <dd>
+                        <p>CSS3支持背景半透明的写法语法格式是:</p>
+                        <p><em>background: rgba(0,0,0,0.3);</em></p>
+                        <p>最后一个参数是 <em>alpha</em> 透明度 取值范围 0~1之间</p>
+                        <p>*注意： 背景半透明是指盒子背景半透明， 盒子里面的内容不收影响。</p>
+                        <p></p>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-016">
+                <h2 class="first">十六、盒子模型（CSS重点）</h2>
+                <p>其实，CSS就三个大模块： 盒子模型 、 浮动 、 定位，其余的都是细节。要求这三部分，无论如何也要学的非常精通。</p>
+                <p>所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和外边距（margin）组成。</p>
+                <dl>
+                    <dt class="second">1.看透网页布局的本质</dt>
+                    <dd>
+                        <p>网页布局中，我们是如何把里面的文字，图片，按照美工给我们的效果图排列的整齐有序呢？</p>
+                        <p>牛奶是怎样运输，让消费者购买的呢？</p>
+                        <p>我们说过，行内元素比如 文字 类似牛奶，也需要一个盒子把他们装起来，我们前面学过的双标签都是一个盒子。有了盒子，我们就可以随意的，自由的，摆放位置了。</p>
+                        <p>看透网页布局的本质： 把网页元素比如文字图片等等，放入盒子里面，然后利用CSS摆放盒子的过程，就是网页布局。</p>
+                        <p>CSS 其实没有太多逻辑可言 ， 类似我们小时候玩的积木,我们可以自由的，随意的摆放出我们想要的效果。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.盒子模型（Box Model）</dt>
+                    <dd>
+                        <p>所有的文档元素（标签）都会生成一个矩形框，我们成为元素框（element
+                            box），它描述了一个文档元素再网页布局汇总所占的位置大小。因此，每个盒子除了有自己大小和位置外，还影响着其他盒子的大小和位置。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.盒子边框（border）</dt>
+                    <dd>
+                        <p>语法：</p>
+                        <p><em>border : border-width || border-style || border-color </em></p>
+                        <p>边框属性—设置边框样式（border-style）</p>
+                        <p>边框样式用于定义页面中边框的风格，常用属性值如下：</p>
+                        <p><em>none</em>：没有边框即忽略所有边框的宽度（默认值）</p>
+                        <p><em>solid</em>：边框为单实线(最为常用的)</p>
+                        <p><em>dashed</em>：边框为虚线</p>
+                        <p><em>dotted</em>：边框为点线</p>
+                        <p><em>double</em>：边框为双实线</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.盒子边框写法总结表</dt>
+                    <dd>
+                        <table>
+                            <tr>
+                                <th>设置内容</th>
+                                <th>样式属性</th>
+                                <th>常用属性值</th>
+                            </tr>
+                            <tr>
+                                <td>上边框</td>
+                                <td>border-top-style:样式; border-top-width:宽度;border-top-color:颜色;border-top:宽度 样式 颜色;
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>下边框</td>
+                                <td>border-bottom-style:样式;border- bottom-width:宽度;border-
+                                    bottom-color:颜色;border-bottom:宽度 样式 颜色;
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>左边框</td>
+                                <td>border-left-style:样式; border-left-width:宽度;border-left-color:颜色;border-left:宽度 样式
+                                    颜色;
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>右边框</td>
+                                <td>border-right-style:样式;border-right-width:宽度;border-right-color:颜色;border-right:宽度 样式
+                                    颜色;
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>样式综合设置</td>
+                                <td>border-style:上边 [右边 下边 左边];</td>
+                                <td>none无（默认）、solid单实线、dashed虚线、dotted点线、double双实线</td>
+                            </tr>
+                            <tr>
+                                <td>宽度综合设置</td>
+                                <td>border-width:上边 [右边 下边 左边];</td>
+                                <td>像素值</td>
+                            </tr>
+                            <tr>
+                                <td>颜色综合设置</td>
+                                <td>border-color:上边 [右边 下边 左边];</td>
+                                <td>颜色值、#十六进制、rgb(r,g,b)、rgb(r%,g%,b%)</td>
+                            </tr>
+                            <tr>
+                                <td>边框综合设置</td>
+                                <td>border:四边宽度 四边样式 四边颜色;</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">5.表格的细线边框</dt>
+                    <dd>
+                        <p><em>table{ border-collapse:collapse; }</em> collapse 单词是合并的意思</p>
+                        <p><em>border-collapse:collapse;</em> 表示边框合并在一起。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">6.圆角边框(CSS3)</dt>
+                    <dd>
+                        <p>语法格式：<em>border-radius: 左上角 右上角 右下角 左下角;</em></p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">7.内边距（padding）</dt>
+                    <dd>
+                        <p><em>padding</em> 属性用于设置内边距。 是指 边框与内容之间的距离。</p>
+                        <p><em>padding-top</em>:上内边距</p>
+                        <p><em>padding-right</em>:右内边距</p>
+                        <p><em>padding-bottom</em>:下内边距</p>
+                        <p><em>padding-left</em>:左内边距</p>
+                        <p>注意： 后面跟几个数值表示的意思是不一样的。</p>
+                        <table>
+                            <tr>
+                                <th>值的个数</th>
+                                <th>表达意思</th>
+                            </tr>
+                            <tr>
+                                <td>1个值</td>
+                                <td>padding：上下左右边距 比如padding: 3px; 表示上下左右都是3像素</td>
+                            </tr>
+                            <tr>
+                                <td>2个值</td>
+                                <td>padding: 上下边距 左右边距 比如 padding: 3px 5px; 表示 上下3像素 左右 5像素</td>
+                            </tr>
+                            <tr>
+                                <td>3个值</td>
+                                <td>padding：上边距 左右边距 下边距 比如 padding: 3px 5px 10px; 表示 上是3像素 左右是5像素 下是10像素</td>
+                            </tr>
+                            <tr>
+                                <td>4个值</td>
+                                <td>padding:上内边距 右内边距 下内边距 左内边距 比如: padding: 3px 5px 10px 15px; 表示 上3px 右是5px 下 10px
+                                    左15px 顺时针
+                                </td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">8.外边距（margin）</dt>
+                    <dd>
+                        <p><em>margin</em> 属性用于设置外边距。 设置外边距会在元素之间创建“空白”， 这段空白通常不能放置其他内容。</p>
+                        <p><em>margin-top</em>:上外边距</p>
+                        <p><em>margin-right</em>:右外边距</p>
+                        <p><em>margin-bottom</em>:下外边距</p>
+                        <p><em>margin-left</em>:上外边距</p>
+                        <p><em>margin</em>:上外边距 右外边距 下外边距 左外边</p>
+                        <p>取值顺序跟内边距相同。</p>
+                        <dl>
+                            <dt class="third">外边距实现盒子居中</dt>
+                            <dd>
+                                <p>可以让一个盒子实现水平居中，需要满足一下两个条件：</p>
+                                <p>1. 必须是块级元素。</p>
+                                <p>2. 盒子必须指定了宽度（width）</p>
+                                <p>然后就给左右的外边距都设置为auto，就可使块级元素水平居中。</p>
+                                <p>实际工作中常用这种方式进行网页布局，示例代码如下：<em>.header{ width:960px; margin:0 auto;}</em></p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">9.文字盒子居中图片和背景区别</dt>
+                    <dd>
+                        <p>1.文字水平居中是 text-align: center</p>
+                        <p>2.盒子水平居中 左右margin 改为 auto</p>
+                        <p><em>text-align: center; /* 文字居中水平 */</em></p>
+                        <p><em>margin: 10px auto; /* 盒子水平居中 左右margin 改为 auto 就阔以了 */</em></p>
+                        <p>1.插入图片 我们用的最多 比如产品展示类</p>
+                        <p>2.背景图片我们一般用于小图标背景 或者 超大背景图片</p>
+                        <div class="daiMa">
+                            <xmp>
+                                section img {
+                                width: 200px;/* 插入图片更改大小 width 和 height */
+                                height: 210px;
+                                margin-top: 30px; /* 插入图片更改位置 可以用margin 或padding 盒模型 */
+                                margin-left: 50px; /* 插入当图片也是一个盒子 */
+                                }
+
+                                aside {
+                                width: 400px;
+                                height: 400px;
+                                border: 1px solid purple;
+                                background: #fff url(images/sun.jpg) no-repeat;
+
+                                background-size: 200px 210px; /* 背景图片更改大小只能用 background-size */
+                                background-position: 30px 50px; /* 背景图片更该位置 我用 background-position */
+                                }
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">10.清除元素的默认内外边距</dt>
+                    <dd>
+                        <p>为了更方便地控制网页中的元素，制作网页时，可使用如下代码清除元素的默认内外边距：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                * {
+                                padding:0; /* 清除内边距 */
+                                margin:0; /* 清除外边距 */
+                                }
+                            </xmp>
+                        </div>
+                        <p>注意： 行内元素是只有左右外边距的，是没有上下外边距的。 内边距，在ie6等低版本浏览器也会有问题。</p>
+                        <p>我们尽量不要给行内元素指定上下的内外边距就好了。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">11.外边距合并</dt>
+                    <dd>
+                        <p>使用 <em>margin</em> 定义块元素的垂直外边距时，可能会出现外边距的合并。</p>
+                        <dl>
+                            <dt class="third">11.1 相邻块元素垂直外边距的合并</dt>
+                            <dd>
+                                <p>当上下相邻的两个块元素相遇时，如果上面的元素有下外边距 <em>margin-bottom</em>，下面的元素有上外边距 <em>margin-top</em>，则他们之间的垂直间距不是
+                                    <em>margin-bottom与 </em>，而是两者中的较大者。这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。</p>
+                                <p>解决方案： 避免就好了。</p>
+                            </dd>
+                            <dt class="third">11.2 嵌套块元素垂直外边距的合并</dt>
+                            <dd>
+                                <p>
+                                    对于两个嵌套关系的块元素，如果父元素没有上内边距及边框，则父元素的上外边距会与子元素的上外边距发生合并，合并后的外边距为两者中的较大者，即使父元素的上外边距为0，也会发生合并。</p>
+                                <p>解决方案：</p>
+                                <p>1. 可以为父元素定义1像素的上边框或上内边距。</p>
+                                <p>2. 可以为父元素添加 <em>overflow:hidden</em>。</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">12.content宽度和高度</dt>
+                    <dd>
+                        <p>使用宽度属性width和高度属性height可以对盒子的大小进行控制。</p>
+                        <p>width和height的属性值可以为不同单位的数值或相对于父元素的百分比%，实际工作中最常用的是像素值。</p>
+                        <p>大多数浏览器，如Firefox、IE6及以上版本都采用了W3C规范，符合CSS规范的盒子模型的总宽度和总高度的计算原则是：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                /*外盒尺寸计算（元素空间尺寸）*/
+                                Element空间高度 = content height + padding + border + margin
+                                Element 空间宽度 = content width + padding + border + margin
+                                /*内盒尺寸计算（元素实际大小）*/
+                                Element Height = content height + padding + border （Height为内容高度）
+                                Element Width = content width + padding + border （Width为内容宽度）
+                            </xmp>
+                        </div>
+                        <p class="forth">注意：</p>
+                        <p>1、宽度属性width和高度属性height仅适用于块级元素，对行内元素无效（ img 标签和 input除外）。</p>
+                        <p>2、计算盒子模型的总高度时，还应考虑上下两个盒子垂直外边距合并的情况。</p>
+                        <p>3、如果一个盒子没有给定宽度/高度或者继承父亲的宽度/高度，则padding 不会影响本盒子大小。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">13.盒子模型布局稳定性</dt>
+                    <dd>
+                        <p>开始学习盒子模型，同学们最大的困惑就是， 分不清内外边距的使用，什么情况下使用内边距，什么情况下使用外边距？</p>
+                        <p>答案是： 其实他们大部分情况下是可以混用的。 就是说，你用内边距也可以，用外边距也可以。 你觉得哪个方便，就用哪个。</p>
+                        <p>但是，总有一个最好用的吧，我们根据稳定性来分，建议如下：</p>
+                        <p>按照 优先使用 宽度 （width） 其次 使用内边距（padding） 再次 外边距（margin）。</p>
+                        <p><em> width > padding > margin </em></p>
+                        <p class="forth">原因：</p>
+                        <p>1.margin 会有外边距合并 还有 ie6下面margin 加倍的bug（讨厌）所以最后使用。</p>
+                        <p>2.padding 会影响盒子大小， 需要进行加减计算（麻烦） 其次使用。</p>
+                        <p>3.width 没有问题（嗨皮）我们经常使用宽度剩余法 高度剩余法来做。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">14.盒子阴影</dt>
+                    <dd>
+                        <p>语法格式：<em>box-shadow:水平阴影 垂直阴影 模糊距离 阴影尺寸 阴影颜色 内/外阴影；</em></p>
+                        <p>1.前两个属性是必须写的。其余的可以省略。</p>
+                        <p>2.外阴影 (outset) 但是不能写 默认 想要内阴影 inset</p>
+                        <div class="daiMa">
+                            <xmp>
+                                div {
+                                width: 200px;
+                                height: 200px;
+                                border: 10px solid red;
+                                /* box-shadow: 5px 5px 3px 4px rgba(0, 0, 0, .4); */
+                                /* box-shadow:水平位置 垂直位置 模糊距离 阴影尺寸（影子大小） 阴影颜色 内/外阴影； */
+                                box-shadow: 0 15px 30px rgba(0, 0, 0, .4);
+
+                                }
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-017">
+                <h2 class="first">十七、浮动(float)</h2>
+                <dl>
+                    <dt class="second">1.普通流(normal flow)</dt>
+                    <dd>
+                        <p>CSS的定位机制有3种：普通流（标准流）、浮动和定位。</p>
+                        <p>
+                            html语言当中另外一个相当重要的概念----------标准流！或者普通流。普通流实际上就是一个网页内标签元素正常从上到下，从左到右排列顺序的意思，比如块级元素会独占一行，行内元素会按顺序依次前后排列；按照这种大前提的布局排列之下绝对不会出现例外的情况叫做普通流布局。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.浮动(float)</dt>
+                    <dd>
+                        <p>浮动最早是用来控制图片，以便达到其他元素（特别是文字）实现“环绕”图片的效果。</p>
+                        <p>
+                            后来，我们发现浮动有个很有意思的事情：就是让任何盒子可以一行排列,因此我们就慢慢的偏离主题，用浮动的特性来布局了。（CSS3已经我们真正意义上的网页布局，具体CSS3我们会详细解释）</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.什么是浮动？</dt>
+                    <dd>
+                        <p>元素的浮动是指设置了浮动属性的元素会脱离标准普通流的控制，移动到其父元素中指定位置的过程。</p>
+                        <p>在CSS中，通过float属性来定义浮动，基本语法格式：<em>选择器{float:属性值;}</em></p>
+                        <table>
+                            <tr>
+                                <th>属性值</th>
+                                <th>描述</th>
+                            </tr>
+                            <tr>
+                                <td>left</td>
+                                <td>元素向左浮动</td>
+                            </tr>
+                            <tr>
+                                <td>right</td>
+                                <td>元素向右浮动</td>
+                            </tr>
+                            <tr>
+                                <td>none</td>
+                                <td>元素不浮动（默认值）</td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.浮动详细内幕特性</dt>
+                    <dd>
+                        <p>浮动脱离标准流，不占位置，会影响标准流。浮动只有左右浮动。</p>
+                        <p>浮动首先创建包含块的概念（包裹）。就是说， 浮动的元素总是找理它最近的父级元素对齐。但是不会超出内边距的范围。</p>
+                        <p>浮动的元素排列位置，跟上一个元素（块级）有关系。如果上一个元素有浮动，则A元素顶部会和上一个元素的顶部对齐；如果上一个元素是标准流，则A元素的顶部会和上一个元素的底部对齐。</p>
+                        <p>由2可以推断出，一个父盒子里面的子盒子，如果其中一个子级有浮动的，则其他子级都需要浮动。这样才能一行对齐显示。</p>
+                        <p>元素添加浮动后，元素会具有行内块元素的特性。元素的大小完全取决于定义的大小或者默认的内容多少浮动根据元素书写的位置来显示相应的浮动。</p>
+                        <p class="forth">总结：</p>
+                        <p>浮动的目的就是为了让多个块级元素同一行上显示。</p>
+                        <p>float 浮 漏 特</p>
+                        <p><em>浮</em>： 加了浮动的元素盒子是浮起来的，漂浮在其他的标准流盒子上面。 </p>
+                        <p><em>漏</em>： 加了浮动的盒子，不占位置的，它浮起来了，它原来的位置漏 给了标准流的盒子。</p>
+                        <p><em>特</em>： 特别注意，首先浮动的盒子需要和标准流的父级搭配使用， 其次 特别的注意浮动可以使元素显示模式体现为行内块特性。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">5.清除浮动</dt>
+                    <dd>
+                        <dl>
+                            <dt class="third">5.1 为什么要清除浮动</dt>
+                            <dd>
+                                <p>由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。</p>
+                                <p>准确地说，并不是清除浮动，而是清除浮动后造成的影响</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">5.2 清除浮动本质</dt>
+                            <dd><p>清除浮动主要为了解决父级元素因为子级浮动引起内部高度为0 的问题。</p></dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">5.3 清除浮动的方法</dt>
+                            <dd>
+                                <p>其实本质叫做闭合浮动更好一些, 记住，清除浮动就是把浮动的盒子圈到里面，让父盒子闭合出口和入口不让他们出来影响其他元素。</p>
+                                <p>在CSS中，clear属性用于清除浮动，其基本语法格式如下：<em>选择器{clear:属性值;}</em></p>
+                                <table>
+                                    <tr>
+                                        <th>属性值</th>
+                                        <th>描述</th>
+                                    </tr>
+                                    <tr>
+                                        <td>left</td>
+                                        <td>不允许左侧有浮动元素（清除左侧浮动的影响）</td>
+                                    </tr>
+                                    <tr>
+                                        <td>right</td>
+                                        <td>不允许右侧有浮动元素（清除右侧浮动的影响）</td>
+                                    </tr>
+                                    <tr>
+                                        <td>both</td>
+                                        <td>同时清除左右两侧浮动的影响</td>
+                                    </tr>
+                                </table>
+                                <dl>
+                                    <dt class="forth">5.3.1额外标签法</dt>
+                                    <dd>
+                                        <div class="daiMa">
+                                            <xmp>
+                                                是W3C推荐的做法是通过在浮动元素末尾添加一个空的标签例如
+                                                <div style=”clear:both”></div>
+                                                ，或则其他标签br等亦可。
+                                            </xmp>
+                                        </div>
+                                        <p>优点： 通俗易懂，书写方便</p>
+                                        <p>缺点： 添加许多无意义的标签，结构化较差。 我只能说，w3c你推荐的方法我不接受，你不值得拥有。。。</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="forth">5.3.2父级添加overflow属性方法</dt>
+                                    <dd>
+                                        <p>可以通过触发BFC的方式，可以实现清除浮动效果。（BFC后面讲解）</p>
+                                        <div class="daiMa">
+                                            <xmp>
+                                                可以给父级添加： overflow为 hidden|auto|scroll 都可以实现。
+                                            </xmp>
+                                        </div>
+                                        <p>优点： 代码简洁</p>
+                                        <p>缺点： 内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素。</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="forth">5.3.3使用after伪元素清除浮动</dt>
+                                    <dd>
+                                        <p>:after 方式为空元素的升级版，好处是不用单独加标签了</p>
+                                        <p>使用方法：</p>
+                                        <div class="daiMa">
+                                            <xmp>
+                                                .clearfix:after { content: "."; display: block; height: 0; clear: both;
+                                                visibility: hidden; }
+
+                                                .clearfix {*zoom: 1;} /* IE6、7 专有 */
+                                            </xmp>
+                                        </div>
+                                        <p>优点： 符合闭合浮动思想 结构语义化正确</p>
+                                        <p>缺点： 由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</p>
+                                        <p>代表网站： 百度、淘宝网、网易等</p>
+                                        <p>注意： content:"." 里面尽量跟一个小点，或者其他，尽量不要为空，否则再firefox 7.0前的版本会有生成空格。</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="forth">5.3.4 使用before和after双伪元素清除浮动</dt>
+                                    <dd>
+                                        <p>使用方法：</p>
+                                        <div class="daiMa">
+                                            <xmp>
+                                                .clearfix:before,.clearfix:after {
+                                                content:"";
+                                                display:table; /* 这句话可以出发BFC BFC可以清除浮动,BFC我们后面讲 */
+                                                }
+                                                .clearfix:after {
+                                                clear:both;
+                                                }
+                                                .clearfix {
+                                                *zoom:1;
+                                                }
+
+                                            </xmp>
+                                        </div>
+                                        <p>优点： 代码更简洁</p>
+                                        <p>缺点： 由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</p>
+                                        <p>代表网站： 小米、腾讯等</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-018">
+                <h2 class="first">十八、版心和布局流程</h2>
+                <p>阅读报纸时容易发现，虽然报纸中的内容很多，但是经过合理地排版，版面依然清晰、易读。同样，在制作网页时，要想使页面结构清晰、有条理，也需要对网页进行“排版”。</p>
+                <p>“版心”(可视区) 是指网页中主体内容所在的区域。一般在浏览器窗口中水平居中显示，常见的宽度值为960px、980px、1000px、1200px等。</p>
+                <dl>
+                    <dt class="second">1.布局流程</dt>
+                    <dd>
+                        <p>为了提高网页制作的效率，布局时通常需要遵守一定的布局流程，具体如下：</p>
+                        <p>1、确定页面的版心（可视区）。</p>
+                        <p>2、分析页面中的行模块，以及每个行模块中的列模块。</p>
+                        <p>3、制作HTML结构 。</p>
+                        <p>4、CSS初始化，然后开始运用盒子模型的原理，通过DIV+CSS布局来控制网页的各个模块。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.一列固定宽度且居中</dt>
+                    <dd>
+                        <p>最普通的，最为常用的结构</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.两列左窄右宽型</dt>
+                    <dd>
+                        比如小米 小米官网
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.通栏平均分布型</dt>
+                    <dd>
+                        <p>比如锤子 锤子官网</p>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-019">
+                <h2 class="first">十九、定位(position)</h2>
+                <p>如果，说浮动， 关键在一个 “浮” 字上面， 那么 我们的定位，关键在于一个 “位” 上。</p>
+                <p>PS: 定位是我们CSS算是数一数二难点的了，但是，你务必要学好它，我们CSS离不开定位，特别是后面的js特效，天天和定位打交道。不要抵触它，反而要爱上它，它可以让我们工作更加轻松哦！</p>
+                <dl>
+                    <dt class="second">1.为什么要用定位？</dt>
+                    <dd>
+                        <p>用标准流或者浮动，实现会比较复杂或者难以实现，此时我们用定位来做</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.元素的定位属性</dt>
+                    <dd>
+                        <p>元素的定位属性主要包括定位模式和边偏移两部分。</p>
+                        <dl>
+                            <dt class="third">2.1 边偏移</dt>
+                            <dd>
+                                <table>
+                                    <tr>
+                                        <th>边偏移属性</th>
+                                        <th>描述</th>
+                                    </tr>
+                                    <tr>
+                                        <td>top</td>
+                                        <td>顶端偏移量，定义元素相对于其父元素上边线的距离</td>
+                                    </tr>
+                                    <tr>
+                                        <td>bottom</td>
+                                        <td>底部偏移量，定义元素相对于其父元素下边线的距离</td>
+                                    </tr>
+                                    <tr>
+                                        <td>left</td>
+                                        <td>左侧偏移量，定义元素相对于其父元素左边线的距离</td>
+                                    </tr>
+                                    <tr>
+                                        <td>right</td>
+                                        <td>右侧偏移量，定义元素相对于其父元素右边线的距离</td>
+                                    </tr>
+                                </table>
+                                <p>也就说，以后定位要和这边偏移搭配使用了， 比如 <em>top: 100px; left: 30px;</em> 等等</p>
+                            </dd>
+                            <dt class="third">2.2 定位模式(定位的分类)</dt>
+                            <dd>
+                                <p>在CSS中，position属性用于定义元素的定位模式，其基本语法格式如下：</p>
+                                <p><em>选择器{position:属性值;}</em></p>
+                                <p>position属性的常用值</p>
+                                <table>
+                                    <tr>
+                                        <th>值</th>
+                                        <th>描述</th>
+                                    </tr>
+                                    <tr>
+                                        <td>static</td>
+                                        <td>自动定位（默认定位方式）</td>
+                                    </tr>
+                                    <tr>
+                                        <td>relative</td>
+                                        <td>相对定位，相对于其原文档流的位置进行定位</td>
+                                    </tr>
+                                    <tr>
+                                        <td>absolute</td>
+                                        <td>绝对定位，相对于其上一个已经定位的父元素进行定位</td>
+                                    </tr>
+                                    <tr>
+                                        <td>fixed</td>
+                                        <td>固定定位，相对于浏览器窗口进行定位</td>
+                                    </tr>
+                                </table>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.静态定位(static)</dt>
+                    <dd>
+                        <p>静态定位是所有元素的默认定位方式，当position属性的取值为static时，可以将元素定位于静态位置。 所谓静态位置就是各个元素在HTML文档流中默认的位置。</p>
+                        <p>上面的话翻译成白话： 就是网页中所有元素都默认的是静态定位哦！ 其实就是标准流的特性。</p>
+                        <p>在静态定位状态下，无法通过边偏移属性（top、bottom、left或right）来改变元素的位置。</p>
+                        <p>PS： 静态定位其实没啥可说的。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.相对定位relative(自恋型)</dt>
+                    <dd>
+                        <p>相对定位是将元素相对于它在标准流中的位置进行定位，当position属性的取值为relative时，可以将元素定位于相对位置。</p>
+                        <p>对元素设置相对定位后，可以通过边偏移属性改变元素的位置，但是它在文档流中的位置仍然保留。如下图所示，即是一个相对定位的效果展示：</p>
+                        <p class="forth">注意：</p>
+                        <p>1.相对定位最重要的一点是，它可以通过边偏移移动位置，但是原来的所占的位置，继续占有。</p>
+                        <p>2.其次，每次移动的位置，是以自己的左上角为基点移动（相对于自己来移动位置）</p>
+                        <p>就是说，相对定位的盒子仍在标准流中，它后面的盒子仍以标准流方式对待它。（相对定位不脱标）</p>
+                        <p>如果说浮动的主要目的是 让多个块级元素一行显示，那么定位的主要价值就是 移动位置， 让盒子到我们想要的位置上去</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">5.绝对定位absolute (拼爹型)</dt>
+                    <dd>
+                        <p>　[注意] 如果文档可滚动，绝对定位元素会随着它滚动，因为元素最终会相对于正常流的某一部分定位。</p>
+                        <p>当position属性的取值为absolute时，可以将元素的定位模式设置为绝对定位。</p>
+                        <p>注意： 绝对定位最重要的一点是，它可以通过边偏移移动位置，但是它完全脱标，完全不占位置。</p>
+                        <dl>
+                            <dt class="third">5.1 父级没有定位</dt>
+                            <dd><p>若所有父元素都没有定位，以浏览器为准对齐(document文档)。</p></dd>
+                            <dt class="third">5.2 父级有定位</dt>
+                            <dd><p>绝对定位是将元素依据最近的已经定位（绝对、固定或相对定位）的父元素（祖先）进行定位。</p></dd>
+                            <dt class="third">5.3 子绝父相</dt>
+                            <dd>
+                                <p>这个“子绝父相”太重要了，是我们学习定位的口诀，时时刻刻记住的。</p>
+                                <p>这句话的意思是 子级是绝对定位的话， 父级要用相对定位。</p>
+                                <p>首先， 我们说下， 绝对定位是将元素依据最近的已经定位绝对、固定或相对定位）的父元素（祖先）进行定位。</p>
+                                <p>就是说， 子级是绝对定位，父亲只要是定位即可（不管父亲是绝对定位还是相对定位，甚至是固定定位都可以），就是说， 子绝父绝，子绝父相都是正确的。</p>
+                                <p>因为子级是绝对定位，不会占有位置， 可以放到父盒子里面的任何一个地方。</p>
+                                <p>父盒子布局时，需要占有位置，因此父亲只能是 相对定位.</p>
+                                <p>这就是子绝父相的由来。</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">6.绝对定位的盒子水平/垂直居中</dt>
+                    <dd>
+                        <p>普通的盒子是左右margin 改为 auto就可， 但是对于绝对定位就无效了</p>
+                        <p>定位的盒子也可以水平或者垂直居中，有一个算法。</p>
+                        <p>1.首先left 50% 父盒子的一半大小</p>
+                        <p>2.然后走自己外边距负的一半值就可以了 margin-left。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">7.固定定位fixed(认死理型)</dt>
+                    <dd>
+                        <p>固定定位是绝对定位的一种特殊形式，类似于 正方形是一个特殊的
+                            矩形。它以浏览器窗口作为参照物来定义网页元素。当position属性的取值为fixed时，即可将元素的定位模式设置为固定定位。</p>
+                        <p>
+                            当对元素设置固定定位后，它将脱离标准文档流的控制，始终依据浏览器窗口来定义自己的显示位置。不管浏览器滚动条如何滚动也不管浏览器窗口的大小如何变化，该元素都会始终显示在浏览器窗口的固定位置。</p>
+                        <p class="forth">固定定位有两点：</p>
+                        <p>1.固定定位的元素跟父亲没有任何关系，只认浏览器。</p>
+                        <p>2.固定定位完全脱标，不占有位置，不随着滚动条滚动。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">8.叠放次序（z-index）</dt>
+                    <dd>
+                        <p>当对多个元素同时设置定位时，定位元素之间有可能会发生重叠。</p>
+                        <p>在CSS中，要想调整重叠定位元素的堆叠顺序，可以对定位元素应用z-index层叠等级属性，其取值可为正整数、负整数和0。</p>
+                        <p class="forth">注意：</p>
+                        <p>1.z-index的默认属性值是0，取值越大，定位元素在层叠元素中越居上。</p>
+                        <p>2.如果取值相同，则根据书写顺序，后来居上。</p>
+                        <p>3.后面数字一定不能加单位。</p>
+                        <p>4.只有相对定位，绝对定位，固定定位有此属性，其余标准流，浮动，静态定位都无此属性，亦不可指定此属性。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">9.四种定位总结</dt>
+                    <dd>
+                        <table>
+                            <tr>
+                                <th>定位模式</th>
+                                <th>是否脱标占有位置</th>
+                                <th>是否可以使用边偏移</th>
+                                <th>移动位置基准</th>
+                            </tr>
+                            <tr>
+                                <td>静态static</td>
+                                <td>不脱标，正常模式</td>
+                                <td>不可以</td>
+                                <td>正常模式</td>
+                            </tr>
+                            <tr>
+                                <td>相对定位relative</td>
+                                <td>不脱标，占有位置</td>
+                                <td>可以</td>
+                                <td>相对自身位置移动（自恋型）</td>
+                            </tr>
+                            <tr>
+                                <td>绝对定位absolute</td>
+                                <td>完全脱标，不占有位置</td>
+                                <td>可以</td>
+                                <td>相对于定位父级移动位置（拼爹型）</td>
+                            </tr>
+                            <tr>
+                                <td>固定定位fixed</td>
+                                <td>完全脱标，不占有位置</td>
+                                <td>可以</td>
+                                <td>相对于浏览器移动位置（认死理型）</td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">10.定位模式转换</dt>
+                    <dd>
+                        <p>跟 浮动一样， 元素添加了 绝对定位和固定定位之后， 元素模式也会发生转换， 都转换为 行内块模式，** 因此 比如 行内元素 如果添加了 绝对定位或者 固定定位后
+                            浮动后，可以不用转换模式，直接给高度和宽度就可以了。**</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">11.元素的显示与隐藏</dt>
+                    <dd>
+                        <p>在CSS中有三个显示和隐藏的单词比较常见，我们要区分开，他们分别是 display visibility 和 overflow。</p>
+                        <p>他们的主要目的是让一个元素在页面中消失，但是不在文档源码中删除。 最常见的是网站广告，当我们点击类似关闭不见了，但是我们重新刷新页面，它们又会出现和你玩躲猫猫！！</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">12.display 显示</dt>
+                    <dd>
+                        <p>display 设置或检索对象是否及如何显示。</p>
+                        <p>display : none 隐藏对象 与它相反的是 display:block 除了转换为块级元素之外，同时还有显示元素的意思。</p>
+                        <p>特点： 隐藏之后，不再保留位置。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">13.visibility 可见性</dt>
+                    <dd>
+                        <p>设置或检索是否显示对象。</p>
+                        <p><em>visible </em>: 　对象可视</p>
+                        <p><em>hidden </em>: 　对象隐藏</p>
+                        <p>特点： 隐藏之后，继续保留原有位置。（停职留薪）</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">14.overflow 溢出</dt>
+                    <dd>
+                        <p>检索或设置当对象的内容超过其指定高度及宽度时如何管理内容。</p>
+                        <p><em>visible </em>: 　不剪切内容也不添加滚动条。</p>
+                        <p><em>auto </em>: 　 超出自动显示滚动条，不超出不显示滚动条</p>
+                        <p><em>hidden </em>: 　不显示超过对象尺寸的内容，超出的部分隐藏掉</p>
+                        <p><em>scroll </em>: 　不管超出内容否，总是显示滚动条/p>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-020">
+                <h2 class="first">二十、CSS高级技巧</h2>
+                <dl>
+                    <dt class="second">1.CSS用户界面样式</dt>
+                    <dd>
+                        <p>所谓的界面样式， 就是更改一些用户操作样式， 比如 更改用户的鼠标样式， 表单轮廓等。但是比如滚动条的样式改动受到了很多浏览器的抵制，因此我们就放弃了。 防止表单域拖拽</p>
+                        <dl>
+                            <dt class="third">1.1 鼠标样式cursor</dt>
+                            <dd>
+                                <p>设置或检索在对象上移动的鼠标指针采用何种系统预定义的光标形状。</p>
+                                <p><em>cursor : default 小白 | pointer 小手 | move 移动 | text 文本</em></p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        <ul>
+                                            <li style="cursor:default">我是小白</li>
+                                            <li style="cursor:pointer">我是小手</li>
+                                            <li style="cursor:move">我是移动</li>
+                                            <li style="cursor:text">我是文本</li>
+                                        </ul>
+                                    </xmp>
+                                </div>
+                                <p>尽量不要用hand 因为 火狐不支持 pointer ie6以上都支持的尽量用</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">1.2 轮廓 outline</dt>
+                            <dd>
+                                <p>是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。</p>
+                                <p><em> outline : outline-color ||outline-style || outline-width </em></p>
+                                <p>但是我们都不关心可以设置多少，我们平时都是去掉的。</p>
+                                <p>最直接的写法是 ： outline: 0; 或者 outline: none;</p>
+                                <p>
+                                    <xmp><input type="text" style="outline: 0;"/></xmp>
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">1.3 防止拖拽文本域resize</dt>
+                            <dd>
+                                <p>resize：none 这个单词可以防止 火狐 谷歌等浏览器随意的拖动 文本域。</p>
+                                <p>
+                                    <xmp><textarea style="resize: none;"></textarea></xmp>
+                                </p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.vertical-align 垂直对齐</dt>
+                    <dd>
+                        <p>以前我们讲过让带有宽度的块级元素居中对齐，是 <em>margin: 0 auto;</em></p>
+                        <p>以前我们还讲过让文字居中对齐，是 <em>text-align: center;</em></p>
+                        <p>但是我们从来没有讲过有垂直居中的属性</p>
+                        <p><em>vertical-align </em> 垂直对齐， 这个看上去很美好的一个属性， 实际有着不可捉摸的脾气，否则我们也不会这么晚来讲解。</p>
+                        <p><em>vertical-align : baseline |top |middle |bottom </em></p>
+                        <p>设置或检索对象内容的垂直对其方式。</p>
+                        <p><em>vertical-align </em> 不影响块级元素中的内容对齐，它只针对于 行内元素或者行内块元素，特别是行内块元素， 通常用来控制图片/表单与文字的对齐。</p>
+                        <dl>
+                            <dt class="third">2.1 图片、表单和文字对齐</dt>
+                            <dd><p>所以我们知道，我们可以通过vertical-align 控制图片和文字的垂直关系了。 默认的图片会和文字基线对齐</p></dd>
+                            <dt class="third">2.2 去除图片底侧空白缝隙</dt>
+                            <dd>
+                                <p>有个很重要特性你要记住： 图片或者表单等行内块元素，他的底线会和父级盒子的基线对齐。这样会造成一个问题，就是图片底侧会有一个空白缝隙。</p>
+                                <p class="forth">解决的方法就是：</p>
+                                <p>1.给img <em>vertical-align:middle | top</em>等等。 让图片不要和基线对齐。</p>
+                                <p>2.给img 添加 <em>display：block; </em>转换为块级元素就不会存在问题了。</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.溢出的文字隐藏</dt>
+                    <dd>
+                        <dl>
+                            <dt class="third">3.1 word-break:自动换行</dt>
+                            <dd>
+                                <p><em>normal</em> 使用浏览器默认的换行规则。</p>
+                                <p><em>break-all </em> 允许在单词内换行。</p>
+                                <p><em>keep-all </em> 只能在半角空格或连字符处换行。</p>
+                                <p>主要处理英文单词</p>
+                            </dd>
+                            <dt class="third">3.2 white-space</dt>
+                            <dd>
+                                <p><em>white-space</em>设置或检索对象内文本显示方式。通常我们使用于强制一行显示内容</p>
+                                <p><em>normal</em> : 　默认处理方式 <em>nowrap</em> : 　强制在同一行内显示所有文本，直到文本结束或者遭遇br标签对象才换行。</p>
+                                <p>可以处理中文</p>
+                            </dd>
+                            <dt class="third">3.3 text-overflow 文字溢出</dt>
+                            <dd>
+                                <p><em>text-overflow : clip | ellipsis</em></p>
+                                <p>设置或检索是否使用一个省略标记（...）标示对象内文本的溢出</p>
+                                <p><em>clip </em>: 　不显示省略标记（...），而是简单的裁切</p>
+                                <p><em>ellipsis </em>: 　当对象内文本溢出时显示省略标记（...）</p>
+                                <p>注意一定要首先强制一行内显示，再次和overflow属性 搭配使用</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-021">
+                <h2 class="first">二十一、CSS精灵技术（sprite） 小妖精 雪碧</h2>
+                <dl>
+                    <dt class="second">1.精灵技术产生的背景</dt>
+                    <dd>
+                        <p>图所示为网页的请求原理图，当用户访问一个网站时，需要向服务器发送请求，网页上的每张图像都要经过一次请求才能展现给用户。</p>
+                        <p>
+                            然而，一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接受和发送请求，这将大大降低页面的加载速度。为了有效地减少服务器接受和发送请求的次数，提高页面的加载速度，出现了CSS精灵技术（也称CSS
+                            Sprites、CSS雪碧）。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.精灵技术本质</dt>
+                    <dd>
+                        <p>
+                            简单地说，CSS精灵是一种处理网页背景图像的方式。它将一个页面涉及到的所有零星背景图像都集中到一张大图中去，然后将大图应用于网页，这样，当用户访问该页面时，只需向服务发送一次请求，网页中的背景图像即可全部展示出来。通常情况下，这个由很多小的背景图像合成的大图被称为精灵图（雪碧图），如下图所示为京东网站中的一个精灵图。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.精灵技术的使用</dt>
+                    <dd>
+                        <p>CSS
+                            精灵其实是将网页中的一些背景图像整合到一张大图中（精灵图），然而，各个网页元素通常只需要精灵图中不同位置的某个小图，要想精确定位到精灵图中的某个小图，就需要使用CSS的background-image、background-repeat和background-position属性进行背景定位，其中最关键的是使用background-position属性精确地定位。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.制作精灵图</dt>
+                    <dd>
+                        <p>CSS 精灵其实是将网页中的一些背景图像整合到一张大图中（精灵图），那我们要做的，就是把小图拼合成一张大图。</p>
+                        <p>大部分情况下，精灵图都是网页美工做。</p>
+                        <div class="daiMa">
+                            <xmp>
+                                我们精灵图上放的都是小的装饰性质的背景图片。 插入图片不能往上放。
+                                我们精灵图的宽度取决于最宽的那个背景。
+                                我们可以横向摆放也可以纵向摆放，但是每个图片之间，间隔至少隔开偶数像素合适。
+                                在我们精灵图的最低端，留一片空隙，方便我们以后添加其他精灵图。
+                            </xmp>
+                        </div>
+                        <p>结束语： 小公司，背景图片很少的情况，没有必要使用精灵技术，维护成本太高。 如果是背景图片比较多，可以建议使用精灵技术。</p>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-022">
+                <h2 class="first">二十二、滑动门</h2>
+                <dl>
+                    <dt class="second">1.滑动门出现的背景</dt>
+                    <dd>
+                        <p>制作网页时，为了美观，常常需要为网页元素设置特殊形状的背景，比如微信导航栏，有凸起和凹下去的感觉，最大的问题是里面的字数不一样多，咋办？</p>
+                        <p>为了使各种特殊形状的背景能够自适应元素中文本内容的多少，出现了CSS滑动门技术。它从新的角度构建页面，使各种特殊形状的背景能够自由拉伸滑动，以适应元素内部的文本内容，可用性更强。
+                            最常见于各种导航栏的滑动门。</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.核心技术</dt>
+                    <dd>
+                        <p>核心技术就是利用CSS精灵（主要是背景位置）和盒子padding撑开宽度, 以便能适应不同字数的导航栏。</p>
+                        <p class="forth">总结：</p>
+                        <p>1.a 设置 背景左侧，padding撑开合适宽度。</p>
+                        <p>2.span 设置背景右侧， padding撑开合适宽度 剩下由文字继续撑开宽度。</p>
+                        <p>3.之所以a包含span就是因为 整个导航都是可以点击的</p>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-023">
+                <h2 class="first">二十三、字体图标</h2>
+                <p>图片是有诸多优点的，但是缺点很明显，比如图片不但增加了总文件的大小，还增加了很多额外的"http请求"，这都会大大降低网页的性能的。更重要的是图片不能很好的进行“缩放”，因为图片放大和缩小会失真。
+                    我们后面会学习移动端响应式，很多情况下希望我们的图标是可以缩放的。此时，一个非常重要的技术出现了，额不是出现了，是以前就有，是被从新"宠幸"啦。。 这就是字体图标（iconfont).</p>
+                <dl>
+                    <dt class="second">1.字体图标优点</dt>
+                    <dd>
+                        <p>1.1 可以做出跟图片一样可以做的事情,改变透明度、旋转度，等..</p>
+                        <p>1.2 但是本质其实是文字，可以很随意的改变颜色、产生阴影、透明效果等等...</p>
+                        <p>1.3 本身体积更小，但携带的信息并没有削减。</p>
+                        <p>1.4 几乎支持所有的浏览器</p>
+                        <p>1.5 移动端设备必备良药..</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.字体图标使用流程</dt>
+                    <dd>
+                        <p>总体来说，字体图标按照如下流程：</p>
+                        <dl>
+                            <dt class="third">2.1 设计字体图标</dt>
+                            <dd>
+                                <p>假如图标是我们公司单独设计，那就需要第一步了，这个属于UI设计人员的工作， 他们在 illustrator 或 Sketch 这类矢量图形软件里创建 icon图标，
+                                    比如下图：</p>
+                                <p>之后保存为svg格式，然后给我们前端人员就好了。</p>
+                                <p>其实第一步，我们不需要关心，只需要给我们这些图标就可以了，如果图标是大众的，网上本来就有的，可以直接跳过第一步，进入第三步。</p>
+                            </dd>
+                            <dt class="third">2.2 上传生成字体包</dt>
+                            <dd>
+                                <p>当UI设计人员给我们svg文件的时候，我们需要转换成我们页面能使用的字体文件， 而且需要生成的是兼容性的适合各个浏览器的。</p>
+                                <p>推荐网站：<a href="http://icomoon.io">http://icomoon.io</a></p>
+                                <p>icomoon字库</p>
+                                <p>IcoMoon成立于2011年，推出的第一个自定义图标字体生成器，它允许用户选择他们所需要的图标，使它们成一字型。
+                                    内容种类繁多，非常全面，唯一的遗憾是国外服务器，打开网速较慢。</p>
+                                <p>推荐网站：<a href="http://www.iconfont.cn/">http://www.iconfont.cn/</a></p>
+                                <p>阿里icon font字库</p>
+                                <p><a href="http://www.iconfont.cn/">http://www.iconfont.cn/</a></p>
+                                <p>这个是阿里妈妈M2UX的一个icon font字体图标字库，包含了淘宝图标库和阿里妈妈图标库。可以使用AI制作图标上传生成。 一个字，免费，免费！！</p>
+                                <p>fontello</p>
+                                <p><a href="http://fontello.com/">http://fontello.com/</a></p>
+                                <p>在线定制你自己的icon font字体图标字库，也可以直接从GitHub下载整个图标集，该项目也是开源的。</p>
+                                <p>Font-Awesome</p>
+                                <p><a href="http://fortawesome.github.io/Font-Awesome/"></a>http://fortawesome.github.io/Font-Awesome/
+                                </p>
+                                <p>这是我最喜欢的字库之一了，更新比较快。目前已经有369个图标了。</p>
+                                <p>Glyphicon Halflings</p>
+                                <p><a href="http://glyphicons.com/">http://glyphicons.com/</a></p>
+                                <p>这个字体图标可以在Bootstrap下免费使用。自带了200多个图标。</p>
+                                <p>Icons8</p>
+                                <p><a href="https://icons8.com/">https://icons8.com/</a></p>
+                                <p>提供PNG免费下载，像素大能到500PX</p>
+                            </dd>
+                            <dt class="third">2.3 下载兼容字体包</dt>
+                            <dd>
+                                <p>我们不需要自己专门的图标，是想网上找几个图标使用，以上2步可以直接省略了， 直接到刚才的网站上找喜欢的下载使用吧。</p>
+                            </dd>
+                            <dt class="third">2.4 字体引入到HTML</dt>
+                            <dd>
+                                <p>得到压缩包之后，最后一步，是最重要的一步了， 就是字体文件已经有了，我们需要引入到我们页面中。</p>
+                                <p>1.首先把 以下4个文件放入到 fonts文件夹里面。 通俗的做法</p>
+                                <p>第一步：在样式里面声明字体： 告诉别人我们自己定义的字体</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        @font-face {
+                                        font-family: 'icomoon';
+                                        src: url('fonts/icomoon.eot?7kkyc2');
+                                        src: url('fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+                                        url('fonts/icomoon.ttf?7kkyc2') format('truetype'),
+                                        url('fonts/icomoon.woff?7kkyc2') format('woff'),
+                                        url('fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+                                        font-weight: normal;
+                                        font-style: normal;
+                                        }
+                                    </xmp>
+                                </div>
+                                <p>第二步：给盒子使用字体</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        span {
+                                        font-family: "icomoon";
+                                        }
+                                    </xmp>
+                                </div>
+                                <p>第三步：盒子里面添加结构</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        span::before {
+                                        content: "\e900";
+                                        }
+                                        或者
+                                        <span></span>
+                                    </xmp>
+                                </div>
+                            </dd>
+                            <dt class="third">2.5 追加新图标到原来库里面</dt>
+                            <dd>
+                                <p>如果工作中，原来的字体图标不够用了，我们需要添加新的字体图标，但是原来的不能删除，继续使用，此时我们需要这样做</p>
+                                <p>把压缩包里面的selection.json 从新上传，然后，选中自己想要新的图标，从新下载压缩包，替换原来文件即可。</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-024">
+                <h2 class="first">二十四、网站优化三大标签</h2>
+                <p>SEO是由英文Search Engine Optimization缩写而来，
+                    中文意译为“搜索引擎优化”！SEO是指通过对网站进行站内优化、网站结构调整、网站内容建设、网站代码优化等)和站外优化，从而提高网站的关键词排名以及公司产品的曝光度。
+                    简单的说就是，把产品做好，搜索引擎就会介绍客户来。</p>
+                <p>我们现在阶段主要进行站内优化。网站优化，我们应该要懂。。。</p>
+                <dl>
+                    <dt class="second">1.网页title 标题</dt>
+                    <dd>
+                        <p>title具有不可替代性，是我们的内页第一个重要标签，是搜索引擎了解网页的入口，和对网页主题归属的最佳判断点。</p>
+                        <p class="forth">建议：</p>
+                        <p>首页标题：网站名（产品名）- 网站的介绍</p>
+                        <p class="forth">例如：</p>
+                        <p>京东(JD.COM)-综合网购首选-正品低价、品质保障、配送及时、轻松购物！</p>
+                        <p>小米商城 - 小米5s、红米Note 4、小米MIX、小米笔记本官方网站</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.Description 网站说明</dt>
+                    <dd>
+                        <p>对于关键词的作用明显降低，但由于很多搜索引擎，仍然大量采用网页的MATA标签中描述部分作为搜索结果的“内容摘要”。 就是简要说明我们网站的主要做什么的。
+                            我们提倡，Description作为网站的总体业务和主题概括，多采用“我们是…”“我们提供…”“×××网作为…”“电话：010…”之类语句。</p>
+                        <p class="forth">京东网：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <meta name="description"
+                                      content="京东JD.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、
+                                      家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，
+                                      为您提供愉悦的网上购物体验!"/>
+                            </xmp>
+                        </div>
+                        <p class="forth">注意点：</p>
+                        <p>1.描述中出现关键词，与正文内容相关，这部分内容是给人看的，所以要写的很详细，让人感兴趣， 吸引用户点击。</p>
+                        <p>2.同样遵循简短原则，字符数含空格在内不要超过 120 个汉字。</p>
+                        <p>3.补充在 title 和 keywords 中未能充分表述的说明.</p>
+                        <p>4.用英文逗号 关键词1,关键词</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <meta name="description"
+                                      content="小米商城直营小米公司旗下所有产品，囊括小米手机系列小米MIX、小米Note 2，红米手机系列红米Note 4、红米4，智能硬件，
+                                      配件及小米生活周边，同时提供小米客户服务及售后支持。"/>
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3.Keywords 关键字</dt>
+                    <dd>
+                        <p>Keywords是页面关键词，是搜索引擎关注点之一。Keywords应该限制在6～8个关键词左右，电商类网站可以多 少许。</p>
+                        <p class="forth">京东网：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <meta name="Keywords" content="网上购物,网上商城,手机,笔记本,电脑,MP3,CD,VCD,DV,相机,数码,配件,手表,存储卡,京东"/>
+                            </xmp>
+                        </div>
+                        <p class="forth">小米网：</p>
+                        <div class="daiMa">
+                            <xmp>
+                                <meta name="keywords" content="小米,小米6,红米Note4,小米MIX,小米商城"/>
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-025">
+                <h2 class="first">二十五、小心得</h2>
+                <p>零零散散，结合实际和案例操作：</p>
+                <p><em>通栏的盒子</em>:不用给宽度 默认为 100% 但是加了浮动和定位的盒子需要 添加 100%</p>
+                <p><em>盒子居中对齐</em>:margin: auto; 注意必须有宽度的块级元素，文字水平居中对齐是 text-align:center;</p>
+                <p><em>行高会继承</em>:文字性质的，比如 颜色、文字大小、字体、行高等会继承父级元素</p>
+                <p><em>浮动元素、固定定位，绝对定位会模式转换</em>:具有行内块特性，比如一行放多个，有高度和宽度，如果没有指定宽度，则会根据内容多少撑开。</p>
+                <p class="forth">宽度剩余法：</p>
+                <p><em>浮动元素特性</em>: 浮动可以让多个元素同一行显示 2. 浮动的元素是顶部对齐</p>
+                <p><em>logo优化</em>: text-indent: -20000px; 隐藏文字， 背景图片</p>
+                <p><em>清除浮动</em>: 清除浮动的目的就是为了解决父亲高度为0的问题</p>
+                <p><em>鼠标样式</em>: cursor: pointer; 小手 cursor: move; 四角箭头 cursor: text; 插入光标 cursor: default; 小白</p>
+                <p><em>不允许换行</em>: white-space: nowrap;</p>
+                <p>=================================</p>
+                <p><em>边框底侧</em> : border-bottom: 2px solid #ccc;</p>
+                <p><em>定位重点</em> : 绝对定位不占位置 相对定位占有位置</p>
+                <p><em>标签语义化dl</em> : dl也是块级元素 dt 是 定义标题 dd 是定义描述，dd是围绕这dt来描述的，也就是说，dd算是dt 的解释说明详细分解。</p>
+                <p><em>标题标签h</em> : 尽量少用h1，可以多用h2和h3等标签</p>
+                <p>=================================</p>
+                <p><em>绝对定位的盒子居中对齐</em> : 盒子 left 50% 然后通过 margin 负值自己的宽度一半（固定定位也是如此）</p>
+                <p>=================================</p>
+                <p><em>圆角矩形</em> : border-radius: 左上角 右上角 右下角 左下角。</p>
+                <p>=================================</p>
+                <p><em>强烈推荐：</em> : background: rgba(r,g,b,alpha); r,g,b 是红绿蓝的颜色， alpha 是透明度的意思，取值范围是 0~1 之间。</p>
+                <p><em>了解ie低版本浏览器 半透明</em> : filter:Alpha(opacity=50) ； // opacity值为0 到 100;但是 此属性是盒子半透明，不是背景半透明哦，因为里面的内容也一起半透明了;因此，低版本的 ie6.7浏览器，我们不需要透明了，直接采用优雅降级的做法。background: gary;background: rgba(0,0,0,.2);写上两句 背景， 低版本ie只执行gray， 其他浏览器执行 半透明下面这一句</p>
+                <p>=================================</p>
+                <p class="forth">浏览器前缀</p>
+                <table>
+                    <tr>
+                        <th>浏览器前缀</th>
+                        <th>浏览器</th>
+                    </tr>
+                    <tr>
+                        <td>-webkit-</td>
+                        <td>Google Chrome, Safari, Android Browser</td>
+                    </tr>
+                    <tr>
+                        <td>-moz-</td>
+                        <td>Firefox</td>
+                    </tr>
+                    <tr>
+                        <td>-o-</td>
+                        <td>Opera</td>
+                    </tr>
+                    <tr>
+                        <td>-ms-</td>
+                        <td>Internet Explorer, Edge</td>
+                    </tr>
+                    <tr>
+                        <td>-khtml-</td>
+                        <td>Konqueror</td>
+                    </tr>
+                </table>
+                <p>=================================</p>
+                <p class="forth">背景渐变</p>
+                <p>在线性渐变过程中，颜色沿着一条直线过渡：从左侧到右侧、从右侧到左侧、从顶部到底部、从底部到顶部或着沿任何任意轴。如果你曾使用过制作图件，比如说Photoshop，你对线性渐变并不会陌生。</p>
+                <p>兼容性问题很严重，我们这里之讲解线性渐变</p>
+                <p>语法格式：</p>
+                <p><em>background:-webkit-linear-gradient(渐变的起始位置， 起始颜色， 结束颜色)；</em></p>
+                <p><em>background:-webkit-linear-gradient(渐变的起始位置， 颜色 位置， 颜色位置....)；</em></p>
+                <p>=================================</p>
+                <p class="forth">CSS W3C 统一验证工具</p>
+                <p>CssStats 是一个在线的 CSS 代码分析工具: <a href="http://www.cssstats.com/">http://www.cssstats.com/</a></p>
+                <p>W3C 统一验证工具： <a href="http://validator.w3.org/unicorn/">http://validator.w3.org/unicorn/</a></p>
+            </li>
+            <li class="model" id="model-100">
+                <h2 class="first">END、完结撒花</h2>
+                <ul class="f_l">
+                    <li class="second animateM">完结撒花</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <p>作者：几道小山</p>
+        <p>邮箱：874972633@qq.com</p>
+        <p>GitHub：<a href="https://github.com/jidaoxiaoshan" target="_blank">https://github.com/jidaoxiaoshan</a></p>
+    </footer>
+</div>
+</body>
+</html>
