@@ -1,0 +1,19 @@
+.model a {
+    font-weight: 700;
+    display: inline-block;
+    background-color: #fff4cb;
+    border: 1px solid #aaaaaa;
+    text-decoration: none;
+    color: #333333;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,.3);
+    position: relative;
+}
+
+.model a:hover {
+    background-color: #27a9ff;
+    color: #ee0625;
+    transform: translateY(2px);
+}

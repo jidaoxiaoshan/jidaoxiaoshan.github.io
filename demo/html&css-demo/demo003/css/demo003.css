@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div.demo {
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 50px;
+    text-align: center;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+
+.demo001 div {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    /*position: absolute;*/
+    transition: all 2s;
+}
+
+.demo001 div:hover {
+    transform: translate(100px, 100px) scale(2);
+    box-shadow: 2px 2px 25px rgba(0, 0, 0, .5);
+    border-radius: 20%;
+    background-color: hotpink;
+}
+
+.demo002 div {
+    width: 50px;
+    height: 50px;
+    background-color: greenyellow;
+    /*position: absolute;*/
+    transition: all 2s;
+}
+
+.demo002 div:hover {
+    width: 200px;
+    background-color: red;
+}
+
+.demo003 div {
+    float: left;
+    width: 183px;
+    height: 130px;
+    border: 1px solid black;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.demo003 div img {
+    width: 193px;
+    height: 130px;
+    transition: all 1s;
+}
+
+.demo003 div.test001 img:hover {
+    transform: scale(1.1);
+}
+
+.demo003 div.test002 img:hover {
+    transform: translateX(-10px);
+}
+
+.demo003 div.test003 img:hover {
+    transform: rotate(360deg);
+}
+
+.demo003 div.test004 img:hover {
+    animation: rabit linear 1s;
+}
+
+@keyframes rabit {
+    from {
+        transform: scale(0.5) rotate(0);
+    }
+    to {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+.demo004 div {
+    float: left;
+    width: 350px;
+    height: 350px;
+    border: 1px solid black;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.demo004 div img {
+    width: 100%;
+    height: 100%;
+    transition: all 2s;
+}
+
+.demo004 div.test001 img:hover {
+    transform: rotate(360deg);
+}
+
+.demo004 div.test002 img {
+    animation: fengche linear 1s infinite;
+}
+
+.demo004 div.test002 img:hover {
+    animation: none;
+}
+
+@keyframes fengche {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.demo005 div {
+    width: 100%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+}
+
+.demo005 div img {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: right top;
+    transition: all 1s;
+}
+
+.demo005 div:hover .pic1 {
+    transform: rotate(60deg);
+}
+
+.demo005 div:hover .pic2 {
+    transform: rotate(120deg);
+}
+
+.demo005 div:hover .pic3 {
+    transform: rotate(180deg);
+}
+
+.demo005 div:hover .pic4 {
+    transform: rotate(240deg);
+}
+
+.demo005 div:hover .pic5 {
+    transform: rotate(300deg);
+}
+
+.demo005 div:hover .pic6 {
+    transform: rotate(360deg);
+}
+
+div.demo006 {
+    height: 600px;
+}
+
+.demo006 div {
+    width: 100%;
+    height: 100%;
+    background-color: orangered;
+    position: relative;
+}
+
+.demo006 div img {
+    position: absolute;
+    transition: all 1s;
+}
+
+.demo006 div img.pic1 {
+    left: 10%;
+    top: 5%;
+    transform: rotate(35deg);
+}
+
+.demo006 div img.pic2 {
+    left: 20%;
+    top: 25%;
+    transform: rotate(55deg);
+}
+
+.demo006 div img.pic3 {
+    left: 66%;
+    top: 55%;
+    transform: rotate(150deg);
+}
+
+.demo006 div img.pic4 {
+    left: 33%;
+    top: 80%;
+    transform: rotate(95deg);
+}
+
+.demo006 div img.pic5 {
+    left: 50%;
+    top: 6%;
+    transform: rotate(35deg);
+}
+
+.demo006 div img.pic6 {
+    left: 20%;
+    top: 66%;
+}
+
+.demo006 div img.pic7 {
+    left: 55%;
+    top: 77%;
+    transform: rotate(85deg);
+}
+
+.demo006 div img.pic8 {
+    left: 29%;
+    top: 34%;
+}
+
+.demo006 div img.pic9 {
+    left: 80%;
+    top: 15%;
+}
+
+.demo006 div:hover img {
+    transform: rotate(0);
+}
+
+.demo006 div:hover img.pic1 {
+    left: 300px;
+    top: 50px;
+}
+
+.demo006 div:hover img.pic2 {
+    left: 420px;
+    top: 50px;
+}
+
+.demo006 div:hover img.pic3 {
+    left: 605px;
+    top: 50px;
+}
+
+.demo006 div:hover img.pic4 {
+    left: 300px;
+    top: 205px;
+}
+
+.demo006 div:hover img.pic5 {
+    left: 420px;
+    top: 205px;
+}
+
+.demo006 div:hover img.pic6 {
+    left: 605px;
+    top: 205px;
+}
+
+.demo006 div:hover img.pic7 {
+    left: 300px;
+    top: 390px;
+}
+
+.demo006 div:hover img.pic8 {
+    left: 420px;
+    top: 390px;
+}
+
+.demo006 div:hover img.pic9 {
+    left: 605px;
+    top: 390px;
+}
+
+.demo007 ul {
+    list-style: none;
+    position: relative;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+}
+
+.demo007 ul li {
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    margin-right: 20px;
+    transform-style:preserve-3d;
+    transition: transform 1s;
+}
+
+.demo007 li a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    color: black;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+}
+
+.demo007 li a:first-child {
+    transform: translateZ(25px);
+    background-color: #ff5544;
+}
+.demo007 li a:last-child {
+    background-color: skyblue;
+    transform: rotateX(-90deg) translateZ( 25px );
+}
+.demo007 li:hover {
+
+    transform: rotateX(90deg);
+}
+
+div.demo008 {
+    margin-bottom: 150px;
+    height: 500px;
+}
+.demo008 section {
+    width: 300px;
+    height: 200px;
+    margin: 100px auto;
+    background: url(../img/fengche.png) no-repeat;
+    background-size: contain;
+    position: relative;
+    transform-style: preserve-3d;  /* 让父盒子里面的子盒子以3d效果显示 */
+    transition:  5s linear;  /* 匀速  all 是可以省略的， 省略默认的all*/
+}
+.demo008 section:hover {
+    transform: rotateY(360deg);
+}
+div.demo008 section div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.demo008 section div:nth-child(1) {
+    background: url(../img/1.jpg) no-repeat;
+    background-size: contain;
+    transform: rotateY(0deg)  translateZ(400px);
+}
+.demo008 section div:nth-child(2) {
+    background: url(../img/2.jpg) no-repeat;
+    background-size: contain;
+    transform: rotateY(60deg)  translateZ(400px);
+}
+.demo008 section div:nth-child(3) {
+    background: url(../img/3.jpg) no-repeat;
+    background-size: contain;
+    transform: rotateY(120deg)  translateZ(400px);
+}
+.demo008 section div:nth-child(4) {
+    background: url(../img/4.jpg) no-repeat;
+    background-size: contain;
+    transform: rotateY(180deg)  translateZ(400px);
+}
+.demo008 section div:nth-child(5) {
+    background: url(../img/5.jpg) no-repeat;
+    background-size: contain;
+    transform: rotateY(240deg)  translateZ(400px);
+}
+.demo008 section div:nth-child(6) {
+    background: url(../img/6.jpg) no-repeat;
+    background-size: contain;
+    transform: rotateY(300deg)  translateZ(400px);
+}
