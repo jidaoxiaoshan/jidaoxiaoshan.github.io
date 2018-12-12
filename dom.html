@@ -15,22 +15,18 @@
         </a></div>
     </header>
     <nav class="page-nav">
-        <!--<ul>-->
-            <!--<li><a href="#">一、常见版本控制器</a></li>-->
-            <!--<li><a href="#">二、git的优势</a></li>-->
-            <!--<li><a href="#">三、版本控制工具应该具备的功能</a></li>-->
-            <!--<li><a href="#">四、版本控制简介</a></li>-->
-            <!--<li><a href="#">五、git简史</a></li>-->
-            <!--<li><a href="#">六、git的下载和安装</a></li>-->
-            <!--<li><a href="#">七、git的结构</a></li>-->
-            <!--<li><a href="#">八、git和代码托管中心</a></li>-->
-            <!--<li><a href="#">九、本地库和远程库</a></li>-->
-            <!--<li><a href="#">十、git的命令行操作</a></li>-->
-            <!--<li><a href="#">十一、git保存版本的机制</a></li>-->
-            <!--<li><a href="#">十二、GitHub</a></li>-->
-            <!--<li><a href="#">十三、SSH免密登录</a></li>-->
-            <!--<li><a href="#">十四、git的可视化操作</a></li>-->
-        <!--</ul>-->
+        <ul>
+            <li><a href="#model-001">一、DOM的概念</a></li>
+            <li><a href="#model-002">二、DOM经常进行的操作</a></li>
+            <li><a href="#model-003">三、获取页面元素</a></li>
+            <li><a href="#model-004">四、事件</a></li>
+            <li><a href="#model-005">五、属性操作</a></li>
+            <li><a href="#model-006">六、创建元素的三种方式</a></li>
+            <li><a href="#model-007">七、节点操作</a></li>
+            <li><a href="#model-008">八、事件详解</a></li>
+            <li><a href="#model-009">九、特效</a></li>
+            <li><a href="#model-100">END</a></li>
+        </ul>
     </nav>
     <nav class="nav">
         <ul>
@@ -59,8 +55,516 @@
     <div class="main">
         <ul>
             <li class="model" id="model-001">
-                <h2 class="first">一、DOM操作</h2>
-                <p>待更新......</p>
+                <dl>
+                    <dt class="first">一、DOM的概念</dt>
+                    <dd>
+                        <p>文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。Document Object Model的历史可以追溯至1990年代后期微软与Netscape的“浏览器大战”，双方为了在JavaScript与JScript一决生死，于是大规模的赋予浏览器强大的功能。微软在网页技术上加入了不少专属事物，既有VBScript、ActiveX、以及微软自家的DHTML格式等，使不少网页使用非微软平台及浏览器无法正常显示。DOM即是当时蕴酿出来的杰作。</p>
+                        <p>文档：一个网页可以称为文档</p>
+                        <p>节点：网页中的所有内容都是节点（标签、属性、文本、注释等）</p>
+                        <p>元素：网页中的标签</p>
+                        <p>属性：标签的属性</p>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-002">
+                <dl>
+                    <dt class="first">二、DOM经常进行的操作</dt>
+                    <dd>
+                        <p>获取元素</p>
+                        <p>动态创建元素</p>
+                        <p>对元素进行操作(设置其属性或调用其方法)</p>
+                        <p>事件(什么时机做相应的操作)</p>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-003">
+                <dl>
+                    <dt class="first">三、获取页面元素</dt>
+                    <dd>
+                        <dl>
+                            <dt class="third">1. 根据id获取元素</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var div = document.getElementById('main');
+                                        console.log(div);
+
+                                        // 获取到的数据类型 HTMLDivElement，对象都是有类型的
+                                        // HTMLDivElement <-- HTMLElement <-- Element  <-- Node  <-- EventTarget
+                                    </xmp>
+                                </div>
+                                <p>注意：由于id名具有唯一性，部分浏览器支持直接使用id名访问元素，但不是标准方式，不推荐使用。</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">2. 根据标签名获取元素</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var divs = document.getElementsByTagName('div');
+                                        for (var i = 0; i < divs.length; i++) {
+                                        var div = divs[i];
+                                        console.log(div);
+                                        }
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">3. 根据name获取元素</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var inputs = document.getElementsByName('hobby');
+                                        for (var i = 0; i < inputs.length; i++) {
+                                        var input = inputs[i];
+                                        console.log(input);
+                                        }
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">4. 根据类名获取元素</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var mains = document.getElementsByClassName('main');
+                                        for (var i = 0; i < mains.length; i++) {
+                                        var main = mains[i];
+                                        console.log(main);
+                                        }
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">5. 根据选择器获取元素</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var text = document.querySelector('#text');
+                                        console.log(text);
+
+                                        var boxes = document.querySelectorAll('.box');
+                                        for (var i = 0; i < boxes.length; i++) {
+                                        var box = boxes[i];
+                                        console.log(box);
+                                        }
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">6. 总结</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        掌握
+                                        getElementById()
+                                        getElementsByTagName()
+                                        了解
+                                        getElementsByName()
+                                        getElementsByClassName()
+                                        querySelector()
+                                        querySelectorAll()
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-004">
+                <dl>
+                    <dt class="first">四、事件</dt>
+                    <dd>
+                        <p>事件：触发-响应机制</p>
+                        <p>Event接口表示在DOM中发生的任何事件，一些是用户生成的（例如鼠标或键盘事件），而其他由API生成。</p>
+                        <dl>
+                            <dt class="second">1. 事件三要素</dt>
+                            <dd>
+                                <p>事件源:触发(被)事件的元素</p>
+                                <p>事件类型:事件的触发方式(例如鼠标点击或键盘点击)</p>
+                                <p>事件处理程序:事件触发后要执行的代码(函数形式</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">2. 事件的基本使用</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var box = document.getElementById('box');
+                                        box.onclick = function() {
+                                        console.log('代码会在box被点击后执行');
+                                        };
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-005">
+                <dl>
+                    <dt class="first">五、属性操作</dt>
+                    <dd>
+                        <dl>
+                            <dt class="second">1. 非表单元素的属性</dt>
+                            <dd>
+                                <p><em>href、title、id、src、className</em></p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var link = document.getElementById('link');
+                                        console.log(link.href);
+                                        console.log(link.title);
+
+                                        var pic = document.getElementById('pic');
+                                        console.log(pic.src);
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">2. innerHTML和innerText</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var box = document.getElementById('box');
+                                        box.innerHTML = '我是文本<p>我会生成为标签</p>';
+                                        console.log(box.innerHTML);
+                                        box.innerText = '我是文本<p>我不会生成为标签</p>';
+                                        console.log(box.innerText);
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">3. HTML转义符</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        "		&quot;
+                                        ‘		&apos;
+                                        &		&amp;
+                                        <		&lt;    //less than  小于
+                                        >		&gt;   // greater than  大于
+                                        空格	   &nbsp;
+                                        ©		&copy;
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">4. 表单元素属性</dt>
+                            <dd>
+                                <p>value 用于大部分表单元素的内容获取(option除外)</p>
+                                <p>type 可以获取input标签的类型(输入框或复选框等)</p>
+                                <p>disabled 禁用属性</p>
+                                <p>checked 复选框选中属性</p>
+                                <p>selected 下拉菜单选中属</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">5. 自定义属性操作</dt>
+                            <dd>
+                                <p>getAttribute() 获取标签行内属性</p>
+                                <p>setAttribute() 设置标签行内属性</p>
+                                <p>removeAttribute() 移除标签行内属性</p>
+                                <p>与element.属性的区别: 上述三个方法用于获取任意的行内属性</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">6. 样式操作</dt>
+                            <dd>
+                                <p>使用style方式设置的样式显示在标签行内</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var box = document.getElementById('box');
+                                        box.style.width = '100px';
+                                        box.style.height = '100px';
+                                        box.style.backgroundColor = 'red';
+                                    </xmp>
+                                </div>
+                                <p>注意: 通过样式属性设置宽高、位置的属性类型是字符串，需要加上px</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">7. 类名操作</dt>
+                            <dd>
+                                <p>修改标签的className属性相当于直接修改标签的类名</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var box = document.getElementById('box');
+                                        box.className = 'clearfix';
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-006">
+                <dl>
+                    <dt class="first">六、创建元素的三种方式</dt>
+                    <dd>
+                        <dl>
+                            <dt class="second">1.document.write()</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        document.write('新设置的内容<p>标签也可以生成</p>');
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">2.innerHTML</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var box = document.getElementById('box');
+                                        box.innerHTML = '新内容<p>新标签</p>';
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">3.document.createElement()</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var div = document.createElement('div');
+                                        document.body.appendChild(div);
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">4.性能问题</dt>
+                            <dd>
+                                <p>innerHTML方法由于会对字符串进行解析，需要避免在循环内多次使用。</p>
+                                <p>可以借助字符串或数组的方式进行替换，再设置给innerHTML</p>
+                                <p>优化后与document.createElement性能相</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-007">
+                <dl>
+                    <dt class="first">七、节点操作</dt>
+                    <dd>
+                        <div class="daiMa">
+                            <xmp>
+                                var body = document.body;
+                                var div = document.createElement('div');
+                                body.appendChild(div);
+
+                                var firstEle = body.children[0];
+                                body.insertBefore(div,firstEle);
+
+                                body.removeChild(firstEle);
+
+                                var text = document.createElement('p');
+                                body.replaceChild(text, div);
+                            </xmp>
+                        </div>
+                        <dl>
+                            <dt class="third">1. 节点层级</dt>
+                            <dd>
+                                <p>重点讲父子属性，兄弟属性画图讲解</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var box = document.getElementById('box');
+                                        console.log(box.parentNode);
+                                        console.log(box.childNodes);
+                                        console.log(box.children);
+                                        console.log(box.nextSibling);
+                                        console.log(box.previousSibling);
+                                        console.log(box.firstChild);
+                                        console.log(box.lastChild);
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">2. 注意</dt>
+                            <dd>
+                                <p>childNodes和children的区别，childNodes获取的是子节点，children获取的是子元素</p>
+                                <p>nextSibling和previousSibling获取的是节点，获取元素对应的属性是nextElementSibling和previousElementSibling获取的是元素</p>
+                                <p>​	nextElementSibling和previousElementSibling有兼容性问题，IE9以后才支持</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">3. 总结</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        节点操作，方法
+                                        appendChild()
+                                        insertBefore()
+                                        removeChild()
+                                        replaceChild()
+                                        节点层次，属性
+                                        parentNode
+                                        childNodes
+                                        children
+                                        nextSibling/previousSibling
+                                        firstChild/lastChild
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-008">
+                <dl>
+                    <dt class="first">八、事件详解</dt>
+                    <dd>
+                        <dl>
+                            <dt class="second">1.注册/移除事件的三种方式</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var box = document.getElementById('box');
+                                        box.onclick = function () {
+                                        console.log('点击后执行');
+                                        };
+                                        box.onclick = null;
+
+                                        box.addEventListener('click', eventCode, false);
+                                        box.removeEventListener('click', eventCode, false);
+
+                                        box.attachEvent('onclick', eventCode);
+                                        box.detachEvent('onclick', eventCode);
+
+                                        function eventCode() {
+                                        console.log('点击后执行');
+                                        }
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">2.兼容代码</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        function addEventListener(element, type, fn) {
+                                        if (element.addEventListener) {
+                                        element.addEventListener(type, fn, false);
+                                        } else if (element.attachEvent){
+                                        element.attachEvent('on' + type,fn);
+                                        } else {
+                                        element['on'+type] = fn;
+                                        }
+                                        }
+
+                                        function removeEventListener(element, type, fn) {
+                                        if (element.removeEventListener) {
+                                        element.removeEventListener(type, fn, false);
+                                        } else if (element.detachEvent) {
+                                        element.detachEvent('on' + type, fn);
+                                        } else {
+                                        element['on'+type] = null;
+                                        }
+                                        }
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">3.事件的三个阶段</dt>
+                            <dd>
+                                <p>1. 捕获阶段</p>
+                                <p>2. 当前目标阶段</p>
+                                <p>3. 冒泡阶段</p>
+                                <p>* 事件对象.eventPhase属性可以查看事件触发时所处的阶段</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">4.事件对象的属性和方法</dt>
+                            <dd>
+                                <p>event.type 获取事件类型</p>
+                                <p>clientX/clientY 所有浏览器都支持，窗口位置</p>
+                                <p>pageX/pageY IE8以前不支持，页面位置</p>
+                                <p>event.target || event.srcElement 用于获取触发事件的元素</p>
+                                <p>event.preventDefault() 取消默认行</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">5.阻止事件传播的方式</dt>
+                            <dd>
+                                <p>标准方式 event.stopPropagation();</p>
+                                <p>IE低版本 event.cancelBubble = true; 标准中已废</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">6.常用的鼠标和键盘事件</dt>
+                            <dd>
+                                <p>onmouseup 鼠标按键放开时触发</p>
+                                <p>onmousedown 鼠标按键按下触发</p>
+                                <p>onmousemove 鼠标移动触发</p>
+                                <p>onkeyup 键盘按键按下触发</p>
+                                <p>onkeydown 键盘按键抬起触</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-009">
+                <dl>
+                    <dt class="first">九、特效</dt>
+                    <dd>
+                        <dl>
+                            <dt class="second">1. 偏移量</dt>
+                            <dd>
+                                <p>offsetParent用于获取定位的父级元素</p>
+                                <p>offsetParent和parentNode的区</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var box = document.getElementById('box');
+                                        console.log(box.offsetParent);
+                                        console.log(box.offsetLeft);
+                                        console.log(box.offsetTop);
+                                        console.log(box.offsetWidth);
+                                        console.log(box.offsetHeight);
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">2. 客户区大小</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var box = document.getElementById('box');
+                                        console.log(box.clientLeft);
+                                        console.log(box.clientTop);
+                                        console.log(box.clientWidth);
+                                        console.log(box.clientHeight);
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="second">3. 滚动偏移</dt>
+                            <dd>
+                                <div class="daiMa">
+                                    <xmp>
+                                        var box = document.getElementById('box');
+                                        console.log(box.scrollLeft)
+                                        console.log(box.scrollTop)
+                                        console.log(box.scrollWidth)
+                                        console.log(box.scrollHeight)
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
             </li>
             <li class="model" id="model-100">
                 <h2 class="first">END、完结撒花</h2>
