@@ -1,19 +1,19 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: "Microsoft Yahei" ,sans-serif;
+    font-family: "Microsoft Yahei", sans-serif;
 }
 
 li {
-    list-style:none;
+    list-style: none;
 }
 
 p {
-    text-indent:2em;
-    margin-bottom:10px;
+    text-indent: 2em;
+    margin-bottom: 10px;
 }
 
 img {
@@ -49,26 +49,27 @@ em {
 }
 
 .main > ul > li {
-    margin-top:20px;
+    margin-top: 20px;
 }
 
 .main > ul > li > ul > li {
     padding-left: 20px;
 }
 
-.container{
-    width:1200px;
-    margin:20px auto;
+.container {
+    width: 1200px;
+    margin: 20px auto;
 }
 
-.go-top{
+.go-top {
     position: fixed;
     transform: translateX(1150px);
     bottom: 100px;
-    border: 1px solid  black;
+    border: 1px solid black;
     background-color: orange;
     border-radius: 5px;
 }
+
 .go-top a {
     display: block;
     padding: 10px;
@@ -76,15 +77,17 @@ em {
     color: black;
     border-radius: 5px;
 }
+
 .go-top a span {
     display: block;
 }
-.container header ,.container footer{
-    background-color:#eee;
-    padding:20px;
-    margin:10px 0;
-    border-radius:10px;
-    box-shadow:2px 5px 2px rgba(0,0,0,.3);
+
+.container header, .container footer {
+    background-color: #eee;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 2px 5px 2px rgba(0, 0, 0, .3);
 }
 
 .container footer {
@@ -93,60 +96,73 @@ em {
 
 .container header h1 {
     font-size: 50px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
-
 
 .container .main {
     border: 1px solid black;
-    border-radius:10px;
-    box-shadow:2px 5px 2px rgba(0,0,0,.3);
-    padding:50px;
+    border-radius: 10px;
+    box-shadow: 2px 5px 2px rgba(0, 0, 0, .3);
+    padding: 50px;
 }
+
 .first {
-    font-size:28px;
+    font-size: 28px;
 }
 
 .second {
-    font-size:24px;
+    font-size: 24px;
 }
 
 .third {
-    font-size:20px;
+    font-size: 20px;
 }
 
 .forth {
-    font-size:16px;
-}
-.first ,.second ,.third ,.forth {
-    font-weight:700;
-    margin:10px 0;
-}
-dd {
-    padding-left:20px;
+    font-size: 16px;
 }
 
-.forth+dd {
-    padding-left:50px;
+.first, .second, .third, .forth {
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+dd {
+    padding-left: 20px;
+}
+
+.forth + dd {
+    padding-left: 50px;
 }
 
 .animateM {
     position: relative;
     animation: move-word 5s infinite forwards alternate;
 }
+
 @keyframes move-word {
-    from {left: 0 }
-    50% { left: 450px ; font-size: 30px ; transform: rotate(360deg)}
-    to { left: 800px ; font-size: 50px;color: red}
+    from {
+        left: 0
+    }
+    50% {
+        left: 450px;
+        font-size: 30px;
+        transform: rotate(360deg)
+    }
+    to {
+        left: 800px;
+        font-size: 50px;
+        color: red
+    }
 }
 
-.page-nav ,
-.nav{
+.page-nav,
+.nav {
     position: fixed;
     background-color: #eeeeee;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
 }
 
 .page-nav {
@@ -159,8 +175,9 @@ dd {
     transform: translateX(-110%);
     text-align: center;
 }
-.page-nav a ,
-.nav a{
+
+.page-nav a,
+.nav a {
     text-decoration: none;
     color: #0f0f0f;
     border: 1px solid #cccccc;
@@ -169,21 +186,22 @@ dd {
     margin-bottom: 5px;
     border-radius: 5px;
     background-color: #ddd;
-    box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
 }
 
 .nav a {
     padding: 5px;
 }
 
-.page-nav a:active ,
-.go-top a:active ,
-.nav a:active{
+.page-nav a:active,
+.go-top a:active,
+.nav a:active {
     background-color: #bbb;
     color: white;
 }
 
-nav.nav .now {
+nav.nav .now,
+#page-nav-link .now{
     background-color: white;
     color: red;
 }
@@ -200,13 +218,37 @@ nav.nav .now {
     text-align: left;
 }
 
-.model dl dd table{
+.model dl dd table {
     text-align: center;
     margin: 0 auto;
     border-collapse: collapse;
 }
-.model dl dd th ,
+
+.model dl dd th,
 .model dl dd td {
     border: 1px solid black;
     padding: 3px 10px;
+}
+
+#friend {
+    padding: 20px 0;
+}
+
+#friend a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #333333;
+    border: 1px solid #cccccc;
+    padding: 5px 15px;
+    line-height: 45px;
+    border-radius: 10px;
+    margin: 0 5px;
+    background-color: skyblue;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+}
+
+#friend a:hover {
+    color: #eeeeee;
+    background-color: orangered;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.6);
 }

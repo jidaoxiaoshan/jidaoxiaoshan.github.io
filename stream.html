@@ -15,7 +15,7 @@
         </a></div>
     </header>
     <nav class="page-nav">
-        <!--<ul>-->
+        <!--<ul id="page-nav-link">-->
             <!--<li><a href="#">一、常见版本控制器</a></li>-->
             <!--<li><a href="#">二、git的优势</a></li>-->
             <!--<li><a href="#">三、版本控制工具应该具备的功能</a></li>-->
@@ -33,27 +33,8 @@
         <!--</ul>-->
     </nav>
     <nav class="nav">
-        <ul>
-            <li><a href="index.html" >首页</a></li>
-            <li><a href="html.html" >HTML</a></li>
-            <li><a href="css.html" >CSS</a></li>
-            <li><a href="jsbase.html" >JavaScript基础</a></li>
-            <li><a href="dom.html" >DOM操作</a></li>
-            <li><a href="bom.html" >BOM操作</a></li>
-            <li><a href="jquery.html">jQuery</a></li>
-            <li><a href="h5.html">HTML5</a></li>
-            <li><a href="c3.html">CSS3</a></li>
-            <li><a href="ajax.html" >ajax</a></li>
-            <li><a href="mysql.html">MySQL</a></li>
-            <li><a href="mongodb.html">MongoDB</a></li>
-            <li><a href="stream.html" class="now">流式布局</a></li>
-            <li><a href="bootstrap.html">响应式布局&Bootstrap</a></li>
-            <li><a href="less.html">rem布局&LESS</a></li>
-            <li><a href="nodejs.html">nodejs</a></li>
-            <li><a href="git.html">Git</a></li>
-            <li><a href="jsplugin.html">js插件</a></li>
-            <li><a href="weapp.html">微信小程序</a></li>
-            <li><a href="show.html">小案例展示</a></li>
+        <ul id="nav-link">
+
         </ul>
     </nav>
     <div class="main">
@@ -74,7 +55,21 @@
         <p>作者：几道小山</p>
         <p>邮箱：874972633@qq.com</p>
         <p>GitHub：<a href="https://github.com/jidaoxiaoshan" target="_blank">https://github.com/jidaoxiaoshan</a></p>
+        <div id="friend"></div>
     </footer>
 </div>
+<script src="lib/template-web.js"></script>
+<script type="text/html" id="friend-link-tpl">
+    {{each $data}}
+    <a href="{{$value.href}}">{{$value.name}}</a>
+    {{/each}}
+</script>
+<script type="text/html" id="nav-link-tpl">
+    {{each $data}}
+    <li><a href="{{$value.href}}">{{$value.name}}</a></li>
+    {{/each}}
+</script>
+<script src="js/friends-link-template.js"></script>
+<script src="js/nav-link-template.js"></script>
 </body>
 </html>

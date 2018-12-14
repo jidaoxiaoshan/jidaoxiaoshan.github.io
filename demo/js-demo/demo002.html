@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计时器</title>
+</head>
+<body>
+<div class="timeBox">
+    <h1>计时器</h1>
+    <input type="button" value="开始计时" id="star">
+    <input type="button" value="暂停" id="stop">
+    <input type="button" value="结束" id="end">
+    <div id="time">
+        <input type="text" value="00" id="hours">
+        <input type="text" value="00" id="minute">
+        <input type="text" value="00" id="second">
+    </div>
+</div>
+</body>
+<script>
+    let star = document.getElementById("star")
+    let stop = document.getElementById("stop")
+    let end = document.getElementById("end")
+    let hours = document.getElementById("hours")
+    let minute = document.getElementById("minute")
+    let second = document.getElementById("second")
+    let times = 0;
+
+    star.onclick = function () {
+        clearInterval(window.timeId)
+        window.timeId = setInterval(function () {
+            times++
+            showTime(times)
+        }, 1000)
+    }
+
+    stop.onclick = function () {
+        clearInterval(window.timeId)
+    }
+
+    end.onclick = function () {
+        clearInterval(window.timeId)
+        times = 0
+        showTime(times)
+    }
+
+    function getTime(time) {
+        let h = Math.floor(time / 3600)
+        let m = Math.floor(time % 3600 / 60)
+        let s = Math.floor(time % 60)
+        return arr = [h, m, s]
+    }
+
+    function geshihua(x) {
+        return x >= 10 ? x : '0' + x
+    }
+
+    function showTime(times) {
+        hours.value = geshihua(getTime(times)[0])
+        minute.value = geshihua(getTime(times)[1])
+        second.value = geshihua(getTime(times)[2])
+    }
+</script>
+</html>

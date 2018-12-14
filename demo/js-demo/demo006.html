@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: #dddddd;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .box:nth-child(1) {
+            background-color: yellow;
+        }
+
+        .box:nth-child(2) {
+            background-color: grey;
+        }
+
+        .box:nth-child(3) {
+            background-color: greenyellow;
+        }
+
+        .food {
+            background-color: red;
+            position: absolute;
+        }
+
+        .cir {
+            width: 350px;
+            height: 350px;
+            background-color: #FFFFFF;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 30px 20px 130px inset rgba(0, 0, 0, .5);
+            z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box" class="box">
+    <div class="cir"></div>
+</div>
+<div id="box1" class="box">
+    <div class="cir"></div>
+</div>
+<div id="box2" class="box">
+    <div class="cir"></div>
+</div>
+<script>
+    let box = document.getElementById("box")
+    let i = 0
+    let timeId = setInterval(function () {
+        randomBox(box)
+        randomBox(box1)
+        randomBox(box2)
+        i++
+        if (i >= 10000) clearInterval(timeId)
+    }, 1)
+
+    function randomBox(ele) {
+        let food = document.createElement("div")
+        food.className = "food"
+        food.style.width = 5 + "px"
+        food.style.height = 5 + "px"
+        food.style.left = parseInt(Math.random() * ele.offsetWidth) + "px"
+        food.style.top = parseInt(Math.random() * ele.offsetHeight) + "px"
+        ele.appendChild(food)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cls {
+            background-color: black;
+        }
+        div {
+            font-size: 200px;
+            text-align: center;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body id="bd">
+<input type="button" value="开/关灯" id="btn"/>
+<div>
+    你好啊！
+</div>
+<script>
+    document.getElementById("btn").onclick = function () {
+        //获取body标签
+        document.body.className = document.body.className != "cls" ? "cls" : "";
+    };
+</script>
+</body>
+</html>

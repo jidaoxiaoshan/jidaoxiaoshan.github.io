@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+</body>
+<script>
+    let btnObjs = document.getElementsByTagName('button')
+    for (let i = 0; i < btnObjs.length; i++) {
+        btnObjs[i].onclick = function () {
+            for (let i = 0; i < btnObjs.length; i++) {
+                btnObjs[i].innerHTML = i + 1
+            }
+            this.innerHTML = "被点击了"
+        }
+    }
+
+</script>
+</html>
