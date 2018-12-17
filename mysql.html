@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset='utf-8'>
-    <title>几道小山的git 学习笔记</title>
+    <title>几道小山的学习笔记</title>
     <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
@@ -15,22 +15,12 @@
         </a></div>
     </header>
     <nav class="page-nav">
-        <!--<ul id="page-nav-link">-->
-            <!--<li><a href="#">一、常见版本控制器</a></li>-->
-            <!--<li><a href="#">二、git的优势</a></li>-->
-            <!--<li><a href="#">三、版本控制工具应该具备的功能</a></li>-->
-            <!--<li><a href="#">四、版本控制简介</a></li>-->
-            <!--<li><a href="#">五、git简史</a></li>-->
-            <!--<li><a href="#">六、git的下载和安装</a></li>-->
-            <!--<li><a href="#">七、git的结构</a></li>-->
-            <!--<li><a href="#">八、git和代码托管中心</a></li>-->
-            <!--<li><a href="#">九、本地库和远程库</a></li>-->
-            <!--<li><a href="#">十、git的命令行操作</a></li>-->
-            <!--<li><a href="#">十一、git保存版本的机制</a></li>-->
-            <!--<li><a href="#">十二、GitHub</a></li>-->
-            <!--<li><a href="#">十三、SSH免密登录</a></li>-->
-            <!--<li><a href="#">十四、git的可视化操作</a></li>-->
-        <!--</ul>-->
+        <ul id="page-nav-link">
+            <li><a href="#model-001">一、准备工作</a></li>
+            <li><a href="#model-002">二、基础操作</a></li>
+            <li><a href="#model-003">三、PHP 操作数据库</a></li>
+            <li><a href="#model-100">END</a></li>
+        </ul>
     </nav>
     <nav class="nav">
         <ul id="nav-link">
@@ -40,8 +30,308 @@
     <div class="main">
         <ul>
             <li class="model" id="model-001">
-                <h2 class="first">一、MySQL</h2>
-                <p>待更新......</p>
+                <h2 class="first">一、准备工作</h2>
+                <dl>
+                    <dt class="second">1.简介</dt>
+                    <dd>
+                        <dl>
+                            <dt class="third">目标：</dt>
+                            <dd>
+                                <p>搞明白什么是数据库</p>
+                                <p>如何通过工具操作数据库</p>
+                                <p>如何通过代码操作数据库
+</p>
+                            </dd>
+                        </dl>
+                        <p>数据库就是数据的仓库，用来按照特定的结构去组织和管理我们的数据，有了数据库我们就可以更加方便、便捷的操作（C / R / U / D）我们需要保存的数据。
+                        </p>
+                        <p>不管是什么数据库，最终都是将数据存到文件（硬盘）中，只是存储的格式不同于文本文件。</p>
+                        <p>一个 Excel 文件就可以看做一个数据库：</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.安装与配置
+                    </dt>
+                    <dd>
+                        <dl>
+                            <dt class="third">在开发领域我们存储数据一般都是使用专门的数据库服务器专门提供的数据库服务，如果需要让自己的机器也可以提供数据库服务，那么就需要安装特定的数据库服务器软件，这种类型的软件也有很多：
+                            </dt>
+                            <dd>
+                                <p>Oracle</p>
+                                <p>MySQL</p>
+                                <p>SQL Server</p>
+                            </dd>
+                        </dl>
+                        <p>MySQL 的安装同样建议采用解压版（目的是了解那些自动安装过程都做了哪些事）</p>
+                        <p>下载地址：<a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
+                        <dl>
+                            <dt class="third">安装过程
+                            </dt>
+                            <dd>
+                                <p class="forth">1. 解压到纯英文路径</p>
+                                <p class="forth">2. 解压目录添加 my.ini （可选）</p>
+                                <dl>
+                                    <dt class="third">参考
+                                    </dt>
+                                    <dd>
+                                        <p><a href="http://www.cnblogs.com/Ray-xujianguo/p/3322455.html">http://www.cnblogs.com/Ray-xujianguo/p/3322455.html</a></p>
+                                        <p><a href="https://gist.github.com/hanjong/1205199">https://gist.github.com/hanjong/1205199</a></p>
+                                        <p><a href="https://dev.mysql.com/doc/refman/5.5/en/mysqld-option-tables.html
+">https://dev.mysql.com/doc/refman/5.5/en/mysqld-option-tables.html
+                                        </a></p>
+                                        <div class="daiMa">
+                                            <xmp>
+                                                [mysqld]
+                                                # MySQL 安装目录
+                                                basedir=C:/Develop/mysql
+                                                # 数据文件所在目录
+                                                datadir=C:/Develop/mysql/data
+
+                                            </xmp>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="third">3. 以管理员身份运行 CMD 执行以下命令，安装一个 MySQL 服务</dt>
+                                    <dd>
+                                        <div class="daiMa">
+                                            <xmp>
+                                                # 定位到安装目录下的 bin 文件夹
+                                                $ cd MySQL安装目录/bin
+                                                # 初始化数据所需文件以及获取一个临时的访问密码
+                                                $ mysqld ‐‐initialize ‐‐user=mysql ‐‐console
+                                                # 将 MySQL 安装为服务 可以指定服务名称
+                                                $ mysqld ‐‐install MySQL
+
+                                            </xmp>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="third">4. 登入 MySQL 服务器，重置密码</dt>
+                                    <dd>
+                                        <div class="daiMa">
+                                            <xmp>
+                                                # 先通过用户名密码进入 MySQL 操作环境
+                                                $ mysql ‐u root ‐p
+                                                Enter password: # 输入临时密码
+                                                # 设置数据库访问密码，一定要加分号
+                                                mysql> set password for root@localhost = password('123');
+
+                                            </xmp>
+                                        </div>
+                                    </dd>
+                                </dl>
+
+                            </dd>
+                        </dl>
+
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-002">
+                <h2 class="first">二、基础操作</h2>
+                <dl>
+                    <dt class="second">1.数据库管理工具</dt>
+                    <dd>
+                        <p>数据库管理工具本质上就是一个使用数据库服务器软件（Server）提供的服务的数据库客户端（Client）。
+                        </p>
+                        <dl>
+                            <dt class="third">1.1 命令行工具</dt>
+                            <dd>
+                                <p>一般如果只是简单操作数据库，推荐使用 MySQL 内置的命令行工具完成：</p>
+                                <p>通过命令行运行解压目录下 bin 目录中的 mysql.exe ：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        # 定位到 bin 目录
+                                        $ cd 解压目录/bin
+                                        # 运行 mysql，‐u 指定数据库用户名，‐p 指定密码
+                                        $ mysql ‐u root ‐p wanglei
+                                        # 一般不建议在命令中填写密码，因为这样会暴露你的密码，一般只加一个 ‐p 但是不给值
+                                        $ mysql ‐u root ‐p
+                                        Enter password: # 这时会要求你输入密码
+
+                                    </xmp>
+                                </div>
+                                <p>进入 MySQL 客户端的 REPL 环境过后，可以通过标准的 SQL 语句操作数据库。</p>
+                                <p>常见的操作指令：</p>
+                                <div class="daiMa">
+                                    <xmp>
+                                        mysql> show databases; ‐‐ 显示全部数据库
+                                        mysql> create database db‐name; ‐‐ 创建一个指定名称的数据库
+                                        mysql> use db‐name; ‐‐ 使用一个数据库，相当于进入指定的数据库
+                                        mysql> show tables; ‐‐ 显示当前数据库中有哪些表
+                                        mysql> create table table‐name (id int, name varchar(20), age int); ‐‐ 创建一个指定名称的数据
+                                        表，并添加 3 个列
+                                        mysql> desc table‐name; ‐‐ 查看指定表结构
+                                        mysql> source ./path/to/sql‐file.sql ‐‐ 执行本地 SQL 文件中的 SQL 语句
+                                        mysql> drop table table‐name; ‐‐ 删除一个指定名称的数据表
+                                        mysql> drop database db‐name; ‐‐ 删除一个指定名称的数据库
+                                        mysql> exit|quit; ‐‐ 退出数据库终端
+
+                                    </xmp>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">1.2 可视化工具</dt>
+                            <dd>
+                                <p>如果需要复杂的操作，推荐 Navicat Premium</p>
+                                <p>下载地址：<a href="http://www.navicat.com.cn/download/navicat-premium">http://www.navicat.com.cn/download/navicat-premium</a></p>
+                                <p>这是一个付费软件，可以免费试用 14 天</p>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">2.基本概念</dt>
+                    <dd>
+                        <p>数据库</p>
+                        <p>表</p>
+                        <p>字段 —— 指的就是列</p>
+                        <p>字段类型 —— 指的就是列能够存储的数据种类 </p>
+                        <p>数据库查询：指的是操作数据库的过程（查、增、删、改</p>
+                        <p>数据库查询语言：SQL</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">3. 基本查询语句</dt>
+                    <dd>
+                        <dl>
+                            <dt class="third">3.1 查询</dt>
+                            <dd>
+                                 <div class="daiMa">
+                                     <xmp>
+                                         ‐‐ 查询数据
+                                         ‐‐ select 字段[, 字段2] from 表名
+                                         select id, name, birthday from users;
+                                         ‐‐ 通配 * 找到表中所有列
+                                         select * from users;
+                                     </xmp>
+                                 </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">3.2 增加</dt>
+                            <dd>
+                                 <div class="daiMa">
+                                     <xmp>
+                                         ‐‐ 新增数据
+                                         ‐‐ 插入全部字段
+                                         insert into users values (null, '王五', 0, '2020‐12‐12', '12312');
+                                         ‐‐ 指定字段
+                                         insert into users (name, gender, avatar) values ('王五', 0, '12312');
+
+                                     </xmp>
+                                 </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">3.3 修改</dt>
+                            <dd>
+                                 <div class="daiMa">
+                                     <xmp>
+                                         ‐‐ 更新数据
+                                         update users set name = '麻子', gender = 0
+
+                                     </xmp>
+                                 </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">3.4 删除</dt>
+                            <dd>
+                                 <div class="daiMa">
+                                     <xmp>
+                                         ‐‐ 删除
+                                         ‐‐ 删除语句必须指定条件
+                                         delete from users
+                                     </xmp>
+                                 </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="third">3.5 筛选条件</dt>
+                            <dd>
+                                 <div class="daiMa">
+                                     <xmp>
+                                         delete from users where id = 6
+                                         delete from users where id = 6 and gender = 0
+                                         delete from users where id = 6 or gender = 0
+                                         delete from users where id > 6
+                                         delete from users where id in (4, 5)
+
+                                     </xmp>
+                                 </div>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="second">4.常见查询函数</dt>
+                    <dd>
+                        <p>总条数 —— count 分页功能，查询总页数</p>
+                        <p>最大值、最小值 —— max/min</p>
+                        <p>平均值 —— avg</p>
+                        <div class="daiMa">
+                            <xmp>
+                                select fn(field1) from table
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
+            </li>
+            <li class="model" id="model-003">
+                <h2 class="first">三、PHP 操作数据库</h2>
+                <p>如何在 PHP 代码中操作数据库是我们能否在自己的程序中使用数据库的核心。</p>
+                <p>数据库扩展：<a href="http://php.net/manual/zh/refs.database.php">http://php.net/manual/zh/refs.database.php</a></p>
+                <p>如果需要使用 MySQLi 扩展，需要在 php.ini 文件中打开这个扩展（解除注释）</p>
+                <div class="daiMa">
+                    <xmp>
+                        // 假定数据库用户名：root，密码：wanglei，数据库：baixiu
+                        $connection = mysqli_connect("localhost", "root", "wanglei", "baixiu");
+                        if (!$connection) {
+                        // 如果连接失败报错
+                        die('<h1>Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error() .
+                        '</h1>');
+                        }
+                        $sql = "select * from users";
+                        $result = mysqli_query($connection, $sql);
+                        // 查询数据填充到关联数组
+                        while ($row = mysqli_fetch_assoc($result)) {
+                        echo $row["id"] . " ‐ " . $row["username"];
+                        }
+                        // 释放结果集
+                        mysqli_free_result($result);
+                        mysqli_close($connection);
+                    </xmp>
+                </div>
+                <p>mysqli：
+                    <a href="http://php.net/manual/zh/book.mysqli.php">http://php.net/manual/zh/book.mysqli.php</a><br>
+                    <a href="http://www.runoob.com/php/php-ref-mysqli.html">http://www.runoob.com/php/php-ref-mysqli.html</a>
+                </p>
+                <p>*pdo：<a href="http://php.net/manual/zh/ref.pdo-mysql.php">http://php.net/manual/zh/ref.pdo-mysql.php</a></p>
+                <dl>
+                    <dt class="second">全部配置总结</dt>
+                    <dd>
+                        <div class="daiMa">
+                            <xmp>
+                                1. Apache
+                                1.1. PHPIniDir
+                                1.2. LoadModule
+                                1.3. AddType
+                                2. PHP
+                                2.1. extension_dir
+                                2.2. php_mbstring.dll
+                                2.3. php_mysqli.dll
+                                2.4. data.timezone
+                                2.5. upload_max_filesize
+                                2.6. post_max_size
+
+                            </xmp>
+                        </div>
+                    </dd>
+                </dl>
             </li>
             <li class="model" id="model-100">
                 <h2 class="first">END、完结撒花</h2>
