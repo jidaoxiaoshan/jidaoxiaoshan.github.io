@@ -201,7 +201,7 @@ dd {
 }
 
 nav.nav .now,
-#page-nav-link .now{
+#page-nav-link .now {
     background-color: white;
     color: red;
 }
@@ -212,10 +212,14 @@ nav.nav .now,
 }
 
 .daiMa {
-    width: 100%;
-    background-color: #000;
-    color: #FFFFFF;
-    text-align: left;
+    width: 98%;
+    background-color: #f2f2f2;
+    color: #6083ff;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 5px 8px 15px 2px rgba(0, 0, 0, .3);
 }
 
 .model dl dd table {
@@ -244,11 +248,11 @@ nav.nav .now,
     border-radius: 10px;
     margin: 0 5px;
     background-color: skyblue;
-    box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
 }
 
 #friend a:hover {
     color: #eeeeee;
     background-color: orangered;
-    box-shadow: 2px 2px 10px rgba(0,0,0,.6);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .6);
 }
