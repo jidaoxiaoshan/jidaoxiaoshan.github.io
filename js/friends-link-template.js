@@ -23,7 +23,8 @@ let data = [
     {name: "wangEditor", href: "http://www.wangeditor.com/"},
     {name: "Less", href: "http://lesscss.cn/"},
     {name: "BootCDN", href: "https://www.bootcdn.cn/"},
-    {name: "ECharts", href: "http://echarts.baidu.com/"}
+    {name: "ECharts", href: "http://echarts.baidu.com/"},
+    {name: "jsfiddle在线编辑器", href: "https://jsfiddle.net/"}
 ]
 let html = template("friend-link-tpl", data)
 friend.innerHTML = html

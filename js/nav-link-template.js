@@ -12,7 +12,7 @@ let navData = [
     {name: "ajax", href: "ajax.html"},
     {name: "MySQL", href: "mysql.html"},
     {name: "MongoDB", href: "mongodb.html"},
-    {name: "流式布局", href: "stream.html"},
+    {name: "正则表达式", href: "regexp.html"},
     {name: "响应式布局&Bootstrap", href: "bootstrap.html"},
     {name: "rem布局&LESS", href: "less.html"},
     {name: "nodejs", href: "nodejs.html"},
